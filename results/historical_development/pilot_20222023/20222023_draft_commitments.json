@@ -1,0 +1,2901 @@
+{
+  "version": "historical-development/0.3.17",
+  "season": "20222023",
+  "cutoff": "2022-09-28T12:00:00Z",
+  "snapshot_sha256": "5a602b6571f4242f7c291e02107dca2697a3296a244f6c2433547b48ed49f084",
+  "keeper_rosters": {
+    "team1": [
+      "h_948141cd971db7",
+      "h_647acb87aedd71",
+      "h_2df37c7a164b97",
+      "h_ab6a3296ad3943",
+      "h_226a6e315659a5",
+      "h_bfc1a343828ae7",
+      "h_07a9b8e5ec0d07"
+    ],
+    "team2": [
+      "h_582727e4454a0a",
+      "h_c269d0f26533eb",
+      "h_38807b405f9de3",
+      "h_b0109270c7973a",
+      "h_d4558b6795d351",
+      "h_4c9d58027937b5",
+      "h_f32c1a7f85f619"
+    ],
+    "team3": [
+      "h_9ee7fcb2ea97e8",
+      "h_23aaf3b2a57d38",
+      "h_73db0935558893",
+      "h_66e8583c20e262",
+      "h_3d809e22f02184",
+      "h_7563cbdfe42886",
+      "h_2fe2545b96ea4c"
+    ],
+    "team4": [
+      "h_731eb459eda280",
+      "h_dafa3ce65301fd",
+      "h_09a9ae7dbe63ff",
+      "h_435c52029f179a",
+      "h_fb5d3377dd6026",
+      "h_f3aa58b91299e6",
+      "h_7a73cdbbf2415c"
+    ],
+    "team5": [
+      "h_6086a31d457fd1",
+      "h_a739b38de56388",
+      "h_7b8e45e7a9e16e",
+      "h_23940f4f903533",
+      "h_da9c8a08265de0",
+      "h_18ce5c3966683e",
+      "h_3cc7eb0ee285ea"
+    ],
+    "team6": [
+      "h_acdd8cea88bb68",
+      "h_e9c5cece0b42c4",
+      "h_d26a0e24b1acfc",
+      "h_d1e7fc594a0d63",
+      "h_41c1fb9da1dc4f",
+      "h_eda1cd1716b7cf",
+      "h_7a911c25620e98"
+    ]
+  },
+  "reference_trace": [
+    {
+      "policy": "B1",
+      "team": "team1",
+      "roster": [
+        "h_07a9b8e5ec0d07",
+        "h_0996208f2a259a",
+        "h_226a6e315659a5",
+        "h_23df1a1ef8de3b",
+        "h_2df37c7a164b97",
+        "h_32f8fee9907142",
+        "h_3574a8937dd953",
+        "h_5d6d2a763c6140",
+        "h_647acb87aedd71",
+        "h_948141cd971db7",
+        "h_9515ce558cf8c2",
+        "h_9b97fc520ba138",
+        "h_ab6a3296ad3943",
+        "h_aba725068f48a3",
+        "h_afc8bb775cd057",
+        "h_b2204698d856d1",
+        "h_bfc1a343828ae7",
+        "h_d58f6aaea3d803",
+        "h_eea65384200a9b"
+      ]
+    },
+    {
+      "policy": "B1",
+      "team": "team2",
+      "roster": [
+        "h_16aa62c109529f",
+        "h_18fd0babb9b661",
+        "h_354f996c276336",
+        "h_38807b405f9de3",
+        "h_46f0973c1255e5",
+        "h_4c9d58027937b5",
+        "h_56f03015a29ed2",
+        "h_582727e4454a0a",
+        "h_6d1fdece293411",
+        "h_6e228474d52b79",
+        "h_8dfef4f7807f79",
+        "h_95007c32a9afe3",
+        "h_9ef4d13a3f72ea",
+        "h_b0109270c7973a",
+        "h_c269d0f26533eb",
+        "h_cf68c430e5fc86",
+        "h_d3818ae4ea8fd6",
+        "h_d4558b6795d351",
+        "h_f32c1a7f85f619"
+      ]
+    },
+    {
+      "policy": "B1",
+      "team": "team3",
+      "roster": [
+        "h_0b5a3ba1f921a8",
+        "h_23aaf3b2a57d38",
+        "h_2786edea3808ff",
+        "h_2912e6e7ad8cf2",
+        "h_2fe2545b96ea4c",
+        "h_3d809e22f02184",
+        "h_66e8583c20e262",
+        "h_73db0935558893",
+        "h_7563cbdfe42886",
+        "h_8b6f433e336c70",
+        "h_98d98a4784d565",
+        "h_9a24c873d42853",
+        "h_9ee7fcb2ea97e8",
+        "h_bd2a0839c9dd43",
+        "h_bec48caa027e88",
+        "h_dac23835681664",
+        "h_e8e7f1ed392521",
+        "h_f0c57a515b0c93",
+        "h_feeeef10c161f2"
+      ]
+    },
+    {
+      "policy": "B1",
+      "team": "team4",
+      "roster": [
+        "h_08d9b4ac453c39",
+        "h_09a9ae7dbe63ff",
+        "h_435c52029f179a",
+        "h_4d777b38311c62",
+        "h_4e8888c5b82d73",
+        "h_5f1ffa30854862",
+        "h_5ff07a8849f9ad",
+        "h_624074bc2a6f1b",
+        "h_731eb459eda280",
+        "h_7a73cdbbf2415c",
+        "h_7d7c8df3ecac55",
+        "h_84fabf71744900",
+        "h_886e92fc7f3178",
+        "h_a1ce69dd896232",
+        "h_dafa3ce65301fd",
+        "h_f3aa58b91299e6",
+        "h_fb5d3377dd6026",
+        "h_fbb6beebc32714",
+        "h_ffa59d1a4de9ed"
+      ]
+    },
+    {
+      "policy": "B1",
+      "team": "team5",
+      "roster": [
+        "h_18ce5c3966683e",
+        "h_23940f4f903533",
+        "h_3560893483c384",
+        "h_3cc7eb0ee285ea",
+        "h_4ed39519be1e58",
+        "h_6086a31d457fd1",
+        "h_66ed420d5c7dcd",
+        "h_7b8e45e7a9e16e",
+        "h_901ebc023f6274",
+        "h_a739b38de56388",
+        "h_ad2da30c7a440c",
+        "h_da68eb0e59bc8c",
+        "h_da9c8a08265de0",
+        "h_dadf135f8d0821",
+        "h_dcb72e7b636549",
+        "h_e51581f13d24d8",
+        "h_fc8833ac41b525",
+        "h_fce5d51ce1462c",
+        "h_ffc0b1385ded92"
+      ]
+    },
+    {
+      "policy": "B1",
+      "team": "team6",
+      "roster": [
+        "h_09069f7876da6a",
+        "h_2ff950f2a503ff",
+        "h_35b8600308a5c5",
+        "h_41c1fb9da1dc4f",
+        "h_50c9ccd2071f06",
+        "h_68f0aaabfd851d",
+        "h_756b5c43b687ad",
+        "h_7a911c25620e98",
+        "h_817b5050f12118",
+        "h_96566192647690",
+        "h_a00293da4a24ce",
+        "h_acdd8cea88bb68",
+        "h_ae02fbe9efb363",
+        "h_c2790c884b53e7",
+        "h_d1e7fc594a0d63",
+        "h_d26a0e24b1acfc",
+        "h_e9c5cece0b42c4",
+        "h_eda1cd1716b7cf",
+        "h_fb244a86ec575b"
+      ]
+    },
+    {
+      "policy": "B2",
+      "team": "team1",
+      "roster": [
+        "h_07a9b8e5ec0d07",
+        "h_0996208f2a259a",
+        "h_226a6e315659a5",
+        "h_23df1a1ef8de3b",
+        "h_2df37c7a164b97",
+        "h_32f8fee9907142",
+        "h_3834dee151e4df",
+        "h_647acb87aedd71",
+        "h_6e228474d52b79",
+        "h_901ebc023f6274",
+        "h_948141cd971db7",
+        "h_95007c32a9afe3",
+        "h_9515ce558cf8c2",
+        "h_ab6a3296ad3943",
+        "h_aba725068f48a3",
+        "h_ae02fbe9efb363",
+        "h_afc8bb775cd057",
+        "h_bfc1a343828ae7",
+        "h_eea65384200a9b"
+      ]
+    },
+    {
+      "policy": "B2",
+      "team": "team2",
+      "roster": [
+        "h_0b5a3ba1f921a8",
+        "h_18fd0babb9b661",
+        "h_2786edea3808ff",
+        "h_3574a8937dd953",
+        "h_38807b405f9de3",
+        "h_46f0973c1255e5",
+        "h_4c9d58027937b5",
+        "h_582727e4454a0a",
+        "h_5d6d2a763c6140",
+        "h_5ff07a8849f9ad",
+        "h_9b97fc520ba138",
+        "h_9ef4d13a3f72ea",
+        "h_b0109270c7973a",
+        "h_bd2a0839c9dd43",
+        "h_c269d0f26533eb",
+        "h_d4558b6795d351",
+        "h_d58f6aaea3d803",
+        "h_e51581f13d24d8",
+        "h_f32c1a7f85f619"
+      ]
+    },
+    {
+      "policy": "B2",
+      "team": "team3",
+      "roster": [
+        "h_08d9b4ac453c39",
+        "h_23aaf3b2a57d38",
+        "h_2fe2545b96ea4c",
+        "h_354f996c276336",
+        "h_3d809e22f02184",
+        "h_4d777b38311c62",
+        "h_66e8583c20e262",
+        "h_73db0935558893",
+        "h_7563cbdfe42886",
+        "h_8b6f433e336c70",
+        "h_8dfef4f7807f79",
+        "h_9a24c873d42853",
+        "h_9ee7fcb2ea97e8",
+        "h_a1ce69dd896232",
+        "h_ad2da30c7a440c",
+        "h_cf68c430e5fc86",
+        "h_f0c57a515b0c93",
+        "h_fce5d51ce1462c",
+        "h_feeeef10c161f2"
+      ]
+    },
+    {
+      "policy": "B2",
+      "team": "team4",
+      "roster": [
+        "h_09a9ae7dbe63ff",
+        "h_2ff950f2a503ff",
+        "h_35b8600308a5c5",
+        "h_435c52029f179a",
+        "h_4e8888c5b82d73",
+        "h_624074bc2a6f1b",
+        "h_731eb459eda280",
+        "h_7a73cdbbf2415c",
+        "h_817b5050f12118",
+        "h_886e92fc7f3178",
+        "h_98d98a4784d565",
+        "h_d3818ae4ea8fd6",
+        "h_dac23835681664",
+        "h_dafa3ce65301fd",
+        "h_e8e7f1ed392521",
+        "h_f3aa58b91299e6",
+        "h_fb244a86ec575b",
+        "h_fb5d3377dd6026",
+        "h_fbb6beebc32714"
+      ]
+    },
+    {
+      "policy": "B2",
+      "team": "team5",
+      "roster": [
+        "h_18ce5c3966683e",
+        "h_1f17f5c6aa3d34",
+        "h_23940f4f903533",
+        "h_2912e6e7ad8cf2",
+        "h_3560893483c384",
+        "h_3cc7eb0ee285ea",
+        "h_5f1ffa30854862",
+        "h_6086a31d457fd1",
+        "h_6d1fdece293411",
+        "h_756b5c43b687ad",
+        "h_7b8e45e7a9e16e",
+        "h_96566192647690",
+        "h_a739b38de56388",
+        "h_bec48caa027e88",
+        "h_c2790c884b53e7",
+        "h_da68eb0e59bc8c",
+        "h_da9c8a08265de0",
+        "h_dcb72e7b636549",
+        "h_ffc0b1385ded92"
+      ]
+    },
+    {
+      "policy": "B2",
+      "team": "team6",
+      "roster": [
+        "h_09069f7876da6a",
+        "h_41c1fb9da1dc4f",
+        "h_4ed39519be1e58",
+        "h_50c9ccd2071f06",
+        "h_56f03015a29ed2",
+        "h_66ed420d5c7dcd",
+        "h_68f0aaabfd851d",
+        "h_7a911c25620e98",
+        "h_84fabf71744900",
+        "h_a00293da4a24ce",
+        "h_a6d795de17d99a",
+        "h_acdd8cea88bb68",
+        "h_d1e7fc594a0d63",
+        "h_d26a0e24b1acfc",
+        "h_dadf135f8d0821",
+        "h_e9c5cece0b42c4",
+        "h_eda1cd1716b7cf",
+        "h_fc8833ac41b525",
+        "h_ffa59d1a4de9ed"
+      ]
+    },
+    {
+      "policy": "B3",
+      "team": "team1",
+      "roster": [
+        "h_07a9b8e5ec0d07",
+        "h_226a6e315659a5",
+        "h_2df37c7a164b97",
+        "h_499625536e225c",
+        "h_50c9ccd2071f06",
+        "h_5f1ffa30854862",
+        "h_5ff07a8849f9ad",
+        "h_647acb87aedd71",
+        "h_68f0aaabfd851d",
+        "h_6d1fdece293411",
+        "h_948141cd971db7",
+        "h_95007c32a9afe3",
+        "h_9515ce558cf8c2",
+        "h_ab6a3296ad3943",
+        "h_bfc1a343828ae7",
+        "h_e8e7f1ed392521",
+        "h_eea65384200a9b",
+        "h_fce5d51ce1462c",
+        "h_ffc0b1385ded92"
+      ]
+    },
+    {
+      "policy": "B3",
+      "team": "team2",
+      "roster": [
+        "h_08d9b4ac453c39",
+        "h_0b5a3ba1f921a8",
+        "h_23df1a1ef8de3b",
+        "h_2ff950f2a503ff",
+        "h_354f996c276336",
+        "h_38807b405f9de3",
+        "h_46f0973c1255e5",
+        "h_4c9d58027937b5",
+        "h_582727e4454a0a",
+        "h_5d6d2a763c6140",
+        "h_886e92fc7f3178",
+        "h_9ef4d13a3f72ea",
+        "h_aba725068f48a3",
+        "h_b0109270c7973a",
+        "h_c269d0f26533eb",
+        "h_d4558b6795d351",
+        "h_dac23835681664",
+        "h_f32c1a7f85f619",
+        "h_fc8833ac41b525"
+      ]
+    },
+    {
+      "policy": "B3",
+      "team": "team3",
+      "roster": [
+        "h_18fd0babb9b661",
+        "h_23aaf3b2a57d38",
+        "h_2786edea3808ff",
+        "h_2fe2545b96ea4c",
+        "h_3834dee151e4df",
+        "h_3d809e22f02184",
+        "h_4e8888c5b82d73",
+        "h_56f03015a29ed2",
+        "h_66e8583c20e262",
+        "h_73db0935558893",
+        "h_7563cbdfe42886",
+        "h_756b5c43b687ad",
+        "h_8dfef4f7807f79",
+        "h_98d98a4784d565",
+        "h_9a24c873d42853",
+        "h_9ee7fcb2ea97e8",
+        "h_d3818ae4ea8fd6",
+        "h_d58f6aaea3d803",
+        "h_ffa59d1a4de9ed"
+      ]
+    },
+    {
+      "policy": "B3",
+      "team": "team4",
+      "roster": [
+        "h_09069f7876da6a",
+        "h_09a9ae7dbe63ff",
+        "h_1f17f5c6aa3d34",
+        "h_2912e6e7ad8cf2",
+        "h_435c52029f179a",
+        "h_4d777b38311c62",
+        "h_624074bc2a6f1b",
+        "h_6e228474d52b79",
+        "h_731eb459eda280",
+        "h_7a73cdbbf2415c",
+        "h_9b97fc520ba138",
+        "h_a00293da4a24ce",
+        "h_bd2a0839c9dd43",
+        "h_bec48caa027e88",
+        "h_dafa3ce65301fd",
+        "h_e51581f13d24d8",
+        "h_f3aa58b91299e6",
+        "h_fb244a86ec575b",
+        "h_fb5d3377dd6026"
+      ]
+    },
+    {
+      "policy": "B3",
+      "team": "team5",
+      "roster": [
+        "h_0996208f2a259a",
+        "h_18ce5c3966683e",
+        "h_23940f4f903533",
+        "h_32f8fee9907142",
+        "h_3560893483c384",
+        "h_3574a8937dd953",
+        "h_3cc7eb0ee285ea",
+        "h_6086a31d457fd1",
+        "h_66ed420d5c7dcd",
+        "h_7b8e45e7a9e16e",
+        "h_8b6f433e336c70",
+        "h_901ebc023f6274",
+        "h_a6d795de17d99a",
+        "h_a739b38de56388",
+        "h_ad2da30c7a440c",
+        "h_cf68c430e5fc86",
+        "h_da68eb0e59bc8c",
+        "h_da9c8a08265de0",
+        "h_f0c57a515b0c93"
+      ]
+    },
+    {
+      "policy": "B3",
+      "team": "team6",
+      "roster": [
+        "h_35b8600308a5c5",
+        "h_41c1fb9da1dc4f",
+        "h_4ed39519be1e58",
+        "h_7a911c25620e98",
+        "h_817b5050f12118",
+        "h_84fabf71744900",
+        "h_96566192647690",
+        "h_acdd8cea88bb68",
+        "h_ae02fbe9efb363",
+        "h_afc8bb775cd057",
+        "h_c2790c884b53e7",
+        "h_d1e7fc594a0d63",
+        "h_d26a0e24b1acfc",
+        "h_dadf135f8d0821",
+        "h_dcb72e7b636549",
+        "h_e9c5cece0b42c4",
+        "h_eda1cd1716b7cf",
+        "h_fbb6beebc32714",
+        "h_feeeef10c161f2"
+      ]
+    }
+  ],
+  "outcomes_loaded": false,
+  "strategies": {
+    "team1": {
+      "B1": {
+        "status": "COMPLETE",
+        "rosters": {
+          "team1": [
+            "h_07a9b8e5ec0d07",
+            "h_0996208f2a259a",
+            "h_16aa62c109529f",
+            "h_226a6e315659a5",
+            "h_23df1a1ef8de3b",
+            "h_2df37c7a164b97",
+            "h_32f8fee9907142",
+            "h_3574a8937dd953",
+            "h_5d6d2a763c6140",
+            "h_647acb87aedd71",
+            "h_948141cd971db7",
+            "h_9515ce558cf8c2",
+            "h_9b97fc520ba138",
+            "h_ab6a3296ad3943",
+            "h_aba725068f48a3",
+            "h_afc8bb775cd057",
+            "h_bfc1a343828ae7",
+            "h_d58f6aaea3d803",
+            "h_eea65384200a9b"
+          ],
+          "team2": [
+            "h_18fd0babb9b661",
+            "h_1f17f5c6aa3d34",
+            "h_354f996c276336",
+            "h_38807b405f9de3",
+            "h_46f0973c1255e5",
+            "h_4c9d58027937b5",
+            "h_50c9ccd2071f06",
+            "h_582727e4454a0a",
+            "h_5ff07a8849f9ad",
+            "h_6d1fdece293411",
+            "h_6e228474d52b79",
+            "h_8dfef4f7807f79",
+            "h_95007c32a9afe3",
+            "h_9ef4d13a3f72ea",
+            "h_b0109270c7973a",
+            "h_c269d0f26533eb",
+            "h_d3818ae4ea8fd6",
+            "h_d4558b6795d351",
+            "h_f32c1a7f85f619"
+          ],
+          "team3": [
+            "h_0b5a3ba1f921a8",
+            "h_23aaf3b2a57d38",
+            "h_2786edea3808ff",
+            "h_2fe2545b96ea4c",
+            "h_3d809e22f02184",
+            "h_4d777b38311c62",
+            "h_66e8583c20e262",
+            "h_73db0935558893",
+            "h_7563cbdfe42886",
+            "h_8b6f433e336c70",
+            "h_9a24c873d42853",
+            "h_9ee7fcb2ea97e8",
+            "h_ae02fbe9efb363",
+            "h_bd2a0839c9dd43",
+            "h_dac23835681664",
+            "h_e8e7f1ed392521",
+            "h_f0c57a515b0c93",
+            "h_fce5d51ce1462c",
+            "h_feeeef10c161f2"
+          ],
+          "team4": [
+            "h_08d9b4ac453c39",
+            "h_09a9ae7dbe63ff",
+            "h_2912e6e7ad8cf2",
+            "h_435c52029f179a",
+            "h_4e8888c5b82d73",
+            "h_56f03015a29ed2",
+            "h_5f1ffa30854862",
+            "h_624074bc2a6f1b",
+            "h_731eb459eda280",
+            "h_7a73cdbbf2415c",
+            "h_817b5050f12118",
+            "h_84fabf71744900",
+            "h_98d98a4784d565",
+            "h_a1ce69dd896232",
+            "h_cf68c430e5fc86",
+            "h_dafa3ce65301fd",
+            "h_f3aa58b91299e6",
+            "h_fb5d3377dd6026",
+            "h_fbb6beebc32714"
+          ],
+          "team5": [
+            "h_09069f7876da6a",
+            "h_18ce5c3966683e",
+            "h_23940f4f903533",
+            "h_2ff950f2a503ff",
+            "h_3560893483c384",
+            "h_3cc7eb0ee285ea",
+            "h_4ed39519be1e58",
+            "h_6086a31d457fd1",
+            "h_7b8e45e7a9e16e",
+            "h_901ebc023f6274",
+            "h_a6d795de17d99a",
+            "h_a739b38de56388",
+            "h_ad2da30c7a440c",
+            "h_da68eb0e59bc8c",
+            "h_da9c8a08265de0",
+            "h_dcb72e7b636549",
+            "h_e51581f13d24d8",
+            "h_fc8833ac41b525",
+            "h_ffa59d1a4de9ed"
+          ],
+          "team6": [
+            "h_35b8600308a5c5",
+            "h_41c1fb9da1dc4f",
+            "h_66ed420d5c7dcd",
+            "h_68f0aaabfd851d",
+            "h_756b5c43b687ad",
+            "h_7a911c25620e98",
+            "h_886e92fc7f3178",
+            "h_96566192647690",
+            "h_a00293da4a24ce",
+            "h_acdd8cea88bb68",
+            "h_bec48caa027e88",
+            "h_c2790c884b53e7",
+            "h_d1e7fc594a0d63",
+            "h_d26a0e24b1acfc",
+            "h_dadf135f8d0821",
+            "h_e9c5cece0b42c4",
+            "h_eda1cd1716b7cf",
+            "h_fb244a86ec575b",
+            "h_ffc0b1385ded92"
+          ]
+        },
+        "trace": [
+          {
+            "pick_index": 0,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_eea65384200a9b"
+          },
+          {
+            "pick_index": 1,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_46f0973c1255e5"
+          },
+          {
+            "pick_index": 2,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_4d777b38311c62"
+          },
+          {
+            "pick_index": 3,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_98d98a4784d565"
+          },
+          {
+            "pick_index": 4,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_3560893483c384"
+          },
+          {
+            "pick_index": 5,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_66ed420d5c7dcd"
+          },
+          {
+            "pick_index": 6,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_35b8600308a5c5"
+          },
+          {
+            "pick_index": 7,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_ffa59d1a4de9ed"
+          },
+          {
+            "pick_index": 8,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_2912e6e7ad8cf2"
+          },
+          {
+            "pick_index": 9,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_ae02fbe9efb363"
+          },
+          {
+            "pick_index": 10,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_354f996c276336"
+          },
+          {
+            "pick_index": 11,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_9515ce558cf8c2"
+          },
+          {
+            "pick_index": 12,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_5d6d2a763c6140"
+          },
+          {
+            "pick_index": 13,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_18fd0babb9b661"
+          },
+          {
+            "pick_index": 14,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_8b6f433e336c70"
+          },
+          {
+            "pick_index": 15,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_fbb6beebc32714"
+          },
+          {
+            "pick_index": 16,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_dcb72e7b636549"
+          },
+          {
+            "pick_index": 17,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_a00293da4a24ce"
+          },
+          {
+            "pick_index": 18,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_68f0aaabfd851d"
+          },
+          {
+            "pick_index": 19,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_da68eb0e59bc8c"
+          },
+          {
+            "pick_index": 20,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_4e8888c5b82d73"
+          },
+          {
+            "pick_index": 21,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_f0c57a515b0c93"
+          },
+          {
+            "pick_index": 22,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_6e228474d52b79"
+          },
+          {
+            "pick_index": 23,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_3574a8937dd953"
+          },
+          {
+            "pick_index": 24,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_23df1a1ef8de3b"
+          },
+          {
+            "pick_index": 25,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_5ff07a8849f9ad"
+          },
+          {
+            "pick_index": 26,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_fce5d51ce1462c"
+          },
+          {
+            "pick_index": 27,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_56f03015a29ed2"
+          },
+          {
+            "pick_index": 28,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_2ff950f2a503ff"
+          },
+          {
+            "pick_index": 29,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_c2790c884b53e7"
+          },
+          {
+            "pick_index": 30,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_bec48caa027e88"
+          },
+          {
+            "pick_index": 31,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_4ed39519be1e58"
+          },
+          {
+            "pick_index": 32,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_624074bc2a6f1b"
+          },
+          {
+            "pick_index": 33,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_9a24c873d42853"
+          },
+          {
+            "pick_index": 34,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_9ef4d13a3f72ea"
+          },
+          {
+            "pick_index": 35,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_32f8fee9907142"
+          },
+          {
+            "pick_index": 36,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_afc8bb775cd057"
+          },
+          {
+            "pick_index": 37,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_50c9ccd2071f06"
+          },
+          {
+            "pick_index": 38,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_2786edea3808ff"
+          },
+          {
+            "pick_index": 39,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_cf68c430e5fc86"
+          },
+          {
+            "pick_index": 40,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_09069f7876da6a"
+          },
+          {
+            "pick_index": 41,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_886e92fc7f3178"
+          },
+          {
+            "pick_index": 42,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_ffc0b1385ded92"
+          },
+          {
+            "pick_index": 43,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_e51581f13d24d8"
+          },
+          {
+            "pick_index": 44,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_5f1ffa30854862"
+          },
+          {
+            "pick_index": 45,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_dac23835681664"
+          },
+          {
+            "pick_index": 46,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_8dfef4f7807f79"
+          },
+          {
+            "pick_index": 47,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_9b97fc520ba138"
+          },
+          {
+            "pick_index": 48,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_0996208f2a259a"
+          },
+          {
+            "pick_index": 49,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_95007c32a9afe3"
+          },
+          {
+            "pick_index": 50,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_feeeef10c161f2"
+          },
+          {
+            "pick_index": 51,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_84fabf71744900"
+          },
+          {
+            "pick_index": 52,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_901ebc023f6274"
+          },
+          {
+            "pick_index": 53,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_fb244a86ec575b"
+          },
+          {
+            "pick_index": 54,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_756b5c43b687ad"
+          },
+          {
+            "pick_index": 55,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_fc8833ac41b525"
+          },
+          {
+            "pick_index": 56,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_08d9b4ac453c39"
+          },
+          {
+            "pick_index": 57,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_e8e7f1ed392521"
+          },
+          {
+            "pick_index": 58,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_6d1fdece293411"
+          },
+          {
+            "pick_index": 59,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_d58f6aaea3d803"
+          },
+          {
+            "pick_index": 60,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_aba725068f48a3"
+          },
+          {
+            "pick_index": 61,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_d3818ae4ea8fd6"
+          },
+          {
+            "pick_index": 62,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_bd2a0839c9dd43"
+          },
+          {
+            "pick_index": 63,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_817b5050f12118"
+          },
+          {
+            "pick_index": 64,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_ad2da30c7a440c"
+          },
+          {
+            "pick_index": 65,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_96566192647690"
+          },
+          {
+            "pick_index": 66,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_dadf135f8d0821"
+          },
+          {
+            "pick_index": 67,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_a6d795de17d99a"
+          },
+          {
+            "pick_index": 68,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_a1ce69dd896232"
+          },
+          {
+            "pick_index": 69,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_0b5a3ba1f921a8"
+          },
+          {
+            "pick_index": 70,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_1f17f5c6aa3d34"
+          },
+          {
+            "pick_index": 71,
+            "team_id": "team1",
+            "policy": "B1",
+            "player_id": "h_16aa62c109529f"
+          }
+        ]
+      },
+      "B2": {
+        "status": "COMPLETE",
+        "rosters": {
+          "team1": [
+            "h_07a9b8e5ec0d07",
+            "h_0996208f2a259a",
+            "h_18fd0babb9b661",
+            "h_226a6e315659a5",
+            "h_23df1a1ef8de3b",
+            "h_2df37c7a164b97",
+            "h_32f8fee9907142",
+            "h_3574a8937dd953",
+            "h_647acb87aedd71",
+            "h_7d7c8df3ecac55",
+            "h_948141cd971db7",
+            "h_95007c32a9afe3",
+            "h_9515ce558cf8c2",
+            "h_ab6a3296ad3943",
+            "h_aba725068f48a3",
+            "h_afc8bb775cd057",
+            "h_bfc1a343828ae7",
+            "h_d58f6aaea3d803",
+            "h_eea65384200a9b"
+          ],
+          "team2": [
+            "h_1f17f5c6aa3d34",
+            "h_354f996c276336",
+            "h_38807b405f9de3",
+            "h_46f0973c1255e5",
+            "h_4c9d58027937b5",
+            "h_50c9ccd2071f06",
+            "h_582727e4454a0a",
+            "h_5d6d2a763c6140",
+            "h_5ff07a8849f9ad",
+            "h_6d1fdece293411",
+            "h_6e228474d52b79",
+            "h_8dfef4f7807f79",
+            "h_9b97fc520ba138",
+            "h_9ef4d13a3f72ea",
+            "h_b0109270c7973a",
+            "h_c269d0f26533eb",
+            "h_d3818ae4ea8fd6",
+            "h_d4558b6795d351",
+            "h_f32c1a7f85f619"
+          ],
+          "team3": [
+            "h_0b5a3ba1f921a8",
+            "h_23aaf3b2a57d38",
+            "h_2786edea3808ff",
+            "h_2fe2545b96ea4c",
+            "h_3d809e22f02184",
+            "h_4d777b38311c62",
+            "h_66e8583c20e262",
+            "h_73db0935558893",
+            "h_7563cbdfe42886",
+            "h_8b6f433e336c70",
+            "h_9a24c873d42853",
+            "h_9ee7fcb2ea97e8",
+            "h_ae02fbe9efb363",
+            "h_bd2a0839c9dd43",
+            "h_dac23835681664",
+            "h_e8e7f1ed392521",
+            "h_f0c57a515b0c93",
+            "h_fce5d51ce1462c",
+            "h_feeeef10c161f2"
+          ],
+          "team4": [
+            "h_08d9b4ac453c39",
+            "h_09a9ae7dbe63ff",
+            "h_2912e6e7ad8cf2",
+            "h_435c52029f179a",
+            "h_4e8888c5b82d73",
+            "h_56f03015a29ed2",
+            "h_5f1ffa30854862",
+            "h_624074bc2a6f1b",
+            "h_731eb459eda280",
+            "h_7a73cdbbf2415c",
+            "h_817b5050f12118",
+            "h_84fabf71744900",
+            "h_98d98a4784d565",
+            "h_a1ce69dd896232",
+            "h_cf68c430e5fc86",
+            "h_dafa3ce65301fd",
+            "h_f3aa58b91299e6",
+            "h_fb5d3377dd6026",
+            "h_fbb6beebc32714"
+          ],
+          "team5": [
+            "h_09069f7876da6a",
+            "h_18ce5c3966683e",
+            "h_23940f4f903533",
+            "h_2ff950f2a503ff",
+            "h_3560893483c384",
+            "h_3cc7eb0ee285ea",
+            "h_4ed39519be1e58",
+            "h_6086a31d457fd1",
+            "h_7b8e45e7a9e16e",
+            "h_901ebc023f6274",
+            "h_a6d795de17d99a",
+            "h_a739b38de56388",
+            "h_ad2da30c7a440c",
+            "h_da68eb0e59bc8c",
+            "h_da9c8a08265de0",
+            "h_dcb72e7b636549",
+            "h_e51581f13d24d8",
+            "h_fc8833ac41b525",
+            "h_ffa59d1a4de9ed"
+          ],
+          "team6": [
+            "h_35b8600308a5c5",
+            "h_41c1fb9da1dc4f",
+            "h_66ed420d5c7dcd",
+            "h_68f0aaabfd851d",
+            "h_756b5c43b687ad",
+            "h_7a911c25620e98",
+            "h_886e92fc7f3178",
+            "h_96566192647690",
+            "h_a00293da4a24ce",
+            "h_acdd8cea88bb68",
+            "h_bec48caa027e88",
+            "h_c2790c884b53e7",
+            "h_d1e7fc594a0d63",
+            "h_d26a0e24b1acfc",
+            "h_dadf135f8d0821",
+            "h_e9c5cece0b42c4",
+            "h_eda1cd1716b7cf",
+            "h_fb244a86ec575b",
+            "h_ffc0b1385ded92"
+          ]
+        },
+        "trace": [
+          {
+            "pick_index": 0,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_eea65384200a9b"
+          },
+          {
+            "pick_index": 1,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_46f0973c1255e5"
+          },
+          {
+            "pick_index": 2,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_4d777b38311c62"
+          },
+          {
+            "pick_index": 3,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_98d98a4784d565"
+          },
+          {
+            "pick_index": 4,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_3560893483c384"
+          },
+          {
+            "pick_index": 5,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_66ed420d5c7dcd"
+          },
+          {
+            "pick_index": 6,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_35b8600308a5c5"
+          },
+          {
+            "pick_index": 7,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_ffa59d1a4de9ed"
+          },
+          {
+            "pick_index": 8,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_2912e6e7ad8cf2"
+          },
+          {
+            "pick_index": 9,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_ae02fbe9efb363"
+          },
+          {
+            "pick_index": 10,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_354f996c276336"
+          },
+          {
+            "pick_index": 11,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_18fd0babb9b661"
+          },
+          {
+            "pick_index": 12,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_9515ce558cf8c2"
+          },
+          {
+            "pick_index": 13,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_5d6d2a763c6140"
+          },
+          {
+            "pick_index": 14,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_8b6f433e336c70"
+          },
+          {
+            "pick_index": 15,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_fbb6beebc32714"
+          },
+          {
+            "pick_index": 16,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_dcb72e7b636549"
+          },
+          {
+            "pick_index": 17,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_a00293da4a24ce"
+          },
+          {
+            "pick_index": 18,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_68f0aaabfd851d"
+          },
+          {
+            "pick_index": 19,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_da68eb0e59bc8c"
+          },
+          {
+            "pick_index": 20,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_4e8888c5b82d73"
+          },
+          {
+            "pick_index": 21,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_f0c57a515b0c93"
+          },
+          {
+            "pick_index": 22,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_6e228474d52b79"
+          },
+          {
+            "pick_index": 23,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_3574a8937dd953"
+          },
+          {
+            "pick_index": 24,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_23df1a1ef8de3b"
+          },
+          {
+            "pick_index": 25,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_5ff07a8849f9ad"
+          },
+          {
+            "pick_index": 26,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_fce5d51ce1462c"
+          },
+          {
+            "pick_index": 27,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_56f03015a29ed2"
+          },
+          {
+            "pick_index": 28,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_2ff950f2a503ff"
+          },
+          {
+            "pick_index": 29,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_c2790c884b53e7"
+          },
+          {
+            "pick_index": 30,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_bec48caa027e88"
+          },
+          {
+            "pick_index": 31,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_4ed39519be1e58"
+          },
+          {
+            "pick_index": 32,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_624074bc2a6f1b"
+          },
+          {
+            "pick_index": 33,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_9a24c873d42853"
+          },
+          {
+            "pick_index": 34,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_9ef4d13a3f72ea"
+          },
+          {
+            "pick_index": 35,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_afc8bb775cd057"
+          },
+          {
+            "pick_index": 36,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_32f8fee9907142"
+          },
+          {
+            "pick_index": 37,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_50c9ccd2071f06"
+          },
+          {
+            "pick_index": 38,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_2786edea3808ff"
+          },
+          {
+            "pick_index": 39,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_cf68c430e5fc86"
+          },
+          {
+            "pick_index": 40,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_09069f7876da6a"
+          },
+          {
+            "pick_index": 41,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_886e92fc7f3178"
+          },
+          {
+            "pick_index": 42,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_ffc0b1385ded92"
+          },
+          {
+            "pick_index": 43,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_e51581f13d24d8"
+          },
+          {
+            "pick_index": 44,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_5f1ffa30854862"
+          },
+          {
+            "pick_index": 45,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_dac23835681664"
+          },
+          {
+            "pick_index": 46,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_8dfef4f7807f79"
+          },
+          {
+            "pick_index": 47,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_0996208f2a259a"
+          },
+          {
+            "pick_index": 48,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_95007c32a9afe3"
+          },
+          {
+            "pick_index": 49,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_9b97fc520ba138"
+          },
+          {
+            "pick_index": 50,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_feeeef10c161f2"
+          },
+          {
+            "pick_index": 51,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_84fabf71744900"
+          },
+          {
+            "pick_index": 52,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_901ebc023f6274"
+          },
+          {
+            "pick_index": 53,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_fb244a86ec575b"
+          },
+          {
+            "pick_index": 54,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_756b5c43b687ad"
+          },
+          {
+            "pick_index": 55,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_fc8833ac41b525"
+          },
+          {
+            "pick_index": 56,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_08d9b4ac453c39"
+          },
+          {
+            "pick_index": 57,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_e8e7f1ed392521"
+          },
+          {
+            "pick_index": 58,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_6d1fdece293411"
+          },
+          {
+            "pick_index": 59,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_d58f6aaea3d803"
+          },
+          {
+            "pick_index": 60,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_aba725068f48a3"
+          },
+          {
+            "pick_index": 61,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_d3818ae4ea8fd6"
+          },
+          {
+            "pick_index": 62,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_bd2a0839c9dd43"
+          },
+          {
+            "pick_index": 63,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_817b5050f12118"
+          },
+          {
+            "pick_index": 64,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_ad2da30c7a440c"
+          },
+          {
+            "pick_index": 65,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_96566192647690"
+          },
+          {
+            "pick_index": 66,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_dadf135f8d0821"
+          },
+          {
+            "pick_index": 67,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_a6d795de17d99a"
+          },
+          {
+            "pick_index": 68,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_a1ce69dd896232"
+          },
+          {
+            "pick_index": 69,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_0b5a3ba1f921a8"
+          },
+          {
+            "pick_index": 70,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_1f17f5c6aa3d34"
+          },
+          {
+            "pick_index": 71,
+            "team_id": "team1",
+            "policy": "B2",
+            "player_id": "h_7d7c8df3ecac55"
+          }
+        ]
+      },
+      "B3": {
+        "status": "COMPLETE",
+        "rosters": {
+          "team1": [
+            "h_07a9b8e5ec0d07",
+            "h_09069f7876da6a",
+            "h_1f17f5c6aa3d34",
+            "h_226a6e315659a5",
+            "h_23df1a1ef8de3b",
+            "h_2df37c7a164b97",
+            "h_50c9ccd2071f06",
+            "h_5ff07a8849f9ad",
+            "h_647acb87aedd71",
+            "h_68f0aaabfd851d",
+            "h_6d1fdece293411",
+            "h_8dfef4f7807f79",
+            "h_948141cd971db7",
+            "h_9515ce558cf8c2",
+            "h_ab6a3296ad3943",
+            "h_aba725068f48a3",
+            "h_bfc1a343828ae7",
+            "h_dac23835681664",
+            "h_eea65384200a9b"
+          ],
+          "team2": [
+            "h_2ff950f2a503ff",
+            "h_354f996c276336",
+            "h_38807b405f9de3",
+            "h_46f0973c1255e5",
+            "h_4c9d58027937b5",
+            "h_582727e4454a0a",
+            "h_5d6d2a763c6140",
+            "h_5f1ffa30854862",
+            "h_6e228474d52b79",
+            "h_95007c32a9afe3",
+            "h_9b97fc520ba138",
+            "h_9ef4d13a3f72ea",
+            "h_a6d795de17d99a",
+            "h_b0109270c7973a",
+            "h_c269d0f26533eb",
+            "h_d3818ae4ea8fd6",
+            "h_d4558b6795d351",
+            "h_e8e7f1ed392521",
+            "h_f32c1a7f85f619"
+          ],
+          "team3": [
+            "h_0996208f2a259a",
+            "h_0b5a3ba1f921a8",
+            "h_18fd0babb9b661",
+            "h_23aaf3b2a57d38",
+            "h_2fe2545b96ea4c",
+            "h_3574a8937dd953",
+            "h_3d809e22f02184",
+            "h_4d777b38311c62",
+            "h_66e8583c20e262",
+            "h_73db0935558893",
+            "h_7563cbdfe42886",
+            "h_9a24c873d42853",
+            "h_9ee7fcb2ea97e8",
+            "h_ae02fbe9efb363",
+            "h_afc8bb775cd057",
+            "h_bd2a0839c9dd43",
+            "h_e51581f13d24d8",
+            "h_f0c57a515b0c93",
+            "h_fc8833ac41b525"
+          ],
+          "team4": [
+            "h_09a9ae7dbe63ff",
+            "h_2912e6e7ad8cf2",
+            "h_32f8fee9907142",
+            "h_435c52029f179a",
+            "h_4e8888c5b82d73",
+            "h_56f03015a29ed2",
+            "h_624074bc2a6f1b",
+            "h_731eb459eda280",
+            "h_7a73cdbbf2415c",
+            "h_817b5050f12118",
+            "h_84fabf71744900",
+            "h_8b6f433e336c70",
+            "h_98d98a4784d565",
+            "h_a1ce69dd896232",
+            "h_d58f6aaea3d803",
+            "h_dafa3ce65301fd",
+            "h_f3aa58b91299e6",
+            "h_fb5d3377dd6026",
+            "h_ffc0b1385ded92"
+          ],
+          "team5": [
+            "h_08d9b4ac453c39",
+            "h_18ce5c3966683e",
+            "h_23940f4f903533",
+            "h_3560893483c384",
+            "h_3cc7eb0ee285ea",
+            "h_4ed39519be1e58",
+            "h_6086a31d457fd1",
+            "h_756b5c43b687ad",
+            "h_7b8e45e7a9e16e",
+            "h_886e92fc7f3178",
+            "h_a739b38de56388",
+            "h_ad2da30c7a440c",
+            "h_da68eb0e59bc8c",
+            "h_da9c8a08265de0",
+            "h_dadf135f8d0821",
+            "h_fbb6beebc32714",
+            "h_fce5d51ce1462c",
+            "h_feeeef10c161f2",
+            "h_ffa59d1a4de9ed"
+          ],
+          "team6": [
+            "h_2786edea3808ff",
+            "h_35b8600308a5c5",
+            "h_41c1fb9da1dc4f",
+            "h_66ed420d5c7dcd",
+            "h_7a911c25620e98",
+            "h_901ebc023f6274",
+            "h_96566192647690",
+            "h_a00293da4a24ce",
+            "h_a5b9e2f6e44dfe",
+            "h_acdd8cea88bb68",
+            "h_bec48caa027e88",
+            "h_c2790c884b53e7",
+            "h_cf68c430e5fc86",
+            "h_d1e7fc594a0d63",
+            "h_d26a0e24b1acfc",
+            "h_dcb72e7b636549",
+            "h_e9c5cece0b42c4",
+            "h_eda1cd1716b7cf",
+            "h_fb244a86ec575b"
+          ]
+        },
+        "trace": [
+          {
+            "pick_index": 0,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_eea65384200a9b"
+          },
+          {
+            "pick_index": 1,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_46f0973c1255e5"
+          },
+          {
+            "pick_index": 2,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_4d777b38311c62"
+          },
+          {
+            "pick_index": 3,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_98d98a4784d565"
+          },
+          {
+            "pick_index": 4,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_3560893483c384"
+          },
+          {
+            "pick_index": 5,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_66ed420d5c7dcd"
+          },
+          {
+            "pick_index": 6,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_35b8600308a5c5"
+          },
+          {
+            "pick_index": 7,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_ffa59d1a4de9ed"
+          },
+          {
+            "pick_index": 8,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_2912e6e7ad8cf2"
+          },
+          {
+            "pick_index": 9,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_ae02fbe9efb363"
+          },
+          {
+            "pick_index": 10,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_354f996c276336"
+          },
+          {
+            "pick_index": 11,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_9515ce558cf8c2"
+          },
+          {
+            "pick_index": 12,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_68f0aaabfd851d"
+          },
+          {
+            "pick_index": 13,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_5d6d2a763c6140"
+          },
+          {
+            "pick_index": 14,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_18fd0babb9b661"
+          },
+          {
+            "pick_index": 15,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_8b6f433e336c70"
+          },
+          {
+            "pick_index": 16,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_fbb6beebc32714"
+          },
+          {
+            "pick_index": 17,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_dcb72e7b636549"
+          },
+          {
+            "pick_index": 18,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_a00293da4a24ce"
+          },
+          {
+            "pick_index": 19,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_da68eb0e59bc8c"
+          },
+          {
+            "pick_index": 20,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_4e8888c5b82d73"
+          },
+          {
+            "pick_index": 21,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_f0c57a515b0c93"
+          },
+          {
+            "pick_index": 22,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_6e228474d52b79"
+          },
+          {
+            "pick_index": 23,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_23df1a1ef8de3b"
+          },
+          {
+            "pick_index": 24,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_5ff07a8849f9ad"
+          },
+          {
+            "pick_index": 25,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_2ff950f2a503ff"
+          },
+          {
+            "pick_index": 26,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_3574a8937dd953"
+          },
+          {
+            "pick_index": 27,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_56f03015a29ed2"
+          },
+          {
+            "pick_index": 28,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_fce5d51ce1462c"
+          },
+          {
+            "pick_index": 29,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_c2790c884b53e7"
+          },
+          {
+            "pick_index": 30,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_bec48caa027e88"
+          },
+          {
+            "pick_index": 31,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_4ed39519be1e58"
+          },
+          {
+            "pick_index": 32,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_624074bc2a6f1b"
+          },
+          {
+            "pick_index": 33,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_9a24c873d42853"
+          },
+          {
+            "pick_index": 34,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_9ef4d13a3f72ea"
+          },
+          {
+            "pick_index": 35,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_09069f7876da6a"
+          },
+          {
+            "pick_index": 36,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_50c9ccd2071f06"
+          },
+          {
+            "pick_index": 37,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_95007c32a9afe3"
+          },
+          {
+            "pick_index": 38,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_afc8bb775cd057"
+          },
+          {
+            "pick_index": 39,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_32f8fee9907142"
+          },
+          {
+            "pick_index": 40,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_08d9b4ac453c39"
+          },
+          {
+            "pick_index": 41,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_2786edea3808ff"
+          },
+          {
+            "pick_index": 42,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_cf68c430e5fc86"
+          },
+          {
+            "pick_index": 43,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_886e92fc7f3178"
+          },
+          {
+            "pick_index": 44,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_ffc0b1385ded92"
+          },
+          {
+            "pick_index": 45,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_e51581f13d24d8"
+          },
+          {
+            "pick_index": 46,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_5f1ffa30854862"
+          },
+          {
+            "pick_index": 47,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_dac23835681664"
+          },
+          {
+            "pick_index": 48,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_8dfef4f7807f79"
+          },
+          {
+            "pick_index": 49,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_9b97fc520ba138"
+          },
+          {
+            "pick_index": 50,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_0996208f2a259a"
+          },
+          {
+            "pick_index": 51,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_84fabf71744900"
+          },
+          {
+            "pick_index": 52,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_feeeef10c161f2"
+          },
+          {
+            "pick_index": 53,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_fb244a86ec575b"
+          },
+          {
+            "pick_index": 54,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_901ebc023f6274"
+          },
+          {
+            "pick_index": 55,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_756b5c43b687ad"
+          },
+          {
+            "pick_index": 56,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_d58f6aaea3d803"
+          },
+          {
+            "pick_index": 57,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_fc8833ac41b525"
+          },
+          {
+            "pick_index": 58,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_e8e7f1ed392521"
+          },
+          {
+            "pick_index": 59,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_6d1fdece293411"
+          },
+          {
+            "pick_index": 60,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_aba725068f48a3"
+          },
+          {
+            "pick_index": 61,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_d3818ae4ea8fd6"
+          },
+          {
+            "pick_index": 62,
+            "team_id": "team3",
+            "policy": "B2",
+            "player_id": "h_bd2a0839c9dd43"
+          },
+          {
+            "pick_index": 63,
+            "team_id": "team4",
+            "policy": "B1",
+            "player_id": "h_817b5050f12118"
+          },
+          {
+            "pick_index": 64,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_ad2da30c7a440c"
+          },
+          {
+            "pick_index": 65,
+            "team_id": "team6",
+            "policy": "B2",
+            "player_id": "h_96566192647690"
+          },
+          {
+            "pick_index": 66,
+            "team_id": "team6",
+            "policy": "B1",
+            "player_id": "h_a5b9e2f6e44dfe"
+          },
+          {
+            "pick_index": 67,
+            "team_id": "team5",
+            "policy": "B3",
+            "player_id": "h_dadf135f8d0821"
+          },
+          {
+            "pick_index": 68,
+            "team_id": "team4",
+            "policy": "B2",
+            "player_id": "h_a1ce69dd896232"
+          },
+          {
+            "pick_index": 69,
+            "team_id": "team3",
+            "policy": "B1",
+            "player_id": "h_0b5a3ba1f921a8"
+          },
+          {
+            "pick_index": 70,
+            "team_id": "team2",
+            "policy": "B3",
+            "player_id": "h_a6d795de17d99a"
+          },
+          {
+            "pick_index": 71,
+            "team_id": "team1",
+            "policy": "B3",
+            "player_id": "h_1f17f5c6aa3d34"
+          }
+        ]
+      },
+      "ENGINE": {
+        "status": "COMPLETE",
+        "rosters": {
+          "team1": [
+            "h_948141cd971db7",
+            "h_647acb87aedd71",
+            "h_2df37c7a164b97",
+            "h_ab6a3296ad3943",
+            "h_226a6e315659a5",
+            "h_bfc1a343828ae7",
+            "h_07a9b8e5ec0d07",
+            "h_98d98a4784d565",
+            "h_8b6f433e336c70",
+            "h_23df1a1ef8de3b",
+            "h_6e228474d52b79",
+            "h_56f03015a29ed2",
+            "h_9b97fc520ba138",
+            "h_09069f7876da6a",
+            "h_621d9c68ca4617",
+            "h_08d9b4ac453c39",
+            "h_6d1fdece293411",
+            "h_d58f6aaea3d803",
+            "h_2d5e8f282f6a82"
+          ],
+          "team2": [
+            "h_582727e4454a0a",
+            "h_c269d0f26533eb",
+            "h_38807b405f9de3",
+            "h_b0109270c7973a",
+            "h_d4558b6795d351",
+            "h_4c9d58027937b5",
+            "h_f32c1a7f85f619",
+            "h_eea65384200a9b",
+            "h_354f996c276336",
+            "h_9515ce558cf8c2",
+            "h_f0c57a515b0c93",
+            "h_5ff07a8849f9ad",
+            "h_9ef4d13a3f72ea",
+            "h_50c9ccd2071f06",
+            "h_5f1ffa30854862",
+            "h_dac23835681664",
+            "h_e8e7f1ed392521",
+            "h_aba725068f48a3",
+            "h_a6d795de17d99a"
+          ],
+          "team3": [
+            "h_9ee7fcb2ea97e8",
+            "h_23aaf3b2a57d38",
+            "h_73db0935558893",
+            "h_66e8583c20e262",
+            "h_3d809e22f02184",
+            "h_7563cbdfe42886",
+            "h_2fe2545b96ea4c",
+            "h_46f0973c1255e5",
+            "h_ae02fbe9efb363",
+            "h_18fd0babb9b661",
+            "h_4e8888c5b82d73",
+            "h_3574a8937dd953",
+            "h_9a24c873d42853",
+            "h_afc8bb775cd057",
+            "h_e51581f13d24d8",
+            "h_8dfef4f7807f79",
+            "h_fc8833ac41b525",
+            "h_bd2a0839c9dd43",
+            "h_16aa62c109529f"
+          ],
+          "team4": [
+            "h_731eb459eda280",
+            "h_dafa3ce65301fd",
+            "h_09a9ae7dbe63ff",
+            "h_435c52029f179a",
+            "h_fb5d3377dd6026",
+            "h_f3aa58b91299e6",
+            "h_7a73cdbbf2415c",
+            "h_4d777b38311c62",
+            "h_2912e6e7ad8cf2",
+            "h_5d6d2a763c6140",
+            "h_da68eb0e59bc8c",
+            "h_bec48caa027e88",
+            "h_624074bc2a6f1b",
+            "h_32f8fee9907142",
+            "h_ffc0b1385ded92",
+            "h_0996208f2a259a",
+            "h_756b5c43b687ad",
+            "h_d3818ae4ea8fd6",
+            "h_0b5a3ba1f921a8"
+          ],
+          "team5": [
+            "h_6086a31d457fd1",
+            "h_a739b38de56388",
+            "h_7b8e45e7a9e16e",
+            "h_23940f4f903533",
+            "h_da9c8a08265de0",
+            "h_18ce5c3966683e",
+            "h_3cc7eb0ee285ea",
+            "h_3560893483c384",
+            "h_ffa59d1a4de9ed",
+            "h_fbb6beebc32714",
+            "h_a00293da4a24ce",
+            "h_fce5d51ce1462c",
+            "h_4ed39519be1e58",
+            "h_95007c32a9afe3",
+            "h_886e92fc7f3178",
+            "h_feeeef10c161f2",
+            "h_901ebc023f6274",
+            "h_ad2da30c7a440c",
+            "h_dadf135f8d0821"
+          ],
+          "team6": [
+            "h_acdd8cea88bb68",
+            "h_e9c5cece0b42c4",
+            "h_d26a0e24b1acfc",
+            "h_d1e7fc594a0d63",
+            "h_41c1fb9da1dc4f",
+            "h_eda1cd1716b7cf",
+            "h_7a911c25620e98",
+            "h_66ed420d5c7dcd",
+            "h_35b8600308a5c5",
+            "h_dcb72e7b636549",
+            "h_68f0aaabfd851d",
+            "h_2ff950f2a503ff",
+            "h_c2790c884b53e7",
+            "h_2786edea3808ff",
+            "h_cf68c430e5fc86",
+            "h_fb244a86ec575b",
+            "h_84fabf71744900",
+            "h_817b5050f12118",
+            "h_96566192647690"
+          ]
+        },
+        "trace": [
+          {
+            "draft_index": 0,
+            "team": "team1",
+            "player_id": "h_98d98a4784d565",
+            "policy": "B4_ADAPTIVE"
+          },
+          {
+            "draft_index": 1,
+            "team": "team2",
+            "player_id": "h_eea65384200a9b",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 2,
+            "team": "team3",
+            "player_id": "h_46f0973c1255e5",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 3,
+            "team": "team4",
+            "player_id": "h_4d777b38311c62",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 4,
+            "team": "team5",
+            "player_id": "h_3560893483c384",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 5,
+            "team": "team6",
+            "player_id": "h_66ed420d5c7dcd",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 6,
+            "team": "team6",
+            "player_id": "h_35b8600308a5c5",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 7,
+            "team": "team5",
+            "player_id": "h_ffa59d1a4de9ed",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 8,
+            "team": "team4",
+            "player_id": "h_2912e6e7ad8cf2",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 9,
+            "team": "team3",
+            "player_id": "h_ae02fbe9efb363",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 10,
+            "team": "team2",
+            "player_id": "h_354f996c276336",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 11,
+            "team": "team1",
+            "player_id": "h_8b6f433e336c70",
+            "policy": "B4_ADAPTIVE"
+          },
+          {
+            "draft_index": 12,
+            "team": "team1",
+            "player_id": "h_23df1a1ef8de3b",
+            "policy": "B4_ADAPTIVE"
+          },
+          {
+            "draft_index": 13,
+            "team": "team2",
+            "player_id": "h_9515ce558cf8c2",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 14,
+            "team": "team3",
+            "player_id": "h_18fd0babb9b661",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 15,
+            "team": "team4",
+            "player_id": "h_5d6d2a763c6140",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 16,
+            "team": "team5",
+            "player_id": "h_fbb6beebc32714",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 17,
+            "team": "team6",
+            "player_id": "h_dcb72e7b636549",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 18,
+            "team": "team6",
+            "player_id": "h_68f0aaabfd851d",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 19,
+            "team": "team5",
+            "player_id": "h_a00293da4a24ce",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 20,
+            "team": "team4",
+            "player_id": "h_da68eb0e59bc8c",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 21,
+            "team": "team3",
+            "player_id": "h_4e8888c5b82d73",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 22,
+            "team": "team2",
+            "player_id": "h_f0c57a515b0c93",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 23,
+            "team": "team1",
+            "player_id": "h_6e228474d52b79",
+            "policy": "B4_ADAPTIVE"
+          },
+          {
+            "draft_index": 24,
+            "team": "team1",
+            "player_id": "h_56f03015a29ed2",
+            "policy": "B4_ADAPTIVE"
+          },
+          {
+            "draft_index": 25,
+            "team": "team2",
+            "player_id": "h_5ff07a8849f9ad",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 26,
+            "team": "team3",
+            "player_id": "h_3574a8937dd953",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 27,
+            "team": "team4",
+            "player_id": "h_bec48caa027e88",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 28,
+            "team": "team5",
+            "player_id": "h_fce5d51ce1462c",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 29,
+            "team": "team6",
+            "player_id": "h_2ff950f2a503ff",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 30,
+            "team": "team6",
+            "player_id": "h_c2790c884b53e7",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 31,
+            "team": "team5",
+            "player_id": "h_4ed39519be1e58",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 32,
+            "team": "team4",
+            "player_id": "h_624074bc2a6f1b",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 33,
+            "team": "team3",
+            "player_id": "h_9a24c873d42853",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 34,
+            "team": "team2",
+            "player_id": "h_9ef4d13a3f72ea",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 35,
+            "team": "team1",
+            "player_id": "h_9b97fc520ba138",
+            "policy": "B4_ADAPTIVE"
+          },
+          {
+            "draft_index": 36,
+            "team": "team1",
+            "player_id": "h_09069f7876da6a",
+            "policy": "B4_ADAPTIVE"
+          },
+          {
+            "draft_index": 37,
+            "team": "team2",
+            "player_id": "h_50c9ccd2071f06",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 38,
+            "team": "team3",
+            "player_id": "h_afc8bb775cd057",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 39,
+            "team": "team4",
+            "player_id": "h_32f8fee9907142",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 40,
+            "team": "team5",
+            "player_id": "h_95007c32a9afe3",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 41,
+            "team": "team6",
+            "player_id": "h_2786edea3808ff",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 42,
+            "team": "team6",
+            "player_id": "h_cf68c430e5fc86",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 43,
+            "team": "team5",
+            "player_id": "h_886e92fc7f3178",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 44,
+            "team": "team4",
+            "player_id": "h_ffc0b1385ded92",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 45,
+            "team": "team3",
+            "player_id": "h_e51581f13d24d8",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 46,
+            "team": "team2",
+            "player_id": "h_5f1ffa30854862",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 47,
+            "team": "team1",
+            "player_id": "h_621d9c68ca4617",
+            "policy": "B4_ADAPTIVE"
+          },
+          {
+            "draft_index": 48,
+            "team": "team1",
+            "player_id": "h_08d9b4ac453c39",
+            "policy": "B4_ADAPTIVE"
+          },
+          {
+            "draft_index": 49,
+            "team": "team2",
+            "player_id": "h_dac23835681664",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 50,
+            "team": "team3",
+            "player_id": "h_8dfef4f7807f79",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 51,
+            "team": "team4",
+            "player_id": "h_0996208f2a259a",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 52,
+            "team": "team5",
+            "player_id": "h_feeeef10c161f2",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 53,
+            "team": "team6",
+            "player_id": "h_fb244a86ec575b",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 54,
+            "team": "team6",
+            "player_id": "h_84fabf71744900",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 55,
+            "team": "team5",
+            "player_id": "h_901ebc023f6274",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 56,
+            "team": "team4",
+            "player_id": "h_756b5c43b687ad",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 57,
+            "team": "team3",
+            "player_id": "h_fc8833ac41b525",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 58,
+            "team": "team2",
+            "player_id": "h_e8e7f1ed392521",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 59,
+            "team": "team1",
+            "player_id": "h_6d1fdece293411",
+            "policy": "B4_ADAPTIVE"
+          },
+          {
+            "draft_index": 60,
+            "team": "team1",
+            "player_id": "h_d58f6aaea3d803",
+            "policy": "B4_ADAPTIVE"
+          },
+          {
+            "draft_index": 61,
+            "team": "team2",
+            "player_id": "h_aba725068f48a3",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 62,
+            "team": "team3",
+            "player_id": "h_bd2a0839c9dd43",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 63,
+            "team": "team4",
+            "player_id": "h_d3818ae4ea8fd6",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 64,
+            "team": "team5",
+            "player_id": "h_ad2da30c7a440c",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 65,
+            "team": "team6",
+            "player_id": "h_817b5050f12118",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 66,
+            "team": "team6",
+            "player_id": "h_96566192647690",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 67,
+            "team": "team5",
+            "player_id": "h_dadf135f8d0821",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 68,
+            "team": "team4",
+            "player_id": "h_0b5a3ba1f921a8",
+            "policy": "B2"
+          },
+          {
+            "draft_index": 69,
+            "team": "team3",
+            "player_id": "h_16aa62c109529f",
+            "policy": "B1"
+          },
+          {
+            "draft_index": 70,
+            "team": "team2",
+            "player_id": "h_a6d795de17d99a",
+            "policy": "B3"
+          },
+          {
+            "draft_index": 71,
+            "team": "team1",
+            "player_id": "h_2d5e8f282f6a82",
+            "policy": "B4_ADAPTIVE"
+          }
+        ],
+        "engine_decisions": [
+          {
+            "ordinal": 1,
+            "draft_index": 0,
+            "player_id": "h_98d98a4784d565",
+            "confidence_status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "one_rollout_leader": "h_09069f7876da6a",
+            "broad_pool_count": 48
+          },
+          {
+            "ordinal": 2,
+            "draft_index": 11,
+            "player_id": "h_8b6f433e336c70",
+            "confidence_status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "one_rollout_leader": "h_5f1ffa30854862",
+            "broad_pool_count": 45
+          },
+          {
+            "ordinal": 3,
+            "draft_index": 12,
+            "player_id": "h_23df1a1ef8de3b",
+            "confidence_status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "one_rollout_leader": "h_68f0aaabfd851d",
+            "broad_pool_count": 44
+          },
+          {
+            "ordinal": 4,
+            "draft_index": 23,
+            "player_id": "h_6e228474d52b79",
+            "confidence_status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "one_rollout_leader": "h_08d9b4ac453c39",
+            "broad_pool_count": 47
+          },
+          {
+            "ordinal": 5,
+            "draft_index": 24,
+            "player_id": "h_56f03015a29ed2",
+            "confidence_status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 32,
+            "one_rollout_leader": "h_08d9b4ac453c39",
+            "broad_pool_count": 47
+          },
+          {
+            "ordinal": 6,
+            "draft_index": 35,
+            "player_id": "h_9b97fc520ba138",
+            "confidence_status": "RESOLVED_WITHIN_ADAPTIVE_RACE",
+            "fallback_used": false,
+            "final_budget": 32,
+            "one_rollout_leader": "h_0b5a3ba1f921a8",
+            "broad_pool_count": 47
+          },
+          {
+            "ordinal": 7,
+            "draft_index": 36,
+            "player_id": "h_09069f7876da6a",
+            "confidence_status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 32,
+            "one_rollout_leader": "h_817b5050f12118",
+            "broad_pool_count": 40
+          },
+          {
+            "ordinal": 8,
+            "draft_index": 47,
+            "player_id": "h_621d9c68ca4617",
+            "confidence_status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 32,
+            "one_rollout_leader": "h_621d9c68ca4617",
+            "broad_pool_count": 39
+          },
+          {
+            "ordinal": 9,
+            "draft_index": 48,
+            "player_id": "h_08d9b4ac453c39",
+            "confidence_status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 64,
+            "one_rollout_leader": "h_b2204698d856d1",
+            "broad_pool_count": 48
+          },
+          {
+            "ordinal": 10,
+            "draft_index": 59,
+            "player_id": "h_6d1fdece293411",
+            "confidence_status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 64,
+            "one_rollout_leader": "h_6d1fdece293411",
+            "broad_pool_count": 43
+          },
+          {
+            "ordinal": 11,
+            "draft_index": 60,
+            "player_id": "h_d58f6aaea3d803",
+            "confidence_status": "RESOLVED_WITHIN_ADAPTIVE_RACE",
+            "fallback_used": false,
+            "final_budget": 8,
+            "one_rollout_leader": "h_d58f6aaea3d803",
+            "broad_pool_count": 43
+          },
+          {
+            "ordinal": 12,
+            "draft_index": 71,
+            "player_id": "h_2d5e8f282f6a82",
+            "confidence_status": "RESOLVED_WITHIN_ADAPTIVE_RACE",
+            "fallback_used": false,
+            "final_budget": 8,
+            "one_rollout_leader": "h_2d5e8f282f6a82",
+            "broad_pool_count": 43
+          }
+        ]
+      }
+    }
+  }
+}

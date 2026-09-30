@@ -1,0 +1,92 @@
+{
+  "version": "historical-development/0.3.17",
+  "season": "20222023",
+  "status": "DEVELOPMENT_HISTORICAL_RECONSTRUCTION_NOT_PROMOTION",
+  "focus_seats": 1,
+  "strategies": {
+    "B1": {
+      "mean_category_share": 0.46623376623376617,
+      "seat_values": [
+        0.46623376623376617
+      ]
+    },
+    "B2": {
+      "mean_category_share": 0.4824675324675325,
+      "seat_values": [
+        0.4824675324675325
+      ]
+    },
+    "B3": {
+      "mean_category_share": 0.5191558441558441,
+      "seat_values": [
+        0.5191558441558441
+      ]
+    },
+    "ENGINE": {
+      "mean_category_share": 0.4792207792207792,
+      "seat_values": [
+        0.4792207792207792
+      ]
+    }
+  },
+  "engine_minus_baseline_pp": {
+    "B1": 1.2987012987013047,
+    "B2": -0.32467532467532756,
+    "B3": -3.9935064935064934
+  },
+  "engine_decisions": {
+    "all": 12,
+    "resolved": 3,
+    "unresolved": 9,
+    "unresolved_rate": 0.75
+  },
+  "identity_audit": {
+    "source_rows": 52460,
+    "preseason_players": 515,
+    "matched_preseason_players": 494,
+    "high_projected_gp_unmatched": [
+      "Alex Formenton",
+      "Alex Wennberg",
+      "Cam Atkinson",
+      "Christopher Tanev",
+      "Gabriel Landeskog",
+      "Hendrix Lapierre",
+      "Jacob Middleton",
+      "Matt Dumba",
+      "Max Comtois",
+      "Mitchell Marner",
+      "Nicholas Robertson",
+      "Oliver Kylington",
+      "Pat Maroon",
+      "Ryan Ellis",
+      "Sam Montembeault",
+      "Scott Perunovich",
+      "Sean Couturier",
+      "Tim Stuetzle",
+      "Troy Grosenick",
+      "Joonas Donskoi"
+    ],
+    "high_projected_gp_unmatched_count": 20,
+    "ambiguous_outcome_name_keys": 0,
+    "unmatched_outcome_name_keys": 581
+  },
+  "excluded_preseason_players": [
+    {
+      "player": "Zach Aston-Reese",
+      "team": "FA",
+      "reason": "NO_SCHEDULE_TEAM"
+    }
+  ],
+  "draft_commitment_sha256": "2118c08e5c0c6482335d7f5d417a83bf23d5c14ecc8c2bc53cb681316716207f",
+  "protocol_notes": [
+    "Preseason Crome projections and ESPN eligibility drive all draft choices.",
+    "Synthetic keepers are the first seven rounds of a shared legal B1 preseason draft; all strategies inherit the same keepers.",
+    "Live draft is 12-round six-team snake with HoH-shaped 19-player roster and 11 categories.",
+    "Engine uses frozen v0.3.15 adaptive race and v0.3.16 unresolved fallback; Timing Value is zero.",
+    "Reference field is deterministic equal B1/B2/B3 baseline-roster mixture built before outcomes.",
+    "Lineups are committed using preseason projections and schedule only; actual performance is never used to choose lineups.",
+    "Schedule is the final official NHL API regular-season calendar and may include later reschedules; this is allowed only in DEVELOPMENT reconstruction and is not holdout-grade schedule provenance.",
+    "No in-season adds, drops, trades, IR activation, or dynamic injury news are modeled.",
+    "Full-draft outcome is reported overall; resolved/unresolved decision counts are reported separately. Decision-level causal outcome attribution is not yet implemented and no resolved-vs-unresolved performance claim is made."
+  ]
+}
