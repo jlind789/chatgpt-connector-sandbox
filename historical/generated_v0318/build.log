@@ -1,16 +1,41 @@
-Traceback (most recent call last):
-  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/build_historical_dev_fixtures.py", line 279, in <module>
-    if __name__=='__main__':main()
-                            ~~~~^^
-  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/build_historical_dev_fixtures.py", line 274, in main
-    audits=[build_season(s,SEASONS[s]) for s in protocol['development_seasons']]
-            ~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/build_historical_dev_fixtures.py", line 217, in build_season
-    d=validate(d)
-  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/.runtime_v0317/decision_engine/validation.py", line 193, in validate
-    fail('EXPOSURE_RECONCILIATION',f'{p}/{key}: total {value} != weighted period sum {expected}.')
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/.runtime_v0317/decision_engine/validation.py", line 36, in fail
-    def fail(code, message, path=''): raise EngineError(code,message,path)
-                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-decision_engine.validation.EngineError: 20222023_0503/games: total 60.75 != weighted period sum 0.0.
+{
+  "version": "v0.3.18-fixture-freeze",
+  "protocol_sha256": "8f517afa8e5602b90edde9b64e9c99cd3211d03dd67253ef4c2bcd166e7cf737",
+  "historical_outcomes_used_for_recommendation_inputs": false,
+  "audits": [
+    {
+      "season": "2022-23",
+      "protocol": "historical-development/0.3.18-preoutcome-freeze",
+      "preseason_players": 516,
+      "engine_players": 516,
+      "official_games": 1312,
+      "first_game": "2022-10-07",
+      "last_game": "2023-04-14",
+      "weekly_evaluation_groups": 28,
+      "projection_only_reference_rosters": 18,
+      "identity_unique_matches": 492,
+      "identity_ambiguous": 2,
+      "identity_no_realized_game": 22,
+      "snapshot_sha256": "87127327f3c7804dc14c9ae45a1ab9fc4125428bcbfd8f5061586c3f7833bfc9",
+      "reference_field_sha256": "d740175d821ef66efccfceffb63f3b3318eede042ad2b385dd6fafad2470d355",
+      "historical_outcome_values_used_to_build_recommendation_snapshot": false
+    },
+    {
+      "season": "2023-24",
+      "protocol": "historical-development/0.3.18-preoutcome-freeze",
+      "preseason_players": 592,
+      "engine_players": 592,
+      "official_games": 1312,
+      "first_game": "2023-10-10",
+      "last_game": "2024-04-18",
+      "weekly_evaluation_groups": 28,
+      "projection_only_reference_rosters": 18,
+      "identity_unique_matches": 561,
+      "identity_ambiguous": 1,
+      "identity_no_realized_game": 30,
+      "snapshot_sha256": "281222bc8a1008480d1207866c43bde42b30799c5bf9c2e78b79ba5d87bd3686",
+      "reference_field_sha256": "74875fd17c76cbe437032289868619dfe134ee83b21f80fb89e3919680f0336c",
+      "historical_outcome_values_used_to_build_recommendation_snapshot": false
+    }
+  ]
+}

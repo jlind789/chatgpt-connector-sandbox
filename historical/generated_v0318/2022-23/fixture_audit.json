@@ -1,0 +1,17 @@
+{
+  "season": "2022-23",
+  "protocol": "historical-development/0.3.18-preoutcome-freeze",
+  "preseason_players": 516,
+  "engine_players": 516,
+  "official_games": 1312,
+  "first_game": "2022-10-07",
+  "last_game": "2023-04-14",
+  "weekly_evaluation_groups": 28,
+  "projection_only_reference_rosters": 18,
+  "identity_unique_matches": 492,
+  "identity_ambiguous": 2,
+  "identity_no_realized_game": 22,
+  "snapshot_sha256": "87127327f3c7804dc14c9ae45a1ab9fc4125428bcbfd8f5061586c3f7833bfc9",
+  "reference_field_sha256": "d740175d821ef66efccfceffb63f3b3318eede042ad2b385dd6fafad2470d355",
+  "historical_outcome_values_used_to_build_recommendation_snapshot": false
+}
