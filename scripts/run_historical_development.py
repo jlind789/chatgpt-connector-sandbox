@@ -549,3 +549,5 @@ if __name__=="__main__":main()
 # workflow-trigger: smoke-v0317
 
 # trigger: historical-development-pilot-2022
+
+# trigger: historical-pilot-diagnostics
