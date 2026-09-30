@@ -314,7 +314,8 @@ def baseline_context(world):
     solver=ReplayEfficientRosterSolver(data)
     solver.initialize([])
     replacement=ReplacementAnchor(data,iv)
-    return SimpleNamespace(solver=solver,iv=iv,replacement=replacement)
+    dependency=canonical_hash({k:data[k] for k in ('league','manager_profile','league_players','projection_set','exposure_model','reference_model','methodology_config')})
+    return SimpleNamespace(solver=solver,iv=iv,replacement=replacement,cache_dependency_sha256=dependency)
 
 
 def generate_b1_keepers(base_snapshot, players):
