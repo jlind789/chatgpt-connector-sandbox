@@ -1,5 +1,38 @@
 [
   {
+    "id": 36770801117,
+    "name": "Workflow status probe",
+    "event": "issues",
+    "status": "in_progress",
+    "conclusion": null,
+    "head_sha": "dc0b30ee45728f3d6eafcfca75d365a170030bed",
+    "created_at": "2026-09-30T20:10:51Z",
+    "updated_at": "2026-09-30T20:10:55Z",
+    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36770801117"
+  },
+  {
+    "id": 36770801095,
+    "name": "Historical development pilot",
+    "event": "issues",
+    "status": "completed",
+    "conclusion": "skipped",
+    "head_sha": "dc0b30ee45728f3d6eafcfca75d365a170030bed",
+    "created_at": "2026-09-30T20:10:51Z",
+    "updated_at": "2026-09-30T20:10:57Z",
+    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36770801095"
+  },
+  {
+    "id": 36770801010,
+    "name": "Issue trigger heartbeat",
+    "event": "issues",
+    "status": "completed",
+    "conclusion": "skipped",
+    "head_sha": "dc0b30ee45728f3d6eafcfca75d365a170030bed",
+    "created_at": "2026-09-30T20:10:51Z",
+    "updated_at": "2026-09-30T20:10:52Z",
+    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36770801010"
+  },
+  {
     "id": 36770698948,
     "name": "Issue trigger heartbeat",
     "event": "issues",
@@ -25,11 +58,11 @@
     "id": 36770698815,
     "name": "Workflow status probe",
     "event": "issues",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "success",
     "head_sha": "00ee278fa186c9eb115c5b376837a50baf3aa0b6",
     "created_at": "2026-09-30T20:10:00Z",
-    "updated_at": "2026-09-30T20:10:04Z",
+    "updated_at": "2026-09-30T20:10:12Z",
     "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36770698815"
   },
   {
@@ -80,11 +113,11 @@
     "id": 36770645784,
     "name": "Historical development pilot",
     "event": "issues",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "failure",
     "head_sha": "2b7031c6607924cf4153473568ec9f41535d6c80",
     "created_at": "2026-09-30T20:09:31Z",
-    "updated_at": "2026-09-30T20:09:36Z",
+    "updated_at": "2026-09-30T20:10:48Z",
     "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36770645784"
   },
   {
@@ -295,38 +328,5 @@
     "created_at": "2026-09-30T19:33:13Z",
     "updated_at": "2026-09-30T19:33:41Z",
     "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36766470042"
-  },
-  {
-    "id": 36766336349,
-    "name": "Historical development smoke",
-    "event": "pull_request",
-    "status": "completed",
-    "conclusion": "failure",
-    "head_sha": "c98761725f0cbed87de6f769fc4dab0c440fb2a4",
-    "created_at": "2026-09-30T19:32:03Z",
-    "updated_at": "2026-09-30T19:32:15Z",
-    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36766336349"
-  },
-  {
-    "id": 36766060231,
-    "name": "Historical development smoke",
-    "event": "push",
-    "status": "completed",
-    "conclusion": "failure",
-    "head_sha": "31d97cf2e1097f97250adc8c1b89459f260ef3d1",
-    "created_at": "2026-09-30T19:29:43Z",
-    "updated_at": "2026-09-30T19:29:53Z",
-    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36766060231"
-  },
-  {
-    "id": 36766044034,
-    "name": "Historical development smoke",
-    "event": "push",
-    "status": "completed",
-    "conclusion": "failure",
-    "head_sha": "ddca7c00e86a7fbcb9e5b17fa99d90604d773fb6",
-    "created_at": "2026-09-30T19:29:35Z",
-    "updated_at": "2026-09-30T19:29:47Z",
-    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36766044034"
   }
 ]
