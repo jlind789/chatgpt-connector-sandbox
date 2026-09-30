@@ -30,5 +30,6 @@ jobs:
             echo "No changes"
           else
             git commit -m "Add 2022-23 and 2023-24 NHL historical outcomes"
+            git pull --rebase origin main
             git push
           fi
