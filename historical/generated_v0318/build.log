@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/build_historical_dev_fixtures.py", line 273, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/build_historical_dev_fixtures.py", line 268, in main
+    audits=[build_season(s,SEASONS[s]) for s in protocol['development_seasons']]
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/build_historical_dev_fixtures.py", line 211, in build_season
+    d=validate(d)
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/.runtime_v0317/decision_engine/validation.py", line 150, in validate
+    if any(timestamp(s)>cutoff for s in stamps):fail('FUTURE_INPUT_INFORMATION','Input information timestamp is later than the decision cutoff.')
+                                                ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/.runtime_v0317/decision_engine/validation.py", line 36, in fail
+    def fail(code, message, path=''): raise EngineError(code,message,path)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+decision_engine.validation.EngineError: Input information timestamp is later than the decision cutoff.
