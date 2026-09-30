@@ -1,0 +1,104 @@
+{
+  "experiment_id": "M034_PAIRED_ROSTER_DEPTH_DIAGNOSTIC_1",
+  "purpose": "Same expanded public pool at two roster depths; separate research workload and sensitivity check",
+  "strata": [
+    {
+      "stratum_id": "DEPTH_SHALLOW_2",
+      "public_family": "BALANCED",
+      "audit_family": "BALANCED",
+      "teams": 2,
+      "depth_profile": "EXPANDED_POOL_SHALLOW",
+      "public_pair_group": "DEPTH_MATCHED_POOL_2",
+      "audit_pair_group": "DEPTH_MATCHED_POOL_2"
+    },
+    {
+      "stratum_id": "DEPTH_DEEP_2",
+      "public_family": "BALANCED",
+      "audit_family": "BALANCED",
+      "teams": 2,
+      "depth_profile": "EXPANDED_POOL_DEEP",
+      "public_pair_group": "DEPTH_MATCHED_POOL_2",
+      "audit_pair_group": "DEPTH_MATCHED_POOL_2"
+    }
+  ],
+  "seed_labels": [
+    34601,
+    34602,
+    34603,
+    34604
+  ],
+  "engine_rollouts": 8,
+  "small_reference_draws": 3,
+  "large_reference_draws": 12,
+  "uncertainty": {
+    "samples": 16,
+    "player_log_sd": 0.3,
+    "period_log_sd": 0.1,
+    "seed": 7330301,
+    "namespace": "M033_PUBLIC_UNCERTAINTY_V1"
+  },
+  "audit_draws": 256,
+  "policies": [
+    "B3",
+    "EUR",
+    "EA"
+  ],
+  "management_policies": [
+    "ADDITIVE"
+  ],
+  "primary_comparison": {
+    "positive": "EUR",
+    "negative": "B3",
+    "manager": "ADDITIVE"
+  },
+  "secondary_contrasts": [
+    "EUR-E0 direct upgrade",
+    "EA-EUR predeclared challenger",
+    "EA-E0",
+    "E0-B3",
+    "EUR-B1",
+    "EUR-B2",
+    "common-management robustness"
+  ],
+  "factors": {
+    "E0": "Unchanged deterministic forecasts, small reference field, nonlinear internal management",
+    "EUR": "Uncertainty plus larger reference sample; fixed primary candidate",
+    "EA": "EUR with fixed additive internal lineup planning instead of nonlinear planning"
+  },
+  "reference_scope": "Increase samples from the SAME baseline roster mixture; no claim of greater roster diversity",
+  "audit_manager_scope": "Every draft strategy receives the same management for a given audit. ADDITIVE uses original public means. CATEGORY_EXPECTED uses the shared EUR public forecast model, independent implementation, and no actual opponent data.",
+  "randomness": "New public seed namespace; disjoint forecast/reference/audit namespaces; identical player-period outcomes across counterfactuals",
+  "primary_outcome": "Realized synthetic each-category share, mean across opponents then seats then generated leagues",
+  "failure_policy": "Report all distinct failed drafts; exclude the entire paired seat across all strategies, separately for each common management policy",
+  "interval_method": "4000-resample stratified paired league-cluster percentile bootstrap; exploratory intervals are descriptive and not adjusted for multiple contrasts",
+  "promotion": "Not eligible; no real seasons, no parameter tuning; previous historical gates retained",
+  "unsupported_scope": [
+    "full-size recommendation latency",
+    "market timing",
+    "UI",
+    "integrations",
+    "historical forecasts",
+    "real-world calibration",
+    "IR and participation minima in this independent audit"
+  ],
+  "revisions_after_audit": "None permitted under this experiment ID",
+  "comparisons": [
+    [
+      "EUR",
+      "B3"
+    ],
+    [
+      "EA",
+      "B3"
+    ],
+    [
+      "EA",
+      "EUR"
+    ]
+  ],
+  "inference": "Eight layout cases are four paired public pools, NOT eight independent samples. Use separate within-layout means and public-pair contrasts, not combined-layout intervals.",
+  "precision": "108 generated leagues (three times previous 36), 12 per stratum. No historical power claim; subgroup mean-loss criterion is a research screen, not proof of harm.",
+  "frozen_candidate_rule": "Keep all v0.3.3 E0, EUR and EA construction parameters unchanged. No new draft score in this version.",
+  "audit_namespace": "AUDIT_M034_OUTCOMES; unobserved role uses auditor-only M034_AUDIT_ROLE_FACTORS",
+  "scope": "Two-team 12-player pool, 3 versus 5 roster spots, two periods. No full-size performance claim."
+}

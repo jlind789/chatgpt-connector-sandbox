@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fantasy-decision-engine-research"
+version = "0.3.16"
+description = "Headless fantasy draft research runner with native split-horizon season exposure; no predictive-performance claim"
+requires-python = ">=3.11"
+dependencies = ["jsonschema>=4.18,<5", "rfc3339-validator>=0.1.4,<0.2", "numpy>=2.0,<3", "scipy>=1.11,<2"]
+
+[project.scripts]
+fantasy-engine = "decision_engine.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["decision_engine*", "research*"]
+
+[tool.setuptools.package-data]
+decision_engine = ["*.schema.json"]
+
+research = ["*.json"]

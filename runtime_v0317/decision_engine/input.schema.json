@@ -1,0 +1,1460 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:decision-engine:input:0.3:exact-small-roster-v1",
+  "title": "Decision Engine v0.3 implemented research profile",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "decision-engine-input/0.3",
+        "decision-engine-input/0.3.1"
+      ]
+    },
+    "capability_profile": {
+      "enum": [
+        "EXACT_SMALL_ROSTER_V1",
+        "HORIZON_SPLIT_REPRESENTATIVE_SEASON_V1",
+        "HORIZON_SPLIT_EXACT_CALENDAR_V1"
+      ]
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "user_team_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "league": {
+      "type": "object",
+      "properties": {
+        "league_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sport_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "season": {
+          "type": "string",
+          "minLength": 1
+        },
+        "platform": {
+          "enum": [
+            "MANUAL",
+            "YAHOO",
+            "ESPN",
+            "FANTRAX",
+            "CUSTOM"
+          ]
+        },
+        "ownership_mode": {
+          "type": "string",
+          "minLength": 1
+        },
+        "number_of_teams": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "positions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "position_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "display_name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "position_group_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rosterable": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "position_id",
+              "display_name",
+              "position_group_id",
+              "rosterable"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "roster_slots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/slot"
+          },
+          "minItems": 1
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/category"
+          },
+          "minItems": 1
+        },
+        "league_constraints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rule"
+          },
+          "minItems": 0
+        },
+        "stat_definitions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stat_key": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minimum": {
+                "type": "number"
+              },
+              "maximum": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "stat_key"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "stat_relationships": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "relationship_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "left_stat_key": {
+                "type": "string",
+                "minLength": 1
+              },
+              "operator": {
+                "enum": [
+                  "LTE",
+                  "GTE",
+                  "EQ"
+                ]
+              },
+              "right_stat_key": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "relationship_id",
+              "left_stat_key",
+              "operator",
+              "right_stat_key"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "scoring_objective": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "minLength": 1
+            },
+            "category_tie_credit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "both_undefined_tie_credit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "rounding": {
+              "const": "HALF_EVEN"
+            },
+            "horizon_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "evaluation_period_count": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "type",
+            "category_tie_credit",
+            "both_undefined_tie_credit",
+            "rounding",
+            "horizon_id",
+            "evaluation_period_count"
+          ],
+          "additionalProperties": false
+        },
+        "lineup_rules": {
+          "type": "object",
+          "properties": {
+            "lock_mode": {
+              "enum": [
+                "DAILY",
+                "WEEKLY"
+              ]
+            },
+            "information_policy": {
+              "type": "string",
+              "minLength": 1
+            },
+            "active_limits": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/limit"
+              },
+              "minItems": 0
+            },
+            "minimum_participation": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/minimum"
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "lock_mode",
+            "information_policy",
+            "active_limits",
+            "minimum_participation"
+          ],
+          "additionalProperties": false
+        },
+        "draft_config": {
+          "type": "object",
+          "properties": {
+            "draft_type": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "draft_type"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "league_id",
+        "sport_code",
+        "season",
+        "platform",
+        "ownership_mode",
+        "number_of_teams",
+        "positions",
+        "roster_slots",
+        "categories",
+        "league_constraints",
+        "stat_definitions",
+        "stat_relationships",
+        "scoring_objective",
+        "lineup_rules",
+        "draft_config"
+      ],
+      "additionalProperties": false
+    },
+    "manager_profile": {
+      "type": "object",
+      "properties": {
+        "manager_profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "position_policies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/policy"
+          },
+          "minItems": 0
+        },
+        "category_preferences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "mode": {
+                "enum": [
+                  "STANDARD",
+                  "PRIORITIZE",
+                  "PUNT"
+                ]
+              },
+              "multiplier": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "category_id",
+              "mode"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "strategy_settings": {
+          "type": "object",
+          "properties": {
+            "opponent_strategy_mode": {
+              "type": "string",
+              "minLength": 1
+            },
+            "timing_enabled": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "opponent_strategy_mode",
+            "timing_enabled"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "manager_profile_id",
+        "position_policies",
+        "category_preferences",
+        "strategy_settings"
+      ],
+      "additionalProperties": false
+    },
+    "players": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sport_code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "display_name": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "player_id",
+          "sport_code",
+          "display_name"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "league_players": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "league_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rosterable": {
+            "type": "boolean"
+          },
+          "eligibility": {
+            "type": "object",
+            "properties": {
+              "position_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "primary_position_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "enum": [
+                  "PLATFORM",
+                  "MANUAL",
+                  "IMPORT",
+                  "MANUAL_OVERRIDE"
+                ]
+              },
+              "as_of": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "position_ids",
+              "source",
+              "as_of"
+            ],
+            "additionalProperties": false
+          },
+          "status_tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "player_id",
+          "league_id",
+          "rosterable",
+          "eligibility",
+          "status_tags"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "projection_set": {
+      "type": "object",
+      "properties": {
+        "projection_set_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sport_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "season": {
+          "type": "string",
+          "minLength": 1
+        },
+        "horizon_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "player_projections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "player_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "stat_values": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "number"
+                }
+              }
+            },
+            "required": [
+              "player_id",
+              "stat_values"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "projection_set_id",
+        "sport_code",
+        "season",
+        "horizon_id",
+        "source",
+        "created_at",
+        "player_projections"
+      ],
+      "additionalProperties": false
+    },
+    "teams": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "team_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "league_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "display_name": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "team_id",
+          "league_id",
+          "display_name"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "roster_state": {
+      "type": "object",
+      "properties": {
+        "as_of": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "teams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "team_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "entries": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/entry"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "team_id",
+              "entries"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "as_of",
+        "teams"
+      ],
+      "additionalProperties": false
+    },
+    "draft_state": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "PRE_DRAFT",
+            "IN_PROGRESS",
+            "COMPLETE"
+          ]
+        },
+        "remaining_picks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pick_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "actor_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "pick_id",
+              "actor_id"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "anonymous_demands": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "agent_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "initial_roster_count": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "agent_id",
+              "initial_roster_count"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "manually_excluded_player_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "status",
+        "remaining_picks",
+        "anonymous_demands",
+        "manually_excluded_player_ids"
+      ],
+      "additionalProperties": false
+    },
+    "exposure_model": {
+      "type": "object",
+      "properties": {
+        "exposure_model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "calendar_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "horizon_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "data_kind": {
+          "enum": [
+            "SYNTHETIC",
+            "ARCHIVED"
+          ]
+        },
+        "exposure_stat_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "periods": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "period_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "lock_group_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "starts_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "evaluation_group_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "period_id",
+              "lock_group_id",
+              "starts_at"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "evaluation_groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "evaluation_group_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "weight": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            },
+            "required": [
+              "evaluation_group_id",
+              "weight"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "projection_reconciliation_mode": {
+          "enum": [
+            "WEIGHTED_EVALUATION_GROUPS_TO_PROJECTION_TOTAL",
+            "EXPOSURE_SUBSET_OF_PROJECTION_HORIZON"
+          ]
+        },
+        "forecast_scenarios": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/scenario"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "exposure_model_id",
+        "calendar_id",
+        "horizon_id",
+        "as_of",
+        "data_kind",
+        "exposure_stat_key",
+        "periods",
+        "forecast_scenarios"
+      ],
+      "additionalProperties": false
+    },
+    "reference_model": {
+      "type": "object",
+      "properties": {
+        "reference_model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "normalization_player_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "field_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generation_policy": {
+          "enum": [
+            "EXPLICIT_SYNTHETIC_FIXTURE",
+            "BASELINE_MIXTURE_V1",
+            "M034_HETEROGENEOUS_BASELINE_COMPOSITION",
+            "HOH_REPRESENTATIVE_SEASON_V1",
+            "HOH_EXACT_SCHEDULE_V1"
+          ]
+        },
+        "field": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "reference_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "weight": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "stat_values": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "number"
+                }
+              },
+              "evaluation_group_stat_values": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "required": [
+              "reference_id",
+              "weight",
+              "stat_values"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "replacement_thresholds": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "replacement_threshold_provenance": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "reference_model_id",
+        "as_of",
+        "normalization_player_ids",
+        "field_id",
+        "generation_policy",
+        "field"
+      ],
+      "additionalProperties": false
+    },
+    "methodology_config": {
+      "type": "object",
+      "properties": {
+        "methodology_id": {
+          "const": "M0.3-ROSTER-RESEARCH-1"
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rollouts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16384
+        },
+        "soft_policy_lambda": {
+          "type": "number",
+          "minimum": 0
+        },
+        "neutral_temperature": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "max_search_nodes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_lineup_plans": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "continuation_policy": {
+          "enum": [
+            "B1",
+            "B3"
+          ]
+        }
+      },
+      "required": [
+        "methodology_id",
+        "seed",
+        "rollouts",
+        "soft_policy_lambda",
+        "neutral_temperature",
+        "max_search_nodes",
+        "max_lineup_plans",
+        "continuation_policy"
+      ],
+      "additionalProperties": false
+    },
+    "source_metadata": {
+      "type": "object",
+      "properties": {
+        "source_platform": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adapter_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adapter_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "imported_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "source_platform",
+        "adapter_name",
+        "adapter_version",
+        "imported_at"
+      ],
+      "additionalProperties": false
+    },
+    "external_ranks": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      }
+    },
+    "external_rank_provenance": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "capability_profile",
+    "snapshot_id",
+    "created_at",
+    "user_team_id",
+    "league",
+    "manager_profile",
+    "players",
+    "league_players",
+    "projection_set",
+    "teams",
+    "roster_state",
+    "draft_state",
+    "exposure_model",
+    "reference_model",
+    "methodology_config",
+    "source_metadata"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "category": {
+      "type": "object",
+      "properties": {
+        "category_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "applicable_position_group_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "direction": {
+          "enum": [
+            "HIGHER_IS_BETTER",
+            "LOWER_IS_BETTER"
+          ]
+        },
+        "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "precision": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12
+        },
+        "calculation": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "COUNT"
+                },
+                "stat_key": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "type",
+                "stat_key"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "RATIO"
+                },
+                "numerator_stat_key": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "denominator_stat_key": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "multiplier": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                }
+              },
+              "required": [
+                "type",
+                "numerator_stat_key",
+                "denominator_stat_key",
+                "multiplier"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "category_id",
+        "display_name",
+        "applicable_position_group_ids",
+        "direction",
+        "weight",
+        "precision",
+        "calculation"
+      ],
+      "additionalProperties": false
+    },
+    "slot": {
+      "type": "object",
+      "properties": {
+        "slot_definition_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capacity": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "slot_class": {
+          "enum": [
+            "ACTIVE",
+            "BENCH",
+            "INJURED_RESERVE",
+            "RESERVE"
+          ]
+        },
+        "eligibility": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "mode": {
+                  "const": "POSITION_SET"
+                },
+                "position_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "mode",
+                "position_ids"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "mode": {
+                  "const": "ANY_ROSTERABLE"
+                }
+              },
+              "required": [
+                "mode"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "required_status_tags_any_of": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "counts_toward_roster_total": {
+          "type": "boolean"
+        },
+        "required_at_completion": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "slot_definition_id",
+        "display_name",
+        "capacity",
+        "slot_class",
+        "eligibility",
+        "required_status_tags_any_of",
+        "counts_toward_roster_total",
+        "required_at_completion"
+      ],
+      "additionalProperties": false
+    },
+    "rule": {
+      "type": "object",
+      "properties": {
+        "constraint_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "POSITION_COUNT",
+            "TOTAL_ROSTER_COUNT"
+          ]
+        },
+        "position_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "counting_basis": {
+          "enum": [
+            "ASSIGNED_POSITION",
+            "ANY_ELIGIBILITY",
+            "PRIMARY_POSITION"
+          ]
+        },
+        "scope_slot_classes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "ACTIVE",
+              "BENCH",
+              "INJURED_RESERVE",
+              "RESERVE"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "operator": {
+          "enum": [
+            "LTE",
+            "GTE",
+            "EQ"
+          ]
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evaluation_phase": {
+          "enum": [
+            "AT_ALL_TIMES",
+            "ROSTER_COMPLETION"
+          ]
+        }
+      },
+      "required": [
+        "constraint_id",
+        "type",
+        "position_ids",
+        "counting_basis",
+        "scope_slot_classes",
+        "operator",
+        "limit",
+        "evaluation_phase"
+      ],
+      "additionalProperties": false
+    },
+    "bound": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "enforcement": {
+          "enum": [
+            "HARD",
+            "SOFT"
+          ]
+        },
+        "evaluation_phase": {
+          "enum": [
+            "AT_ALL_TIMES",
+            "DRAFT_COMPLETION"
+          ]
+        },
+        "weight": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "value",
+        "enforcement",
+        "evaluation_phase"
+      ],
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "policy_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "position_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "counting_basis": {
+          "enum": [
+            "ASSIGNED_POSITION",
+            "ANY_ELIGIBILITY",
+            "PRIMARY_POSITION"
+          ]
+        },
+        "scope_slot_classes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "ACTIVE",
+              "BENCH",
+              "INJURED_RESERVE",
+              "RESERVE"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "minimum": {
+          "$ref": "#/$defs/bound"
+        },
+        "maximum": {
+          "$ref": "#/$defs/bound"
+        },
+        "target": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "weight": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "value",
+            "weight"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "policy_id",
+        "position_ids",
+        "counting_basis",
+        "scope_slot_classes"
+      ],
+      "additionalProperties": false
+    },
+    "entry": {
+      "type": "object",
+      "properties": {
+        "player_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "acquisition_type": {
+          "enum": [
+            "KEEPER",
+            "DRAFT_PICK",
+            "WAIVER",
+            "TRADE",
+            "OTHER"
+          ]
+        },
+        "reported_slot_definition_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "construction_lock": {
+          "type": "object",
+          "properties": {
+            "slot_instance_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "assigned_position_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "slot_instance_id",
+            "assigned_position_id"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "player_id",
+        "acquisition_type"
+      ],
+      "additionalProperties": false
+    },
+    "scenario": {
+      "type": "object",
+      "properties": {
+        "scenario_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "probability": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "player_period_stats": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "scenario_id",
+        "probability",
+        "player_period_stats"
+      ],
+      "additionalProperties": false
+    },
+    "limit": {
+      "type": "object",
+      "properties": {
+        "limit_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stat_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "maximum": {
+          "type": "number",
+          "minimum": 0
+        },
+        "enforcement": {
+          "const": "ROBUST_ALL_FORECAST_SCENARIOS"
+        }
+      },
+      "required": [
+        "limit_id",
+        "stat_key",
+        "maximum",
+        "enforcement"
+      ],
+      "additionalProperties": false
+    },
+    "minimum": {
+      "type": "object",
+      "properties": {
+        "requirement_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stat_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minimum": {
+          "type": "number",
+          "minimum": 0
+        },
+        "failed_category_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "consequence": {
+          "const": "LOSE_APPLICABLE_CATEGORIES"
+        }
+      },
+      "required": [
+        "requirement_id",
+        "stat_key",
+        "minimum",
+        "failed_category_ids",
+        "consequence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

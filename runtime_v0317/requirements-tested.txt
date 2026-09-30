@@ -1,0 +1,7 @@
+# Recorded runtime: Python 3.13.5; package supports Python >=3.11.
+numpy==2.3.5
+scipy==1.17.0
+jsonschema==4.26.0
+rfc3339-validator==0.1.4
+
+PyMuPDF==1.26.7

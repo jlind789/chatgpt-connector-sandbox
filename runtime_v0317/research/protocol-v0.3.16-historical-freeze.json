@@ -1,0 +1,41 @@
+{
+  "protocol_id": "historical-backtest-freeze-v0.3.16",
+  "status": "FROZEN_BEFORE_HISTORICAL_OUTCOME_ACCESS",
+  "methodology": "M0.3 unchanged",
+  "timing_value_enabled": false,
+  "decision_policy": {
+    "resolved_status": "RESOLVED_WITHIN_ADAPTIVE_RACE",
+    "resolved_action": "final adaptive leader",
+    "unresolved_status": "UNRESOLVED_MAX_BUDGET",
+    "unresolved_action": "final-budget mean leader",
+    "unresolved_action_label": "UNRESOLVED_FINAL_BUDGET_MEAN_LEADER_FALLBACK",
+    "unresolved_must_remain_unresolved": true,
+    "unsupported_or_error_status": "NO_FORCED_ACTION"
+  },
+  "tie_break": [
+    "mean decision utility descending",
+    "intrinsic value descending",
+    "stable player_id ascending"
+  ],
+  "historical_reporting": {
+    "required_cohorts": ["ALL", "RESOLVED", "UNRESOLVED"],
+    "report_engine_vs_each_frozen_baseline": true,
+    "report_completion_failures": true,
+    "report_unresolved_rate": true,
+    "report_human_actual_picks_separately_when_available": true,
+    "report_legacy_keeper_lab_advice_separately_when_available": true,
+    "human_actual_pick_is_ground_truth": false
+  },
+  "leakage_guards": [
+    "Only information available at the historical draft cutoff may enter recommendations.",
+    "Realized season outcomes may be used only after all draft actions and lineup policies are committed.",
+    "Historical outcomes may not change convergence status, fallback action, coefficients, baselines, or reporting cohorts.",
+    "Counterfactual drafts must adapt legally after an engine selection; original future picks are not blindly replayed.",
+    "Resolved and unresolved results must be reported separately in addition to the overall result."
+  ],
+  "promotion": {
+    "historical_backtest_can_inform_future_methodology": true,
+    "holdout_parameters_must_be_frozen_before_holdout_access": true,
+    "no_product_performance_claim_from_development_seasons_alone": true
+  }
+}

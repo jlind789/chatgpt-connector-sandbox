@@ -1,0 +1,41 @@
+{
+  "experiment_id": "M033_FRESH_UNCERTAINTY_REFERENCE_MANAGEMENT_FACTOR_DIAGNOSTIC_1",
+  "purpose": "Controlled research contrasts, frozen before audit outcomes; no historical or predictive promotion claim",
+  "strata": [
+    {"stratum_id":"BALANCED_2","public_family":"BALANCED","audit_family":"BALANCED","teams":2},
+    {"stratum_id":"BALANCED_3","public_family":"BALANCED","audit_family":"BALANCED","teams":3},
+    {"stratum_id":"CALENDAR_2","public_family":"CALENDAR_CONGESTION","audit_family":"CALENDAR_CONGESTION","teams":2},
+    {"stratum_id":"CALENDAR_3","public_family":"CALENDAR_CONGESTION","audit_family":"CALENDAR_CONGESTION","teams":3},
+    {"stratum_id":"ROLE_REVERSAL_2","public_family":"ROLE_REVERSAL","audit_family":"ROLE_REVERSAL","teams":2},
+    {"stratum_id":"GOALIE_2","public_family":"GOALIE_RATES","audit_family":"GOALIE_RATES","teams":2},
+    {"stratum_id":"GOALIE_3","public_family":"GOALIE_RATES","audit_family":"GOALIE_RATES","teams":3},
+    {"stratum_id":"UNOBSERVED_ROLE_2","public_family":"BALANCED","audit_family":"UNOBSERVED_ROLE_SHIFT","teams":2},
+    {"stratum_id":"UNOBSERVED_ROLE_3","public_family":"BALANCED","audit_family":"UNOBSERVED_ROLE_SHIFT","teams":3}
+  ],
+  "seed_labels":[33001,33002,33003,33004],
+  "engine_rollouts":8,
+  "small_reference_draws":3,
+  "large_reference_draws":12,
+  "uncertainty":{"samples":16,"player_log_sd":0.30,"period_log_sd":0.10,"seed":7330301,"namespace":"M033_PUBLIC_UNCERTAINTY_V1"},
+  "audit_draws":256,
+  "policies":["B1","B2","B3","E0","EU","ER","EUR","EA"],
+  "management_policies":["ADDITIVE","CATEGORY_EXPECTED"],
+  "primary_comparison":"EUR minus B3 under the shared ADDITIVE audit manager",
+  "secondary_contrasts":["EU-E0 uncertainty alone","ER-E0 reference sample size alone","EUR-ER uncertainty with large field","EUR-EU reference size with uncertainty","EUR-E0 combined change","EA-EUR internal management alignment","EUR-vs-B3 management interaction"],
+  "factors": {
+    "E0":"Unchanged deterministic forecasts, small reference field, nonlinear internal management",
+    "EU":"Mean-preserving uncertainty only",
+    "ER":"Larger reference sample only",
+    "EUR":"Uncertainty plus larger reference sample; fixed primary candidate",
+    "EA":"EUR with fixed additive internal lineup planning instead of nonlinear planning"
+  },
+  "reference_scope":"Increase samples from the SAME baseline roster mixture; no claim of greater roster diversity",
+  "audit_manager_scope":"Every draft strategy receives the same management for a given audit. ADDITIVE uses original public means. CATEGORY_EXPECTED uses the shared EUR public forecast model, independent implementation, and no actual opponent data.",
+  "randomness":"New public seed namespace; disjoint forecast/reference/audit namespaces; identical player-period outcomes across counterfactuals",
+  "primary_outcome":"Realized synthetic each-category share, mean across opponents then seats then generated leagues",
+  "failure_policy":"Report all distinct failed drafts; exclude the entire paired seat across all strategies, separately for each common management policy",
+  "interval_method":"4000-resample stratified paired league-cluster percentile bootstrap; exploratory intervals are descriptive and not adjusted for multiple contrasts",
+  "promotion":"Not eligible; no real seasons, no parameter tuning; previous historical gates retained",
+  "unsupported_scope":["full-size recommendation latency","market timing","UI","integrations","historical forecasts","real-world calibration","IR and participation minima in this independent audit"],
+  "revisions_after_audit":"None permitted under this experiment ID"
+}

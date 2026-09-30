@@ -1,0 +1,61 @@
+{
+  "protocol_id": "SCALING-v0.3.5-2",
+  "purpose": "Computational/numerical diagnostics, not predictive promotion",
+  "seed": 35001,
+  "full_roster_workloads": [
+    {
+      "initial_count": 18,
+      "teams": 6,
+      "pool_size": 250,
+      "periods": 7,
+      "rollouts": 4,
+      "sweeps": 2
+    },
+    {
+      "initial_count": 14,
+      "teams": 6,
+      "pool_size": 250,
+      "periods": 7,
+      "rollouts": 2,
+      "sweeps": 2
+    },
+    {
+      "initial_count": 7,
+      "teams": 6,
+      "pool_size": 250,
+      "periods": 7,
+      "rollouts": 1,
+      "sweeps": 2
+    }
+  ],
+  "exact_oracle": {
+    "families": [
+      "BALANCED",
+      "CALENDAR_CONGESTION",
+      "GOALIE_RATES"
+    ],
+    "seeds": [
+      35101,
+      35102,
+      35103,
+      35104,
+      35105,
+      35106,
+      35107,
+      35108
+    ],
+    "teams": 2,
+    "rollouts": 8,
+    "sweeps": 2
+  },
+  "limits": [
+    "Total-roster constraints only in scaling profile",
+    "Approximate nonlinear lineup search",
+    "Static pre-draft information",
+    "Synthetic seven-period schedule",
+    "No real-player predictive evaluation",
+    "No universal rollout certification"
+  ],
+  "revision_reason": "Engineering correction of constructed balanced-player omission; initial menu measurements preserved separately. No hidden predictive outcomes used.",
+  "lineup_menu": "CATEGORY_MATCHINGS_PLUS_EVERY_PLAYABLE_PLAYER_SUPPORT_AND_EMPTY"
+}

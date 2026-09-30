@@ -1,0 +1,32 @@
+{
+  "experiment_id": "M03_2_SYNTHETIC_FULL_DRAFT_DIAGNOSTIC_1",
+  "purpose": "Development diagnostic; not historical holdout, calibration or a promotion experiment",
+  "fixed_before_audit_outcomes": true,
+  "strata": [
+    {"family": "BALANCED", "teams": 2},
+    {"family": "BALANCED", "teams": 3},
+    {"family": "CALENDAR_CONGESTION", "teams": 2},
+    {"family": "CALENDAR_CONGESTION", "teams": 3},
+    {"family": "ROLE_REVERSAL", "teams": 2},
+    {"family": "GOALIE_RATES", "teams": 2},
+    {"family": "GOALIE_RATES", "teams": 3}
+  ],
+  "seeds": [101, 102, 103, 104, 105, 106],
+  "engine_rollouts": 8,
+  "reference_forecast_draws_per_roster": 3,
+  "audit_draws": 128,
+  "policies": ["B1", "B2", "B3", "B4"],
+  "opponent_policy": "MIXED_B1_B3_B2_INDEXED_BY_ACTUAL_PICK",
+  "lineup_policy": "ADDITIVE_PUBLIC_FORECAST_MATCHING_V1",
+  "metric": "Mean official each-category share against all actual independently completed opponent rosters",
+  "pairing": "Same league, seat, initial keepers, public projections and player-period outcome tape; opponent picks re-run legally after interventions",
+  "independent_unit_for_intervals": "Generated league, aggregating its seats before bootstrapping",
+  "calibration_split": "None; parameters fixed as research defaults before this diagnostic",
+  "primary_descriptive_comparator": "B1",
+  "other_comparisons": "B2 and B3 exploratory; no post-hoc winner declares promotion",
+  "B0": "Unavailable; no archival external rankings invented for synthetic players",
+  "B4": "Roster-only engine; timing is identically zero",
+  "failure_policy": "Record every failed draft and omit its entire paired seat block from comparisons; never silently substitute another policy",
+  "unsupported_scope": ["real hockey forecasts", "full-size commercial leagues", "most-categories", "hard position caps in B2 global anchor", "participation limits in independent audit", "in-season news", "market timing"],
+  "revisions_after_outcomes": "None permitted for this protocol ID"
+}

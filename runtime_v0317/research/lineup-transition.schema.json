@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "decision-engine-lineup-transition/0.3.6"
+    },
+    "snapshot_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "period_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lock_basis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "period_starts_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "period_ends_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "previous_committed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schedule_as_of": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lock_slot_classes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "ACTIVE",
+          "BENCH",
+          "INJURED_RESERVE",
+          "RESERVE"
+        ]
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "scheduled_starts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "uniqueItems": true
+      }
+    },
+    "before_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "slot_instance_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assigned_position_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "player_id",
+          "slot_instance_id",
+          "assigned_position_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "after_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "slot_instance_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assigned_position_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "player_id",
+          "slot_instance_id",
+          "assigned_position_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "previously_locked_player_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "snapshot_sha256",
+    "period_id",
+    "lock_basis",
+    "decision_at",
+    "period_starts_at",
+    "period_ends_at",
+    "previous_committed_at",
+    "schedule_as_of",
+    "lock_slot_classes",
+    "scheduled_starts",
+    "before_plan",
+    "after_plan",
+    "previously_locked_player_ids"
+  ],
+  "additionalProperties": false
+}

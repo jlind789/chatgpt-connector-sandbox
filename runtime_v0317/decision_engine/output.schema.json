@@ -1,0 +1,334 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "decision-engine-output/0.3.1"
+    },
+    "engine_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_status": {
+      "enum": [
+        "ROSTER_ONLY",
+        "INPUT_ERROR",
+        "UNSUPPORTED_CAPABILITY",
+        "RESOURCE_LIMIT",
+        "NO_FEASIBLE_CANDIDATE",
+        "DRAFT_COMPLETE"
+      ]
+    },
+    "calibration_status": {
+      "const": "MODELLED_SCORE_UNCALIBRATED"
+    },
+    "input_snapshot_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "recommended_player_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "score_reference_player_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ranked_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "feasible": {
+            "const": true
+          },
+          "intrinsic_value": {
+            "type": "number"
+          },
+          "intrinsic_category_components": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "category_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "applicable": {
+                  "type": "boolean"
+                },
+                "raw_projection": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "normalized_contribution": {
+                  "type": "number"
+                },
+                "weighted_contribution": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "category_id",
+                "applicable",
+                "raw_projection",
+                "normalized_contribution",
+                "weighted_contribution"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0
+          },
+          "neutral_utility": {
+            "type": "number"
+          },
+          "market_utility": {
+            "type": "number"
+          },
+          "marginal_roster_value": {
+            "type": "number"
+          },
+          "timing_value": {
+            "const": 0.0
+          },
+          "decision_score": {
+            "type": "number"
+          },
+          "score_units": {
+            "enum": [
+              "RISK_ADJUSTED_UTILITY_POINTS",
+              "STRATEGY_UTILITY_POINTS",
+              "MODELLED_CATEGORY_SHARE_PERCENTAGE_POINTS"
+            ]
+          },
+          "score_reference_player_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "league_utility": {
+            "type": "number"
+          },
+          "completion_failure_rate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "paired_sampling_standard_error_points": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "path_summary": {
+            "type": "object",
+            "properties": {
+              "neutral_utility": {
+                "type": "number"
+              },
+              "league_utility": {
+                "type": "number"
+              },
+              "strategy_utility": {
+                "type": "number"
+              },
+              "soft_policy_penalty": {
+                "type": "number",
+                "minimum": 0
+              },
+              "completion_failure_rate": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "category_result_credit": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "number"
+                }
+              },
+              "expected_usable_stats": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "number"
+                }
+              },
+              "completed_roster_frequencies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "player_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "minItems": 0,
+                      "uniqueItems": true
+                    },
+                    "path_count": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "player_ids",
+                    "path_count"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0
+              },
+              "failure_reasons": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "required": [
+              "neutral_utility",
+              "league_utility",
+              "strategy_utility",
+              "soft_policy_penalty",
+              "completion_failure_rate",
+              "category_result_credit",
+              "expected_usable_stats",
+              "completed_roster_frequencies",
+              "failure_reasons"
+            ],
+            "additionalProperties": false
+          },
+          "explanation": {
+            "type": "object"
+          },
+          "neutral_path_utility_samples": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "player_id",
+          "feasible",
+          "intrinsic_value",
+          "intrinsic_category_components",
+          "neutral_utility",
+          "market_utility",
+          "marginal_roster_value",
+          "timing_value",
+          "decision_score",
+          "score_units",
+          "score_reference_player_id",
+          "league_utility",
+          "completion_failure_rate",
+          "paired_sampling_standard_error_points",
+          "path_summary",
+          "explanation",
+          "neutral_path_utility_samples"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "excluded_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "const": "INFEASIBLE"
+          },
+          "reason_codes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "player_id",
+          "status",
+          "reason_codes"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "baselines": {
+      "type": "object"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "severity": {
+            "enum": [
+              "INFO",
+              "WARNING",
+              "ERROR"
+            ]
+          },
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "severity",
+          "code",
+          "message"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "provenance": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "engine_version",
+    "run_status",
+    "calibration_status",
+    "input_snapshot_id",
+    "recommended_player_id",
+    "score_reference_player_id",
+    "ranked_candidates",
+    "excluded_candidates",
+    "baselines",
+    "messages",
+    "provenance"
+  ],
+  "additionalProperties": false
+}

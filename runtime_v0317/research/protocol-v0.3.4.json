@@ -1,0 +1,208 @@
+{
+  "experiment_id": "M034_FIXED_CANDIDATE_FRESH_REPLICATION_1",
+  "purpose": "108-world prespecified replication; unchanged E0/EUR/EA model factors and B1/B2/B3; no product promotion",
+  "strata": [
+    {
+      "stratum_id": "BALANCED_2",
+      "public_family": "BALANCED",
+      "audit_family": "BALANCED",
+      "teams": 2
+    },
+    {
+      "stratum_id": "BALANCED_3",
+      "public_family": "BALANCED",
+      "audit_family": "BALANCED",
+      "teams": 3
+    },
+    {
+      "stratum_id": "CALENDAR_2",
+      "public_family": "CALENDAR_CONGESTION",
+      "audit_family": "CALENDAR_CONGESTION",
+      "teams": 2
+    },
+    {
+      "stratum_id": "CALENDAR_3",
+      "public_family": "CALENDAR_CONGESTION",
+      "audit_family": "CALENDAR_CONGESTION",
+      "teams": 3
+    },
+    {
+      "stratum_id": "ROLE_REVERSAL_2",
+      "public_family": "ROLE_REVERSAL",
+      "audit_family": "ROLE_REVERSAL",
+      "teams": 2
+    },
+    {
+      "stratum_id": "GOALIE_2",
+      "public_family": "GOALIE_RATES",
+      "audit_family": "GOALIE_RATES",
+      "teams": 2
+    },
+    {
+      "stratum_id": "GOALIE_3",
+      "public_family": "GOALIE_RATES",
+      "audit_family": "GOALIE_RATES",
+      "teams": 3
+    },
+    {
+      "stratum_id": "UNOBSERVED_ROLE_2",
+      "public_family": "BALANCED",
+      "audit_family": "UNOBSERVED_ROLE_SHIFT",
+      "teams": 2
+    },
+    {
+      "stratum_id": "UNOBSERVED_ROLE_3",
+      "public_family": "BALANCED",
+      "audit_family": "UNOBSERVED_ROLE_SHIFT",
+      "teams": 3
+    }
+  ],
+  "seed_labels": [
+    34001,
+    34002,
+    34003,
+    34004,
+    34005,
+    34006,
+    34007,
+    34008,
+    34009,
+    34010,
+    34011,
+    34012
+  ],
+  "engine_rollouts": 8,
+  "small_reference_draws": 3,
+  "large_reference_draws": 12,
+  "uncertainty": {
+    "samples": 16,
+    "player_log_sd": 0.3,
+    "period_log_sd": 0.1,
+    "seed": 7330301,
+    "namespace": "M033_PUBLIC_UNCERTAINTY_V1"
+  },
+  "audit_draws": 256,
+  "policies": [
+    "B1",
+    "B2",
+    "B3",
+    "E0",
+    "EUR",
+    "EA"
+  ],
+  "management_policies": [
+    "ADDITIVE",
+    "CATEGORY_EXPECTED"
+  ],
+  "primary_comparison": {
+    "positive": "EUR",
+    "negative": "B3",
+    "manager": "ADDITIVE"
+  },
+  "secondary_contrasts": [
+    "EUR-E0 direct upgrade",
+    "EA-EUR predeclared challenger",
+    "EA-E0",
+    "E0-B3",
+    "EUR-B1",
+    "EUR-B2",
+    "common-management robustness"
+  ],
+  "factors": {
+    "E0": "Unchanged deterministic forecasts, small reference field, nonlinear internal management",
+    "EUR": "Uncertainty plus larger reference sample; fixed primary candidate",
+    "EA": "EUR with fixed additive internal lineup planning instead of nonlinear planning"
+  },
+  "reference_scope": "Increase samples from the SAME baseline roster mixture; no claim of greater roster diversity",
+  "audit_manager_scope": "Every draft strategy receives the same management for a given audit. ADDITIVE uses original public means. CATEGORY_EXPECTED uses the shared EUR public forecast model, independent implementation, and no actual opponent data.",
+  "randomness": "New public seed namespace; disjoint forecast/reference/audit namespaces; identical player-period outcomes across counterfactuals",
+  "primary_outcome": "Realized synthetic each-category share, mean across opponents then seats then generated leagues",
+  "failure_policy": "Report all distinct failed drafts; exclude the entire paired seat across all strategies, separately for each common management policy",
+  "interval_method": "4000-resample stratified paired league-cluster percentile bootstrap; exploratory intervals are descriptive and not adjusted for multiple contrasts",
+  "promotion": "Not eligible; no real seasons, no parameter tuning; previous historical gates retained",
+  "unsupported_scope": [
+    "full-size recommendation latency",
+    "market timing",
+    "UI",
+    "integrations",
+    "historical forecasts",
+    "real-world calibration",
+    "IR and participation minima in this independent audit"
+  ],
+  "revisions_after_audit": "None permitted under this experiment ID",
+  "comparisons": [
+    [
+      "EUR",
+      "B3"
+    ],
+    [
+      "EUR",
+      "E0"
+    ],
+    [
+      "EA",
+      "EUR"
+    ],
+    [
+      "EA",
+      "E0"
+    ],
+    [
+      "E0",
+      "B3"
+    ],
+    [
+      "EUR",
+      "B1"
+    ],
+    [
+      "EUR",
+      "B2"
+    ]
+  ],
+  "inference": "One primary EUR-vs-B3 comparison; all other intervals descriptive and not multiplicity adjusted. Do not promote a default based on observed winner.",
+  "precision": "108 generated leagues (three times previous 36), 12 per stratum. No historical power claim; subgroup mean-loss criterion is a research screen, not proof of harm.",
+  "frozen_candidate_rule": "Keep all v0.3.3 E0, EUR and EA construction parameters unchanged. No new draft score in this version.",
+  "audit_namespace": "AUDIT_M034_OUTCOMES; unobserved role uses auditor-only M034_AUDIT_ROLE_FACTORS",
+  "role_diagnostic": {
+    "stratum_id": "UNOBSERVED_ROLE_2",
+    "policies": [
+      "B3",
+      "E0",
+      "EUR",
+      "EA"
+    ],
+    "magnitudes": [
+      0,
+      0.25,
+      0.45
+    ],
+    "assignments": 12,
+    "audit_draws": 128,
+    "selection": "ALL 12 public seeds, not loss-selected; reuse committed drafts; public league remains cluster"
+  },
+  "numerical_diagnostic": {
+    "strata": [
+      "BALANCED_2",
+      "CALENDAR_2",
+      "GOALIE_2",
+      "UNOBSERVED_ROLE_2"
+    ],
+    "seed_label": 34001,
+    "budgets": [
+      8,
+      32,
+      128,
+      512,
+      2048
+    ],
+    "reference_budget": 2048,
+    "check_budget": 4096,
+    "states": "FIRST/MIDDLE/LAST user picks from EUR committed draft; selection does not depend on outcomes",
+    "targets": {
+      "mean_regret_points": 0.1,
+      "p95_regret_points": 0.25
+    },
+    "scope": "Conditional Monte Carlo convergence at fixed field and projection scenarios, not predictive validity; do not choose runtime default from these 12 states"
+  }
+}

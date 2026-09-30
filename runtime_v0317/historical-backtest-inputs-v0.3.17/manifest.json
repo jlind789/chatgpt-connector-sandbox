@@ -1,0 +1,66 @@
+{
+  "version": "historical-input-freeze/0.3.17",
+  "created_at": "2026-09-30",
+  "seasons": {
+    "2022-23": {
+      "role": "DEVELOPMENT",
+      "source_file": "Crome Aggregate Projections 22-23 v2.01.xlsx",
+      "source_sha256": "bc1de5313e957cf4f709090f967eafec5510ce0dc9a233e0b6eb722c91f5d510",
+      "declared_cutoff": "2022-09-28",
+      "players": 516,
+      "skaters": 451,
+      "goalies": 65,
+      "espn_eligibility_coverage": "516/516",
+      "skater_core_projection_complete": "450/451",
+      "goalie_core_projection_complete": "65/65",
+      "def_projection_coverage_for_defense_eligible": "149/150",
+      "output_csv": "2022-23/preseason_players.csv",
+      "historical_outcomes_used": false
+    },
+    "2023-24": {
+      "role": "DEVELOPMENT",
+      "source_file": "Crome Aggregate Projections 23-24.xlsx",
+      "source_sha256": "14285ade67e793b5ece2537eb993a57e9cd4edfc6dbf1fbe596b4abfe204bbbf",
+      "declared_cutoff": "2023-10-07",
+      "players": 592,
+      "skaters": 513,
+      "goalies": 79,
+      "espn_eligibility_coverage": "592/592",
+      "skater_core_projection_complete": "513/513",
+      "goalie_core_projection_complete": "79/79",
+      "def_projection_coverage_for_defense_eligible": "163/163",
+      "output_csv": "2023-24/preseason_players.csv",
+      "historical_outcomes_used": false
+    },
+    "2024-25": {
+      "role": "VALIDATION",
+      "source_file": "Crome Aggregate Projections 2024-25.xlsx",
+      "source_sha256": "c5114804b5124db11b959bfbc16432cf91e014281900c699f472d40a4ec23d12",
+      "declared_cutoff": "2024-09-21",
+      "players": 838,
+      "skaters": 764,
+      "goalies": 74,
+      "espn_eligibility_coverage": "837/838",
+      "skater_core_projection_complete": "764/764",
+      "goalie_core_projection_complete": "74/74",
+      "def_projection_coverage_for_defense_eligible": "271/271",
+      "output_csv": "2024-25/preseason_players.csv",
+      "historical_outcomes_used": false
+    },
+    "2025-26": {
+      "role": "HOLDOUT",
+      "source_file": "Crome Aggregate Projections 2025-26.xlsx",
+      "source_sha256": "251cc2cde6d8ac0b77382bc3ccda6d65806ea136a1a630826f0860107c904aa7",
+      "declared_cutoff": "2025-10-02",
+      "players": 658,
+      "skaters": 580,
+      "goalies": 78,
+      "espn_eligibility_coverage": "658/658",
+      "skater_core_projection_complete": "580/580",
+      "goalie_core_projection_complete": "78/78",
+      "def_projection_coverage_for_defense_eligible": "195/195",
+      "output_csv": "2025-26/preseason_players.csv",
+      "historical_outcomes_used": false
+    }
+  }
+}

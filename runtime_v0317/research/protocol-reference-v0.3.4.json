@@ -1,0 +1,109 @@
+{
+  "experiment_id": "M034_REFERENCE_COMPOSITION_FIXED_BUDGET_DIAGNOSTIC_1",
+  "purpose": "Separate reference-composition diagnostic, same number of samples and same forecast tapes",
+  "strata": [
+    {
+      "stratum_id": "BALANCED_2",
+      "public_family": "BALANCED",
+      "audit_family": "BALANCED",
+      "teams": 2
+    },
+    {
+      "stratum_id": "BALANCED_3",
+      "public_family": "BALANCED",
+      "audit_family": "BALANCED",
+      "teams": 3
+    },
+    {
+      "stratum_id": "CALENDAR_2",
+      "public_family": "CALENDAR_CONGESTION",
+      "audit_family": "CALENDAR_CONGESTION",
+      "teams": 2
+    },
+    {
+      "stratum_id": "GOALIE_2",
+      "public_family": "GOALIE_RATES",
+      "audit_family": "GOALIE_RATES",
+      "teams": 2
+    }
+  ],
+  "seed_labels": [
+    34501,
+    34502,
+    34503,
+    34504
+  ],
+  "engine_rollouts": 8,
+  "small_reference_draws": 3,
+  "large_reference_draws": 12,
+  "uncertainty": {
+    "samples": 16,
+    "player_log_sd": 0.3,
+    "period_log_sd": 0.1,
+    "seed": 7330301,
+    "namespace": "M033_PUBLIC_UNCERTAINTY_V1"
+  },
+  "audit_draws": 256,
+  "policies": [
+    "B3",
+    "EUR",
+    "ED"
+  ],
+  "management_policies": [
+    "ADDITIVE"
+  ],
+  "primary_comparison": {
+    "positive": "ED",
+    "negative": "EUR",
+    "manager": "ADDITIVE"
+  },
+  "secondary_contrasts": [
+    "EUR-E0 direct upgrade",
+    "EA-EUR predeclared challenger",
+    "EA-E0",
+    "E0-B3",
+    "EUR-B1",
+    "EUR-B2",
+    "common-management robustness"
+  ],
+  "factors": {
+    "E0": "Unchanged deterministic forecasts, small reference field, nonlinear internal management",
+    "EUR": "Uncertainty plus larger reference sample; fixed primary candidate",
+    "EA": "EUR with fixed additive internal lineup planning instead of nonlinear planning"
+  },
+  "reference_scope": "Replace three homogeneous baseline draft fields with three heterogeneous baseline draft fields. Draws per roster, sample row count, tape IDs, weighting and uncertainty fixed. Report unique roster counts; do not assume greater diversity.",
+  "audit_manager_scope": "Every draft strategy receives the same management for a given audit. ADDITIVE uses original public means. CATEGORY_EXPECTED uses the shared EUR public forecast model, independent implementation, and no actual opponent data.",
+  "randomness": "New public seed namespace; disjoint forecast/reference/audit namespaces; identical player-period outcomes across counterfactuals",
+  "primary_outcome": "Realized synthetic each-category share, mean across opponents then seats then generated leagues",
+  "failure_policy": "Report all distinct failed drafts; exclude the entire paired seat across all strategies, separately for each common management policy",
+  "interval_method": "4000-resample stratified paired league-cluster percentile bootstrap; exploratory intervals are descriptive and not adjusted for multiple contrasts",
+  "promotion": "Not eligible; no real seasons, no parameter tuning; previous historical gates retained",
+  "unsupported_scope": [
+    "full-size recommendation latency",
+    "market timing",
+    "UI",
+    "integrations",
+    "historical forecasts",
+    "real-world calibration",
+    "IR and participation minima in this independent audit"
+  ],
+  "revisions_after_audit": "None permitted under this experiment ID",
+  "comparisons": [
+    [
+      "ED",
+      "EUR"
+    ],
+    [
+      "ED",
+      "B3"
+    ],
+    [
+      "EUR",
+      "B3"
+    ]
+  ],
+  "inference": "Exploratory diagnostic only; do not pool with the main replication.",
+  "precision": "108 generated leagues (three times previous 36), 12 per stratum. No historical power claim; subgroup mean-loss criterion is a research screen, not proof of harm.",
+  "frozen_candidate_rule": "Keep all v0.3.3 E0, EUR and EA construction parameters unchanged. No new draft score in this version.",
+  "audit_namespace": "AUDIT_M034_OUTCOMES; unobserved role uses auditor-only M034_AUDIT_ROLE_FACTORS"
+}
