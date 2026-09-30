@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 548, in <module>
+    if __name__=="__main__":main()
+                            ^^^^^^
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 546, in main
+    a=ap.parse_args();run(a.season,Path(a.root),Path(a.output),a.focus_limit)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 479, in run
+    pre=make_snapshot(season,players,cal,meta["cutoff"],draft_order=snake_order(19))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 270, in make_snapshot
+    "league_id":league_id,"sport_code":"HOCKEY","season":season,
+                ^^^^^^^^^
+NameError: name 'league_id' is not defined
