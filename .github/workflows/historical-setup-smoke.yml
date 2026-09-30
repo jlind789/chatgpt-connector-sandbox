@@ -1,0 +1,49 @@
+name: Historical setup smoke
+on:
+  push:
+    paths:
+      - '.github/workflows/historical-setup-smoke.yml'
+      - 'scripts/test_historical_setup.py'
+      - 'scripts/run_historical_development.py'
+  issues:
+    types: [opened]
+permissions:
+  contents: write
+jobs:
+  setup:
+    if: github.event_name != 'issues' || startsWith(github.event.issue.title, 'RUN_HIST_SETUP')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r runtime_v0317/requirements-tested.txt
+      - run: |
+          rm -rf runtime_v0317/data
+          ln -s ../data runtime_v0317/data
+      - name: Run setup smoke
+        id: smoke
+        continue-on-error: true
+        env:
+          PYTHONPATH: runtime_v0317:scripts
+        run: |
+          mkdir -p results/historical_setup
+          set +e
+          python scripts/test_historical_setup.py > results/historical_setup/setup.log 2>&1
+          status=$?
+          echo "exit_code=$status" >> "$GITHUB_OUTPUT"
+          cat results/historical_setup/setup.log
+          exit 0
+      - name: Commit setup result
+        run: |
+          git config user.name "chatgpt-historical-setup"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/historical_setup
+          git commit -m "Record historical setup smoke" || true
+          git pull --rebase origin main
+          git push
+      - name: Fail if setup failed
+        if: steps.smoke.outputs.exit_code != '0'
+        run: exit 1
