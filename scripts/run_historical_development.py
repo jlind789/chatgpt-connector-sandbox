@@ -259,7 +259,8 @@ def make_snapshot(season, players, calendar, cutoff, initial_rosters=None, refer
     others=[t for t in TEAMS if t!=focus]
     amap={t:f"anon{i+1}" for i,t in enumerate(others)}
     actors=["USER" if t==focus else amap[t] for t in draft_order]
-    team_objects=[{"team_id":t,"league_id":f"historical_{season}_hoh_shape","display_name":t} for t in TEAMS]
+    league_id=f"historical_{season}_hoh_shape"
+    team_objects=[{"team_id":t,"league_id":league_id,"display_name":t} for t in TEAMS]
     d={
         "schema_version":"decision-engine-input/0.3.1",
         "capability_profile":"HORIZON_SPLIT_EXACT_CALENDAR_V1",
