@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import csv, json, math, re, sys, unicodedata, zipfile
+import csv, json, math, re, sys, unicodedata, zipfile, gzip
 from collections import defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -253,7 +253,9 @@ def build_season(season, cfg):
         player_outcome_map[pid]=m['nhl_player_id'] if m else ''
 
     od=OUT/season;od.mkdir(parents=True,exist_ok=True)
-    (od/'world.json').write_text(json.dumps(world,indent=2)+'\n')
+    with gzip.open(od/'world.json.gz','wt',encoding='utf-8',compresslevel=6) as gz:
+        json.dump(world,gz,separators=(',',':'))
+        gz.write('\n')
     with (od/'player_identity_map.csv').open('w',newline='',encoding='utf-8') as f:
         w=csv.DictWriter(f,fieldnames=mapping[0].keys());w.writeheader();w.writerows(mapping)
     (od/'outcome_id_map.json').write_text(json.dumps(player_outcome_map,indent=2)+'\n')
