@@ -1,0 +1,14 @@
+{
+  "season": "20232024",
+  "regular_games": 1312,
+  "player_game_rows": 52468,
+  "faceoff_events": 74188,
+  "schedule_sha256": "1b17b3fb05171fa68edc385d15c5fd9e9f1a036873b252d756145dd8c230ef4c",
+  "player_game_stats_sha256": "b5564a2a169f388da0f2874c16c85c94d0fcaafe361818895c1adf47cecd6289",
+  "source": "Official NHL Web API api-web.nhle.com",
+  "endpoints": [
+    "/v1/schedule/{date}",
+    "/v1/gamecenter/{gameId}/boxscore",
+    "/v1/gamecenter/{gameId}/play-by-play"
+  ]
+}
