@@ -1,0 +1,35 @@
+name: v0.3.19 convergence calibration pilot
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/v0319-convergence-calibration-pilot.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install frozen runtime
+        run: |
+          unzip -o Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip -d .runtime_v0317
+          pip install -r .runtime_v0317/requirements-tested.txt
+      - name: Verify calibration scripts
+        run: |
+          python -m py_compile scripts/calibrate_v0319_convergence.py
+          python -m py_compile scripts/aggregate_v0319_convergence.py
+      - name: Run late-round pilot
+        run: python scripts/calibrate_v0319_convergence.py "2022-23" "1" "5"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v0319-convergence-pilot
+          path: historical/calibration_v0319/chunks/2022-23_seat1_chunk5.json
+          retention-days: 30
