@@ -1,0 +1,39 @@
+{
+  "protocol_version": "historical-development/0.3.19-convergence-calibration",
+  "parent_protocol": "historical-development/0.3.18-preoutcome-freeze",
+  "source_results_commit": "6694f7c59883c8933ea613536af83dafc247eb43",
+  "purpose": "Calibrate adaptive-race convergence using development seasons only before opening validation.",
+  "development_seasons": ["2022-23", "2023-24"],
+  "source_decision_cohort": "UNRESOLVED_MAX_BUDGET",
+  "historical_outcome_values_used": false,
+  "validation_season_2024_25_opened": false,
+  "holdout_season_2025_26_opened": false,
+  "calibration": {
+    "epsilon_utility_points": 0.10,
+    "minimum_resolution_budget": 8,
+    "minimum_diagnostic_budget": 128,
+    "maximum_diagnostic_budget": 512,
+    "continue_after_first_resolution_until_at_least_budget": 128,
+    "post_128_rule": "If unresolved at 128, continue to 256; if unresolved at 256, continue to 512.",
+    "lineup_scoring_safety_ceiling": 100000000,
+    "broad_pool": {
+      "top_decision_score": 24,
+      "top_intrinsic": 16,
+      "include_B1": true,
+      "include_B3": true,
+      "sentinel_ranks": [30, 50, 75, 100, 150, 200, 250, 300],
+      "min_keep": 3,
+      "max_keep": 12
+    }
+  },
+  "reproducibility": {
+    "reconstruct_each_snapshot_from_frozen_v0_3_18_world_and_committed_draft_trace": true,
+    "assert_original_one_rollout_leader": true,
+    "assert_original_stage_leaders_and_candidate_counts": true,
+    "assert_original_unresolved_state_at_original_ceiling": true,
+    "random_stream": "UNCHANGED_DETERMINISTIC_PREFIX",
+    "scoring_model": "UNCHANGED_M0.3",
+    "timing_value": 0
+  },
+  "interpretation": "Development-only calibration. These results may inform a methodology change, but any change must be frozen before 2024-25 validation is opened."
+}
