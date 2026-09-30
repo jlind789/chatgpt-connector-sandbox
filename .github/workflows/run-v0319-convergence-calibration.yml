@@ -1,0 +1,64 @@
+name: Run v0.3.19 convergence calibration
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/run-v0319-convergence-calibration.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  calibrate:
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        season: ["2022-23", "2023-24"]
+        seat: [1, 2, 3, 4, 5, 6]
+        chunk: [1, 2, 3, 4, 5]
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install frozen runtime
+        run: |
+          unzip -o Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip -d .runtime_v0317
+          pip install -r .runtime_v0317/requirements-tested.txt
+      - name: Run convergence calibration chunk
+        run: python scripts/calibrate_v0319_convergence.py "${{ matrix.season }}" "${{ matrix.seat }}" "${{ matrix.chunk }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: conv-${{ matrix.season }}-seat${{ matrix.seat }}-chunk${{ matrix.chunk }}
+          path: historical/calibration_v0319/chunks/${{ matrix.season }}_seat${{ matrix.seat }}_chunk${{ matrix.chunk }}.json
+          retention-days: 30
+
+  aggregate:
+    needs: calibrate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: conv-*
+          path: historical/calibration_v0319/chunks
+          merge-multiple: true
+      - name: Aggregate calibration results
+        run: python scripts/aggregate_v0319_convergence.py
+      - name: Commit auditable calibration results
+        run: |
+          git config user.name "chatgpt-historical-calibration"
+          git config user.email "actions@users.noreply.github.com"
+          git add historical/calibration_v0319
+          if git diff --cached --quiet; then
+            echo "No calibration result changes"
+          else
+            git commit -m "Add v0.3.19 convergence calibration results"
+            git pull --rebase origin main
+            git push
+          fi
