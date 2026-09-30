@@ -1,0 +1,5475 @@
+{
+  "version": "v0.3.18-development-seat",
+  "season": "2023-24",
+  "seat": 4,
+  "focus_team": "opponent3",
+  "protocol": {
+    "protocol_version": "historical-development/0.3.18-preoutcome-freeze",
+    "engine_protocol": "v0.3.16-historical-freeze",
+    "methodology": "M0.3",
+    "historical_outcomes_used_to_define_protocol": false,
+    "season_roles": {
+      "2022-23": "DEVELOPMENT",
+      "2023-24": "DEVELOPMENT",
+      "2024-25": "VALIDATION_UNTOUCHED",
+      "2025-26": "HOLDOUT_UNTOUCHED"
+    },
+    "development_seasons": [
+      "2022-23",
+      "2023-24"
+    ],
+    "league": {
+      "teams": 6,
+      "draft_type": "SNAKE",
+      "rounds": 19,
+      "keepers": 0,
+      "roster_slots": {
+        "C": 2,
+        "LW": 2,
+        "RW": 2,
+        "D": 4,
+        "UTIL": 2,
+        "G": 2,
+        "BN": 5
+      },
+      "categories": [
+        "G",
+        "A",
+        "FOW",
+        "SOG",
+        "HIT",
+        "BLK",
+        "DEF",
+        "W",
+        "SVS",
+        "SO",
+        "SVPCT"
+      ],
+      "manager_soft_preferences": [],
+      "goalie_minimum": null,
+      "lineup_lock": "DAILY",
+      "scoring_objective": "H2H_EACH_CATEGORY",
+      "category_tie_credit": 0.5
+    },
+    "fantasy_calendar": {
+      "week_definition": "MONDAY_SUNDAY",
+      "anchor": "MONDAY_CONTAINING_FIRST_REGULAR_SEASON_GAME",
+      "end": "WEEK_CONTAINING_LAST_REGULAR_SEASON_GAME",
+      "playoffs": "NONE_FOR_BENCHMARK",
+      "note": "This is a standardized historical benchmark, not a claim about historical HoH league settings."
+    },
+    "forecast_exposure": {
+      "season_projection_drives_intrinsic": true,
+      "lineup_exposure_uses_exact_official_team_game_dates": true,
+      "per_team_game_expected_stat": "SEASON_PROJECTION_TOTAL_DIVIDED_BY_TEAM_REGULAR_SEASON_GAME_COUNT",
+      "projection_reconciliation": "EXPOSURE_SUBSET_OR_EQUAL_TO_PROJECTION_HORIZON"
+    },
+    "reference_field": {
+      "generation": "PROJECTION_ONLY_BASELINE_MIXTURE",
+      "baselines": [
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "rosters_per_baseline": 6,
+      "historical_outcomes_used": false
+    },
+    "draft_comparators": [
+      "B1",
+      "B2",
+      "B3",
+      "DECISION_ENGINE"
+    ],
+    "opponent_policy": {
+      "mode": "MIXED",
+      "rotation": [
+        "B1",
+        "B3",
+        "B2"
+      ],
+      "same_for_all_focus_policy_comparisons": true
+    },
+    "focus_seats": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "decision_engine": {
+      "timing_value": 0,
+      "continuation_policy": "B3",
+      "adaptive_convergence": {
+        "epsilon_utility_points": 0.1,
+        "minimum_resolution_budget": 8,
+        "max_budget_by_user_picks_remaining": [
+          {
+            "minimum_remaining": 12,
+            "maximum_rollouts": 16
+          },
+          {
+            "minimum_remaining": 6,
+            "maximum_rollouts": 32
+          },
+          {
+            "minimum_remaining": 0,
+            "maximum_rollouts": 64
+          }
+        ],
+        "initial_full_pool_budget": 1,
+        "broad_pool": {
+          "top_decision_score": 24,
+          "top_intrinsic": 16,
+          "include_B1": true,
+          "include_B3": true,
+          "sentinel_ranks": [
+            30,
+            50,
+            75,
+            100,
+            150,
+            200,
+            250,
+            300
+          ],
+          "min_keep": 3,
+          "max_keep": 12
+        },
+        "unresolved_action": "FINAL_BUDGET_MEAN_LEADER_FALLBACK_KEEP_UNRESOLVED_LABEL"
+      }
+    },
+    "realized_outcome_evaluation": {
+      "source": "OFFICIAL_NHL_WEB_API",
+      "lineup_management": "COMMON_FORECAST_ONLY_DAILY_MATCHING_WITH_REALIZED_DRESSED_AVAILABILITY",
+      "lineup_choice_uses_realized_stats": false,
+      "actual_participation_may_define_daily_availability": true,
+      "waivers_trades_free_agents": "DISABLED",
+      "primary_metric": "MEAN_WEEKLY_H2H_CATEGORY_SHARE_VS_OTHER_FIVE_DRAFTED_TEAMS",
+      "ratio_stat": "SVPCT_FROM_TOTAL_SAVES_DIVIDED_BY_TOTAL_SHOTS_AGAINST",
+      "DEF": "GOALS_PLUS_ASSISTS_BY_DEFENSE_ELIGIBLE_PLAYER",
+      "FOW": "OFFICIAL_PLAY_BY_PLAY_FACE_OFF_WINS"
+    },
+    "reporting": {
+      "required_engine_decision_cohorts": [
+        "ALL",
+        "RESOLVED",
+        "UNRESOLVED"
+      ],
+      "report_unresolved_rate": true,
+      "report_draft_completion_failures": true,
+      "human_picks_are_ground_truth": false,
+      "legacy_HoH_Lab_advice_is_ground_truth": false,
+      "development_results_are_promotion_eligible": false
+    }
+  },
+  "results": {
+    "B1": {
+      "draft": {
+        "status": "COMPLETE",
+        "policy": "B1",
+        "focus_team": "opponent3",
+        "rosters": {
+          "user": [
+            "20232024_0085",
+            "20232024_0130",
+            "20232024_0132",
+            "20232024_0148",
+            "20232024_0156",
+            "20232024_0195",
+            "20232024_0219",
+            "20232024_0243",
+            "20232024_0253",
+            "20232024_0321",
+            "20232024_0347",
+            "20232024_0358",
+            "20232024_0389",
+            "20232024_0393",
+            "20232024_0406",
+            "20232024_0419",
+            "20232024_0520",
+            "20232024_0534",
+            "20232024_0588"
+          ],
+          "opponent1": [
+            "20232024_0013",
+            "20232024_0014",
+            "20232024_0021",
+            "20232024_0059",
+            "20232024_0067",
+            "20232024_0082",
+            "20232024_0112",
+            "20232024_0164",
+            "20232024_0172",
+            "20232024_0292",
+            "20232024_0303",
+            "20232024_0324",
+            "20232024_0370",
+            "20232024_0388",
+            "20232024_0423",
+            "20232024_0454",
+            "20232024_0538",
+            "20232024_0563",
+            "20232024_0571"
+          ],
+          "opponent2": [
+            "20232024_0006",
+            "20232024_0010",
+            "20232024_0024",
+            "20232024_0095",
+            "20232024_0127",
+            "20232024_0160",
+            "20232024_0186",
+            "20232024_0210",
+            "20232024_0220",
+            "20232024_0224",
+            "20232024_0250",
+            "20232024_0275",
+            "20232024_0333",
+            "20232024_0336",
+            "20232024_0401",
+            "20232024_0416",
+            "20232024_0491",
+            "20232024_0570",
+            "20232024_0581"
+          ],
+          "opponent3": [
+            "20232024_0038",
+            "20232024_0050",
+            "20232024_0066",
+            "20232024_0076",
+            "20232024_0114",
+            "20232024_0117",
+            "20232024_0145",
+            "20232024_0187",
+            "20232024_0216",
+            "20232024_0265",
+            "20232024_0271",
+            "20232024_0300",
+            "20232024_0398",
+            "20232024_0402",
+            "20232024_0405",
+            "20232024_0461",
+            "20232024_0466",
+            "20232024_0476",
+            "20232024_0529"
+          ],
+          "opponent4": [
+            "20232024_0020",
+            "20232024_0072",
+            "20232024_0081",
+            "20232024_0109",
+            "20232024_0168",
+            "20232024_0184",
+            "20232024_0225",
+            "20232024_0267",
+            "20232024_0296",
+            "20232024_0334",
+            "20232024_0377",
+            "20232024_0380",
+            "20232024_0394",
+            "20232024_0430",
+            "20232024_0475",
+            "20232024_0485",
+            "20232024_0505",
+            "20232024_0509",
+            "20232024_0548"
+          ],
+          "opponent5": [
+            "20232024_0004",
+            "20232024_0037",
+            "20232024_0091",
+            "20232024_0144",
+            "20232024_0173",
+            "20232024_0182",
+            "20232024_0208",
+            "20232024_0211",
+            "20232024_0230",
+            "20232024_0234",
+            "20232024_0237",
+            "20232024_0326",
+            "20232024_0397",
+            "20232024_0457",
+            "20232024_0494",
+            "20232024_0514",
+            "20232024_0521",
+            "20232024_0524",
+            "20232024_0535"
+          ]
+        },
+        "trace": [
+          {
+            "pick_index": 0,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0132"
+          },
+          {
+            "pick_index": 1,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0059"
+          },
+          {
+            "pick_index": 2,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0333"
+          },
+          {
+            "pick_index": 3,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0405"
+          },
+          {
+            "pick_index": 4,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0072"
+          },
+          {
+            "pick_index": 5,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0514"
+          },
+          {
+            "pick_index": 6,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0211"
+          },
+          {
+            "pick_index": 7,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0475"
+          },
+          {
+            "pick_index": 8,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0216"
+          },
+          {
+            "pick_index": 9,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0095"
+          },
+          {
+            "pick_index": 10,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0388"
+          },
+          {
+            "pick_index": 11,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0148"
+          },
+          {
+            "pick_index": 12,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0130"
+          },
+          {
+            "pick_index": 13,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0013"
+          },
+          {
+            "pick_index": 14,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0275"
+          },
+          {
+            "pick_index": 15,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0038"
+          },
+          {
+            "pick_index": 16,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0394"
+          },
+          {
+            "pick_index": 17,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0173"
+          },
+          {
+            "pick_index": 18,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0208"
+          },
+          {
+            "pick_index": 19,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0377"
+          },
+          {
+            "pick_index": 20,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0466"
+          },
+          {
+            "pick_index": 21,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0024"
+          },
+          {
+            "pick_index": 22,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0303"
+          },
+          {
+            "pick_index": 23,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0419"
+          },
+          {
+            "pick_index": 24,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0520"
+          },
+          {
+            "pick_index": 25,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0172"
+          },
+          {
+            "pick_index": 26,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0570"
+          },
+          {
+            "pick_index": 27,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0066"
+          },
+          {
+            "pick_index": 28,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0020"
+          },
+          {
+            "pick_index": 29,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0234"
+          },
+          {
+            "pick_index": 30,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0524"
+          },
+          {
+            "pick_index": 31,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0267"
+          },
+          {
+            "pick_index": 32,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0050"
+          },
+          {
+            "pick_index": 33,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0220"
+          },
+          {
+            "pick_index": 34,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0067"
+          },
+          {
+            "pick_index": 35,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0321"
+          },
+          {
+            "pick_index": 36,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0534"
+          },
+          {
+            "pick_index": 37,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0538"
+          },
+          {
+            "pick_index": 38,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0250"
+          },
+          {
+            "pick_index": 39,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0402"
+          },
+          {
+            "pick_index": 40,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0168"
+          },
+          {
+            "pick_index": 41,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0535"
+          },
+          {
+            "pick_index": 42,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0004"
+          },
+          {
+            "pick_index": 43,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0505"
+          },
+          {
+            "pick_index": 44,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0271"
+          },
+          {
+            "pick_index": 45,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0160"
+          },
+          {
+            "pick_index": 46,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0423"
+          },
+          {
+            "pick_index": 47,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0219"
+          },
+          {
+            "pick_index": 48,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0393"
+          },
+          {
+            "pick_index": 49,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0563"
+          },
+          {
+            "pick_index": 50,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0336"
+          },
+          {
+            "pick_index": 51,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0117"
+          },
+          {
+            "pick_index": 52,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0081"
+          },
+          {
+            "pick_index": 53,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0182"
+          },
+          {
+            "pick_index": 54,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0144"
+          },
+          {
+            "pick_index": 55,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0296"
+          },
+          {
+            "pick_index": 56,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0265"
+          },
+          {
+            "pick_index": 57,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0127"
+          },
+          {
+            "pick_index": 58,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0324"
+          },
+          {
+            "pick_index": 59,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0406"
+          },
+          {
+            "pick_index": 60,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0358"
+          },
+          {
+            "pick_index": 61,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0014"
+          },
+          {
+            "pick_index": 62,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0416"
+          },
+          {
+            "pick_index": 63,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0398"
+          },
+          {
+            "pick_index": 64,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0225"
+          },
+          {
+            "pick_index": 65,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0457"
+          },
+          {
+            "pick_index": 66,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0397"
+          },
+          {
+            "pick_index": 67,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0548"
+          },
+          {
+            "pick_index": 68,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0145"
+          },
+          {
+            "pick_index": 69,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0210"
+          },
+          {
+            "pick_index": 70,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0021"
+          },
+          {
+            "pick_index": 71,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0253"
+          },
+          {
+            "pick_index": 72,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0389"
+          },
+          {
+            "pick_index": 73,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0571"
+          },
+          {
+            "pick_index": 74,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0491"
+          },
+          {
+            "pick_index": 75,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0476"
+          },
+          {
+            "pick_index": 76,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0184"
+          },
+          {
+            "pick_index": 77,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0037"
+          },
+          {
+            "pick_index": 78,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0326"
+          },
+          {
+            "pick_index": 79,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0334"
+          },
+          {
+            "pick_index": 80,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0461"
+          },
+          {
+            "pick_index": 81,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0224"
+          },
+          {
+            "pick_index": 82,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0112"
+          },
+          {
+            "pick_index": 83,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0243"
+          },
+          {
+            "pick_index": 84,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0085"
+          },
+          {
+            "pick_index": 85,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0164"
+          },
+          {
+            "pick_index": 86,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0186"
+          },
+          {
+            "pick_index": 87,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0076"
+          },
+          {
+            "pick_index": 88,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0509"
+          },
+          {
+            "pick_index": 89,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0494"
+          },
+          {
+            "pick_index": 90,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0091"
+          },
+          {
+            "pick_index": 91,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0430"
+          },
+          {
+            "pick_index": 92,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0300"
+          },
+          {
+            "pick_index": 93,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0581"
+          },
+          {
+            "pick_index": 94,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0454"
+          },
+          {
+            "pick_index": 95,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0156"
+          },
+          {
+            "pick_index": 96,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0195"
+          },
+          {
+            "pick_index": 97,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0292"
+          },
+          {
+            "pick_index": 98,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0010"
+          },
+          {
+            "pick_index": 99,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0187"
+          },
+          {
+            "pick_index": 100,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0109"
+          },
+          {
+            "pick_index": 101,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0230"
+          },
+          {
+            "pick_index": 102,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0521"
+          },
+          {
+            "pick_index": 103,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0485"
+          },
+          {
+            "pick_index": 104,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0529"
+          },
+          {
+            "pick_index": 105,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0401"
+          },
+          {
+            "pick_index": 106,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0082"
+          },
+          {
+            "pick_index": 107,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0588"
+          },
+          {
+            "pick_index": 108,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0347"
+          },
+          {
+            "pick_index": 109,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0370"
+          },
+          {
+            "pick_index": 110,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0006"
+          },
+          {
+            "pick_index": 111,
+            "team_id": "opponent3",
+            "policy": "B1",
+            "player_id": "20232024_0114"
+          },
+          {
+            "pick_index": 112,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0380"
+          },
+          {
+            "pick_index": 113,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0237"
+          }
+        ],
+        "elapsed_seconds": 22.472630536999993
+      },
+      "outcome": {
+        "mean_weekly_category_share": 0.5737012987012987,
+        "matchup_comparisons": 140,
+        "category_credits": {
+          "G": 0.48214285714285715,
+          "A": 0.55,
+          "FOW": 0.7607142857142857,
+          "SOG": 0.44285714285714284,
+          "HIT": 0.6535714285714286,
+          "BLK": 0.8535714285714285,
+          "DEF": 0.6964285714285714,
+          "W": 0.45714285714285713,
+          "SVS": 0.37142857142857144,
+          "SO": 0.5,
+          "SVPCT": 0.5428571428571428
+        },
+        "started_contributions": {
+          "20232024_0187": {
+            "started_days": 47,
+            "goals": 17.0,
+            "assists": 26.0,
+            "faceoff_wins": 227.0,
+            "shots": 125.0,
+            "hits": 14.0,
+            "blocks": 30.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0405": {
+            "started_days": 82,
+            "goals": 51.0,
+            "assists": 89.0,
+            "faceoff_wins": 607.0,
+            "shots": 405.0,
+            "hits": 55.0,
+            "blocks": 69.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0050": {
+            "started_days": 81,
+            "goals": 26.0,
+            "assists": 44.0,
+            "faceoff_wins": 859.0,
+            "shots": 133.0,
+            "hits": 37.0,
+            "blocks": 65.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0216": {
+            "started_days": 81,
+            "goals": 37.0,
+            "assists": 66.0,
+            "faceoff_wins": 823.0,
+            "shots": 194.0,
+            "hits": 217.0,
+            "blocks": 61.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0117": {
+            "started_days": 82,
+            "goals": 21.0,
+            "assists": 43.0,
+            "faceoff_wins": 668.0,
+            "shots": 183.0,
+            "hits": 40.0,
+            "blocks": 30.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0461": {
+            "started_days": 72,
+            "goals": 16.0,
+            "assists": 70.0,
+            "faceoff_wins": 0.0,
+            "shots": 172.0,
+            "hits": 24.0,
+            "blocks": 51.0,
+            "defense_points": 86.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0145": {
+            "started_days": 81,
+            "goals": 10.0,
+            "assists": 22.0,
+            "faceoff_wins": 0.0,
+            "shots": 181.0,
+            "hits": 168.0,
+            "blocks": 172.0,
+            "defense_points": 32.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0529": {
+            "started_days": 51,
+            "goals": 0.0,
+            "assists": 0.0,
+            "faceoff_wins": 0.0,
+            "shots": 0.0,
+            "hits": 0.0,
+            "blocks": 0.0,
+            "defense_points": 0.0,
+            "wins": 35.0,
+            "saves": 1369.0,
+            "shutouts": 0.0,
+            "shots_against": 1492.0
+          },
+          "20232024_0114": {
+            "started_days": 82,
+            "goals": 39.0,
+            "assists": 36.0,
+            "faceoff_wins": 35.0,
+            "shots": 246.0,
+            "hits": 99.0,
+            "blocks": 20.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0265": {
+            "started_days": 82,
+            "goals": 27.0,
+            "assists": 40.0,
+            "faceoff_wins": 355.0,
+            "shots": 194.0,
+            "hits": 75.0,
+            "blocks": 70.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0466": {
+            "started_days": 81,
+            "goals": 20.0,
+            "assists": 39.0,
+            "faceoff_wins": 0.0,
+            "shots": 235.0,
+            "hits": 195.0,
+            "blocks": 154.0,
+            "defense_points": 59.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0402": {
+            "started_days": 82,
+            "goals": 9.0,
+            "assists": 33.0,
+            "faceoff_wins": 0.0,
+            "shots": 135.0,
+            "hits": 211.0,
+            "blocks": 212.0,
+            "defense_points": 42.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0300": {
+            "started_days": 43,
+            "goals": 1.0,
+            "assists": 21.0,
+            "faceoff_wins": 0.0,
+            "shots": 97.0,
+            "hits": 57.0,
+            "blocks": 78.0,
+            "defense_points": 22.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0271": {
+            "started_days": 82,
+            "goals": 10.0,
+            "assists": 42.0,
+            "faceoff_wins": 0.0,
+            "shots": 176.0,
+            "hits": 69.0,
+            "blocks": 194.0,
+            "defense_points": 52.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0066": {
+            "started_days": 81,
+            "goals": 33.0,
+            "assists": 35.0,
+            "faceoff_wins": 765.0,
+            "shots": 248.0,
+            "hits": 61.0,
+            "blocks": 42.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0476": {
+            "started_days": 80,
+            "goals": 30.0,
+            "assists": 35.0,
+            "faceoff_wins": 318.0,
+            "shots": 182.0,
+            "hits": 36.0,
+            "blocks": 38.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0076": {
+            "started_days": 53,
+            "goals": 7.0,
+            "assists": 19.0,
+            "faceoff_wins": 0.0,
+            "shots": 133.0,
+            "hits": 79.0,
+            "blocks": 55.0,
+            "defense_points": 26.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0038": {
+            "started_days": 52,
+            "goals": 0.0,
+            "assists": 0.0,
+            "faceoff_wins": 0.0,
+            "shots": 0.0,
+            "hits": 0.0,
+            "blocks": 0.0,
+            "defense_points": 0.0,
+            "wins": 30.0,
+            "saves": 1329.0,
+            "shutouts": 0.0,
+            "shots_against": 1477.0
+          }
+        }
+      },
+      "elapsed_seconds": 23.618309707999998
+    },
+    "B2": {
+      "draft": {
+        "status": "COMPLETE",
+        "policy": "B2",
+        "focus_team": "opponent3",
+        "rosters": {
+          "user": [
+            "20232024_0006",
+            "20232024_0010",
+            "20232024_0130",
+            "20232024_0132",
+            "20232024_0148",
+            "20232024_0156",
+            "20232024_0186",
+            "20232024_0219",
+            "20232024_0224",
+            "20232024_0253",
+            "20232024_0321",
+            "20232024_0347",
+            "20232024_0358",
+            "20232024_0389",
+            "20232024_0393",
+            "20232024_0406",
+            "20232024_0419",
+            "20232024_0520",
+            "20232024_0534"
+          ],
+          "opponent1": [
+            "20232024_0013",
+            "20232024_0014",
+            "20232024_0021",
+            "20232024_0059",
+            "20232024_0067",
+            "20232024_0112",
+            "20232024_0164",
+            "20232024_0172",
+            "20232024_0292",
+            "20232024_0303",
+            "20232024_0324",
+            "20232024_0388",
+            "20232024_0423",
+            "20232024_0454",
+            "20232024_0485",
+            "20232024_0529",
+            "20232024_0538",
+            "20232024_0563",
+            "20232024_0571"
+          ],
+          "opponent2": [
+            "20232024_0024",
+            "20232024_0085",
+            "20232024_0095",
+            "20232024_0127",
+            "20232024_0160",
+            "20232024_0195",
+            "20232024_0210",
+            "20232024_0220",
+            "20232024_0250",
+            "20232024_0275",
+            "20232024_0300",
+            "20232024_0333",
+            "20232024_0336",
+            "20232024_0416",
+            "20232024_0461",
+            "20232024_0491",
+            "20232024_0498",
+            "20232024_0570",
+            "20232024_0588"
+          ],
+          "opponent3": [
+            "20232024_0037",
+            "20232024_0038",
+            "20232024_0050",
+            "20232024_0066",
+            "20232024_0076",
+            "20232024_0117",
+            "20232024_0145",
+            "20232024_0187",
+            "20232024_0216",
+            "20232024_0243",
+            "20232024_0258",
+            "20232024_0271",
+            "20232024_0296",
+            "20232024_0370",
+            "20232024_0398",
+            "20232024_0405",
+            "20232024_0466",
+            "20232024_0535",
+            "20232024_0581"
+          ],
+          "opponent4": [
+            "20232024_0020",
+            "20232024_0072",
+            "20232024_0081",
+            "20232024_0082",
+            "20232024_0109",
+            "20232024_0184",
+            "20232024_0225",
+            "20232024_0265",
+            "20232024_0267",
+            "20232024_0334",
+            "20232024_0377",
+            "20232024_0394",
+            "20232024_0402",
+            "20232024_0430",
+            "20232024_0475",
+            "20232024_0505",
+            "20232024_0509",
+            "20232024_0521",
+            "20232024_0548"
+          ],
+          "opponent5": [
+            "20232024_0004",
+            "20232024_0091",
+            "20232024_0144",
+            "20232024_0168",
+            "20232024_0173",
+            "20232024_0182",
+            "20232024_0208",
+            "20232024_0211",
+            "20232024_0230",
+            "20232024_0234",
+            "20232024_0315",
+            "20232024_0326",
+            "20232024_0397",
+            "20232024_0401",
+            "20232024_0457",
+            "20232024_0476",
+            "20232024_0494",
+            "20232024_0514",
+            "20232024_0524"
+          ]
+        },
+        "trace": [
+          {
+            "pick_index": 0,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0132"
+          },
+          {
+            "pick_index": 1,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0059"
+          },
+          {
+            "pick_index": 2,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0333"
+          },
+          {
+            "pick_index": 3,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0405"
+          },
+          {
+            "pick_index": 4,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0072"
+          },
+          {
+            "pick_index": 5,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0514"
+          },
+          {
+            "pick_index": 6,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0211"
+          },
+          {
+            "pick_index": 7,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0475"
+          },
+          {
+            "pick_index": 8,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0216"
+          },
+          {
+            "pick_index": 9,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0095"
+          },
+          {
+            "pick_index": 10,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0388"
+          },
+          {
+            "pick_index": 11,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0148"
+          },
+          {
+            "pick_index": 12,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0130"
+          },
+          {
+            "pick_index": 13,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0013"
+          },
+          {
+            "pick_index": 14,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0275"
+          },
+          {
+            "pick_index": 15,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0038"
+          },
+          {
+            "pick_index": 16,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0394"
+          },
+          {
+            "pick_index": 17,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0173"
+          },
+          {
+            "pick_index": 18,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0208"
+          },
+          {
+            "pick_index": 19,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0377"
+          },
+          {
+            "pick_index": 20,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0466"
+          },
+          {
+            "pick_index": 21,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0024"
+          },
+          {
+            "pick_index": 22,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0303"
+          },
+          {
+            "pick_index": 23,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0419"
+          },
+          {
+            "pick_index": 24,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0520"
+          },
+          {
+            "pick_index": 25,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0172"
+          },
+          {
+            "pick_index": 26,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0570"
+          },
+          {
+            "pick_index": 27,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0066"
+          },
+          {
+            "pick_index": 28,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0020"
+          },
+          {
+            "pick_index": 29,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0234"
+          },
+          {
+            "pick_index": 30,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0524"
+          },
+          {
+            "pick_index": 31,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0267"
+          },
+          {
+            "pick_index": 32,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0050"
+          },
+          {
+            "pick_index": 33,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0220"
+          },
+          {
+            "pick_index": 34,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0067"
+          },
+          {
+            "pick_index": 35,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0321"
+          },
+          {
+            "pick_index": 36,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0534"
+          },
+          {
+            "pick_index": 37,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0538"
+          },
+          {
+            "pick_index": 38,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0250"
+          },
+          {
+            "pick_index": 39,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0535"
+          },
+          {
+            "pick_index": 40,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0402"
+          },
+          {
+            "pick_index": 41,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0168"
+          },
+          {
+            "pick_index": 42,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0004"
+          },
+          {
+            "pick_index": 43,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0505"
+          },
+          {
+            "pick_index": 44,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0271"
+          },
+          {
+            "pick_index": 45,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0160"
+          },
+          {
+            "pick_index": 46,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0423"
+          },
+          {
+            "pick_index": 47,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0219"
+          },
+          {
+            "pick_index": 48,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0393"
+          },
+          {
+            "pick_index": 49,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0563"
+          },
+          {
+            "pick_index": 50,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0336"
+          },
+          {
+            "pick_index": 51,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0117"
+          },
+          {
+            "pick_index": 52,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0081"
+          },
+          {
+            "pick_index": 53,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0182"
+          },
+          {
+            "pick_index": 54,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0144"
+          },
+          {
+            "pick_index": 55,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0265"
+          },
+          {
+            "pick_index": 56,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0296"
+          },
+          {
+            "pick_index": 57,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0127"
+          },
+          {
+            "pick_index": 58,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0324"
+          },
+          {
+            "pick_index": 59,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0406"
+          },
+          {
+            "pick_index": 60,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0358"
+          },
+          {
+            "pick_index": 61,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0014"
+          },
+          {
+            "pick_index": 62,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0416"
+          },
+          {
+            "pick_index": 63,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0398"
+          },
+          {
+            "pick_index": 64,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0225"
+          },
+          {
+            "pick_index": 65,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0457"
+          },
+          {
+            "pick_index": 66,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0397"
+          },
+          {
+            "pick_index": 67,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0548"
+          },
+          {
+            "pick_index": 68,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0145"
+          },
+          {
+            "pick_index": 69,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0210"
+          },
+          {
+            "pick_index": 70,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0021"
+          },
+          {
+            "pick_index": 71,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0253"
+          },
+          {
+            "pick_index": 72,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0389"
+          },
+          {
+            "pick_index": 73,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0571"
+          },
+          {
+            "pick_index": 74,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0491"
+          },
+          {
+            "pick_index": 75,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0037"
+          },
+          {
+            "pick_index": 76,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0184"
+          },
+          {
+            "pick_index": 77,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0326"
+          },
+          {
+            "pick_index": 78,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0476"
+          },
+          {
+            "pick_index": 79,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0334"
+          },
+          {
+            "pick_index": 80,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0243"
+          },
+          {
+            "pick_index": 81,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0461"
+          },
+          {
+            "pick_index": 82,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0112"
+          },
+          {
+            "pick_index": 83,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0186"
+          },
+          {
+            "pick_index": 84,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0224"
+          },
+          {
+            "pick_index": 85,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0164"
+          },
+          {
+            "pick_index": 86,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0085"
+          },
+          {
+            "pick_index": 87,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0076"
+          },
+          {
+            "pick_index": 88,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0509"
+          },
+          {
+            "pick_index": 89,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0494"
+          },
+          {
+            "pick_index": 90,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0091"
+          },
+          {
+            "pick_index": 91,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0430"
+          },
+          {
+            "pick_index": 92,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0581"
+          },
+          {
+            "pick_index": 93,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0300"
+          },
+          {
+            "pick_index": 94,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0454"
+          },
+          {
+            "pick_index": 95,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0156"
+          },
+          {
+            "pick_index": 96,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0010"
+          },
+          {
+            "pick_index": 97,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0292"
+          },
+          {
+            "pick_index": 98,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0195"
+          },
+          {
+            "pick_index": 99,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0187"
+          },
+          {
+            "pick_index": 100,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0109"
+          },
+          {
+            "pick_index": 101,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0230"
+          },
+          {
+            "pick_index": 102,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0401"
+          },
+          {
+            "pick_index": 103,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0521"
+          },
+          {
+            "pick_index": 104,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0370"
+          },
+          {
+            "pick_index": 105,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0588"
+          },
+          {
+            "pick_index": 106,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0485"
+          },
+          {
+            "pick_index": 107,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0347"
+          },
+          {
+            "pick_index": 108,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0006"
+          },
+          {
+            "pick_index": 109,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0529"
+          },
+          {
+            "pick_index": 110,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0498"
+          },
+          {
+            "pick_index": 111,
+            "team_id": "opponent3",
+            "policy": "B2",
+            "player_id": "20232024_0258"
+          },
+          {
+            "pick_index": 112,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0082"
+          },
+          {
+            "pick_index": 113,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0315"
+          }
+        ],
+        "elapsed_seconds": 22.652536413000007
+      },
+      "outcome": {
+        "mean_weekly_category_share": 0.5344155844155843,
+        "matchup_comparisons": 140,
+        "category_credits": {
+          "G": 0.525,
+          "A": 0.6214285714285714,
+          "FOW": 0.7178571428571429,
+          "SOG": 0.6285714285714286,
+          "HIT": 0.6464285714285715,
+          "BLK": 0.6321428571428571,
+          "DEF": 0.5357142857142857,
+          "W": 0.29642857142857143,
+          "SVS": 0.2392857142857143,
+          "SO": 0.5,
+          "SVPCT": 0.5357142857142857
+        },
+        "started_contributions": {
+          "20232024_0187": {
+            "started_days": 63,
+            "goals": 19.0,
+            "assists": 33.0,
+            "faceoff_wins": 305.0,
+            "shots": 153.0,
+            "hits": 22.0,
+            "blocks": 35.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0405": {
+            "started_days": 82,
+            "goals": 51.0,
+            "assists": 89.0,
+            "faceoff_wins": 607.0,
+            "shots": 405.0,
+            "hits": 55.0,
+            "blocks": 69.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0050": {
+            "started_days": 81,
+            "goals": 26.0,
+            "assists": 44.0,
+            "faceoff_wins": 859.0,
+            "shots": 133.0,
+            "hits": 37.0,
+            "blocks": 65.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0216": {
+            "started_days": 81,
+            "goals": 37.0,
+            "assists": 66.0,
+            "faceoff_wins": 823.0,
+            "shots": 194.0,
+            "hits": 217.0,
+            "blocks": 61.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0581": {
+            "started_days": 74,
+            "goals": 37.0,
+            "assists": 52.0,
+            "faceoff_wins": 50.0,
+            "shots": 291.0,
+            "hits": 32.0,
+            "blocks": 23.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0117": {
+            "started_days": 82,
+            "goals": 21.0,
+            "assists": 43.0,
+            "faceoff_wins": 668.0,
+            "shots": 183.0,
+            "hits": 40.0,
+            "blocks": 30.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0296": {
+            "started_days": 81,
+            "goals": 10.0,
+            "assists": 59.0,
+            "faceoff_wins": 0.0,
+            "shots": 196.0,
+            "hits": 90.0,
+            "blocks": 103.0,
+            "defense_points": 69.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0145": {
+            "started_days": 81,
+            "goals": 10.0,
+            "assists": 22.0,
+            "faceoff_wins": 0.0,
+            "shots": 181.0,
+            "hits": 168.0,
+            "blocks": 172.0,
+            "defense_points": 32.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0535": {
+            "started_days": 69,
+            "goals": 28.0,
+            "assists": 24.0,
+            "faceoff_wins": 44.0,
+            "shots": 207.0,
+            "hits": 111.0,
+            "blocks": 42.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0243": {
+            "started_days": 82,
+            "goals": 21.0,
+            "assists": 39.0,
+            "faceoff_wins": 436.0,
+            "shots": 164.0,
+            "hits": 110.0,
+            "blocks": 50.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0466": {
+            "started_days": 81,
+            "goals": 20.0,
+            "assists": 39.0,
+            "faceoff_wins": 0.0,
+            "shots": 235.0,
+            "hits": 195.0,
+            "blocks": 154.0,
+            "defense_points": 59.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0370": {
+            "started_days": 47,
+            "goals": 21.0,
+            "assists": 30.0,
+            "faceoff_wins": 23.0,
+            "shots": 143.0,
+            "hits": 23.0,
+            "blocks": 13.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0271": {
+            "started_days": 82,
+            "goals": 10.0,
+            "assists": 42.0,
+            "faceoff_wins": 0.0,
+            "shots": 176.0,
+            "hits": 69.0,
+            "blocks": 194.0,
+            "defense_points": 52.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0066": {
+            "started_days": 81,
+            "goals": 33.0,
+            "assists": 35.0,
+            "faceoff_wins": 765.0,
+            "shots": 248.0,
+            "hits": 61.0,
+            "blocks": 42.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0258": {
+            "started_days": 44,
+            "goals": 0.0,
+            "assists": 0.0,
+            "faceoff_wins": 0.0,
+            "shots": 0.0,
+            "hits": 0.0,
+            "blocks": 0.0,
+            "defense_points": 0.0,
+            "wins": 25.0,
+            "saves": 1179.0,
+            "shutouts": 0.0,
+            "shots_against": 1287.0
+          },
+          "20232024_0037": {
+            "started_days": 59,
+            "goals": 19.0,
+            "assists": 33.0,
+            "faceoff_wins": 4.0,
+            "shots": 144.0,
+            "hits": 142.0,
+            "blocks": 22.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0076": {
+            "started_days": 65,
+            "goals": 8.0,
+            "assists": 25.0,
+            "faceoff_wins": 0.0,
+            "shots": 163.0,
+            "hits": 100.0,
+            "blocks": 66.0,
+            "defense_points": 33.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0038": {
+            "started_days": 52,
+            "goals": 0.0,
+            "assists": 0.0,
+            "faceoff_wins": 0.0,
+            "shots": 0.0,
+            "hits": 0.0,
+            "blocks": 0.0,
+            "defense_points": 0.0,
+            "wins": 30.0,
+            "saves": 1329.0,
+            "shutouts": 0.0,
+            "shots_against": 1477.0
+          }
+        }
+      },
+      "elapsed_seconds": 23.700357471999993
+    },
+    "B3": {
+      "draft": {
+        "status": "COMPLETE",
+        "policy": "B3",
+        "focus_team": "opponent3",
+        "rosters": {
+          "user": [
+            "20232024_0085",
+            "20232024_0130",
+            "20232024_0132",
+            "20232024_0148",
+            "20232024_0156",
+            "20232024_0195",
+            "20232024_0219",
+            "20232024_0243",
+            "20232024_0253",
+            "20232024_0321",
+            "20232024_0347",
+            "20232024_0358",
+            "20232024_0389",
+            "20232024_0393",
+            "20232024_0406",
+            "20232024_0419",
+            "20232024_0520",
+            "20232024_0534",
+            "20232024_0588"
+          ],
+          "opponent1": [
+            "20232024_0013",
+            "20232024_0014",
+            "20232024_0021",
+            "20232024_0059",
+            "20232024_0067",
+            "20232024_0082",
+            "20232024_0112",
+            "20232024_0164",
+            "20232024_0172",
+            "20232024_0292",
+            "20232024_0303",
+            "20232024_0324",
+            "20232024_0370",
+            "20232024_0388",
+            "20232024_0423",
+            "20232024_0454",
+            "20232024_0538",
+            "20232024_0563",
+            "20232024_0571"
+          ],
+          "opponent2": [
+            "20232024_0024",
+            "20232024_0095",
+            "20232024_0127",
+            "20232024_0160",
+            "20232024_0186",
+            "20232024_0187",
+            "20232024_0210",
+            "20232024_0220",
+            "20232024_0250",
+            "20232024_0275",
+            "20232024_0333",
+            "20232024_0336",
+            "20232024_0401",
+            "20232024_0416",
+            "20232024_0461",
+            "20232024_0491",
+            "20232024_0498",
+            "20232024_0570",
+            "20232024_0581"
+          ],
+          "opponent3": [
+            "20232024_0010",
+            "20232024_0037",
+            "20232024_0038",
+            "20232024_0050",
+            "20232024_0066",
+            "20232024_0076",
+            "20232024_0109",
+            "20232024_0117",
+            "20232024_0145",
+            "20232024_0216",
+            "20232024_0224",
+            "20232024_0265",
+            "20232024_0271",
+            "20232024_0300",
+            "20232024_0380",
+            "20232024_0398",
+            "20232024_0402",
+            "20232024_0405",
+            "20232024_0466"
+          ],
+          "opponent4": [
+            "20232024_0020",
+            "20232024_0072",
+            "20232024_0081",
+            "20232024_0168",
+            "20232024_0184",
+            "20232024_0225",
+            "20232024_0230",
+            "20232024_0258",
+            "20232024_0267",
+            "20232024_0296",
+            "20232024_0334",
+            "20232024_0377",
+            "20232024_0394",
+            "20232024_0430",
+            "20232024_0475",
+            "20232024_0505",
+            "20232024_0509",
+            "20232024_0529",
+            "20232024_0548"
+          ],
+          "opponent5": [
+            "20232024_0004",
+            "20232024_0006",
+            "20232024_0091",
+            "20232024_0144",
+            "20232024_0173",
+            "20232024_0182",
+            "20232024_0208",
+            "20232024_0211",
+            "20232024_0234",
+            "20232024_0326",
+            "20232024_0397",
+            "20232024_0457",
+            "20232024_0476",
+            "20232024_0485",
+            "20232024_0494",
+            "20232024_0514",
+            "20232024_0521",
+            "20232024_0524",
+            "20232024_0535"
+          ]
+        },
+        "trace": [
+          {
+            "pick_index": 0,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0132"
+          },
+          {
+            "pick_index": 1,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0059"
+          },
+          {
+            "pick_index": 2,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0333"
+          },
+          {
+            "pick_index": 3,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0405"
+          },
+          {
+            "pick_index": 4,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0072"
+          },
+          {
+            "pick_index": 5,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0514"
+          },
+          {
+            "pick_index": 6,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0211"
+          },
+          {
+            "pick_index": 7,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0475"
+          },
+          {
+            "pick_index": 8,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0216"
+          },
+          {
+            "pick_index": 9,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0095"
+          },
+          {
+            "pick_index": 10,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0388"
+          },
+          {
+            "pick_index": 11,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0148"
+          },
+          {
+            "pick_index": 12,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0130"
+          },
+          {
+            "pick_index": 13,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0013"
+          },
+          {
+            "pick_index": 14,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0275"
+          },
+          {
+            "pick_index": 15,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0038"
+          },
+          {
+            "pick_index": 16,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0394"
+          },
+          {
+            "pick_index": 17,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0173"
+          },
+          {
+            "pick_index": 18,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0208"
+          },
+          {
+            "pick_index": 19,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0377"
+          },
+          {
+            "pick_index": 20,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0466"
+          },
+          {
+            "pick_index": 21,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0024"
+          },
+          {
+            "pick_index": 22,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0303"
+          },
+          {
+            "pick_index": 23,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0419"
+          },
+          {
+            "pick_index": 24,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0520"
+          },
+          {
+            "pick_index": 25,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0172"
+          },
+          {
+            "pick_index": 26,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0570"
+          },
+          {
+            "pick_index": 27,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0066"
+          },
+          {
+            "pick_index": 28,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0020"
+          },
+          {
+            "pick_index": 29,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0234"
+          },
+          {
+            "pick_index": 30,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0524"
+          },
+          {
+            "pick_index": 31,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0267"
+          },
+          {
+            "pick_index": 32,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0050"
+          },
+          {
+            "pick_index": 33,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0220"
+          },
+          {
+            "pick_index": 34,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0067"
+          },
+          {
+            "pick_index": 35,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0321"
+          },
+          {
+            "pick_index": 36,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0534"
+          },
+          {
+            "pick_index": 37,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0538"
+          },
+          {
+            "pick_index": 38,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0250"
+          },
+          {
+            "pick_index": 39,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0402"
+          },
+          {
+            "pick_index": 40,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0168"
+          },
+          {
+            "pick_index": 41,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0535"
+          },
+          {
+            "pick_index": 42,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0004"
+          },
+          {
+            "pick_index": 43,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0505"
+          },
+          {
+            "pick_index": 44,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0271"
+          },
+          {
+            "pick_index": 45,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0160"
+          },
+          {
+            "pick_index": 46,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0423"
+          },
+          {
+            "pick_index": 47,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0219"
+          },
+          {
+            "pick_index": 48,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0393"
+          },
+          {
+            "pick_index": 49,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0563"
+          },
+          {
+            "pick_index": 50,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0336"
+          },
+          {
+            "pick_index": 51,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0117"
+          },
+          {
+            "pick_index": 52,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0081"
+          },
+          {
+            "pick_index": 53,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0182"
+          },
+          {
+            "pick_index": 54,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0144"
+          },
+          {
+            "pick_index": 55,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0296"
+          },
+          {
+            "pick_index": 56,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0265"
+          },
+          {
+            "pick_index": 57,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0127"
+          },
+          {
+            "pick_index": 58,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0324"
+          },
+          {
+            "pick_index": 59,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0406"
+          },
+          {
+            "pick_index": 60,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0358"
+          },
+          {
+            "pick_index": 61,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0014"
+          },
+          {
+            "pick_index": 62,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0416"
+          },
+          {
+            "pick_index": 63,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0398"
+          },
+          {
+            "pick_index": 64,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0225"
+          },
+          {
+            "pick_index": 65,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0457"
+          },
+          {
+            "pick_index": 66,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0397"
+          },
+          {
+            "pick_index": 67,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0548"
+          },
+          {
+            "pick_index": 68,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0145"
+          },
+          {
+            "pick_index": 69,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0210"
+          },
+          {
+            "pick_index": 70,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0021"
+          },
+          {
+            "pick_index": 71,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0253"
+          },
+          {
+            "pick_index": 72,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0389"
+          },
+          {
+            "pick_index": 73,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0571"
+          },
+          {
+            "pick_index": 74,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0491"
+          },
+          {
+            "pick_index": 75,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0037"
+          },
+          {
+            "pick_index": 76,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0184"
+          },
+          {
+            "pick_index": 77,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0326"
+          },
+          {
+            "pick_index": 78,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0476"
+          },
+          {
+            "pick_index": 79,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0334"
+          },
+          {
+            "pick_index": 80,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0224"
+          },
+          {
+            "pick_index": 81,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0461"
+          },
+          {
+            "pick_index": 82,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0112"
+          },
+          {
+            "pick_index": 83,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0243"
+          },
+          {
+            "pick_index": 84,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0085"
+          },
+          {
+            "pick_index": 85,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0164"
+          },
+          {
+            "pick_index": 86,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0186"
+          },
+          {
+            "pick_index": 87,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0076"
+          },
+          {
+            "pick_index": 88,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0509"
+          },
+          {
+            "pick_index": 89,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0494"
+          },
+          {
+            "pick_index": 90,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0091"
+          },
+          {
+            "pick_index": 91,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0430"
+          },
+          {
+            "pick_index": 92,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0300"
+          },
+          {
+            "pick_index": 93,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0581"
+          },
+          {
+            "pick_index": 94,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0454"
+          },
+          {
+            "pick_index": 95,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0156"
+          },
+          {
+            "pick_index": 96,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0195"
+          },
+          {
+            "pick_index": 97,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0292"
+          },
+          {
+            "pick_index": 98,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0187"
+          },
+          {
+            "pick_index": 99,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0109"
+          },
+          {
+            "pick_index": 100,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0230"
+          },
+          {
+            "pick_index": 101,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0521"
+          },
+          {
+            "pick_index": 102,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0485"
+          },
+          {
+            "pick_index": 103,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0529"
+          },
+          {
+            "pick_index": 104,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0010"
+          },
+          {
+            "pick_index": 105,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0401"
+          },
+          {
+            "pick_index": 106,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0082"
+          },
+          {
+            "pick_index": 107,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0588"
+          },
+          {
+            "pick_index": 108,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0347"
+          },
+          {
+            "pick_index": 109,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0370"
+          },
+          {
+            "pick_index": 110,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0498"
+          },
+          {
+            "pick_index": 111,
+            "team_id": "opponent3",
+            "policy": "B3",
+            "player_id": "20232024_0380"
+          },
+          {
+            "pick_index": 112,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0258"
+          },
+          {
+            "pick_index": 113,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0006"
+          }
+        ],
+        "elapsed_seconds": 23.871066756000005
+      },
+      "outcome": {
+        "mean_weekly_category_share": 0.5353896103896104,
+        "matchup_comparisons": 140,
+        "category_credits": {
+          "G": 0.37857142857142856,
+          "A": 0.5178571428571429,
+          "FOW": 0.7714285714285715,
+          "SOG": 0.35714285714285715,
+          "HIT": 0.8142857142857143,
+          "BLK": 0.875,
+          "DEF": 0.5071428571428571,
+          "W": 0.32857142857142857,
+          "SVS": 0.3464285714285714,
+          "SO": 0.5,
+          "SVPCT": 0.4928571428571429
+        },
+        "started_contributions": {
+          "20232024_0109": {
+            "started_days": 65,
+            "goals": 15.0,
+            "assists": 30.0,
+            "faceoff_wins": 470.0,
+            "shots": 84.0,
+            "hits": 27.0,
+            "blocks": 33.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0380": {
+            "started_days": 49,
+            "goals": 12.0,
+            "assists": 15.0,
+            "faceoff_wins": 361.0,
+            "shots": 87.0,
+            "hits": 36.0,
+            "blocks": 32.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0405": {
+            "started_days": 82,
+            "goals": 51.0,
+            "assists": 89.0,
+            "faceoff_wins": 607.0,
+            "shots": 405.0,
+            "hits": 55.0,
+            "blocks": 69.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0050": {
+            "started_days": 81,
+            "goals": 26.0,
+            "assists": 44.0,
+            "faceoff_wins": 859.0,
+            "shots": 133.0,
+            "hits": 37.0,
+            "blocks": 65.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0216": {
+            "started_days": 81,
+            "goals": 37.0,
+            "assists": 66.0,
+            "faceoff_wins": 823.0,
+            "shots": 194.0,
+            "hits": 217.0,
+            "blocks": 61.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0010": {
+            "started_days": 65,
+            "goals": 25.0,
+            "assists": 39.0,
+            "faceoff_wins": 3.0,
+            "shots": 205.0,
+            "hits": 92.0,
+            "blocks": 29.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0117": {
+            "started_days": 82,
+            "goals": 21.0,
+            "assists": 43.0,
+            "faceoff_wins": 668.0,
+            "shots": 183.0,
+            "hits": 40.0,
+            "blocks": 30.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0145": {
+            "started_days": 81,
+            "goals": 10.0,
+            "assists": 22.0,
+            "faceoff_wins": 0.0,
+            "shots": 181.0,
+            "hits": 168.0,
+            "blocks": 172.0,
+            "defense_points": 32.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0224": {
+            "started_days": 48,
+            "goals": 0.0,
+            "assists": 0.0,
+            "faceoff_wins": 0.0,
+            "shots": 0.0,
+            "hits": 0.0,
+            "blocks": 0.0,
+            "defense_points": 0.0,
+            "wins": 23.0,
+            "saves": 1248.0,
+            "shutouts": 0.0,
+            "shots_against": 1379.0
+          },
+          "20232024_0265": {
+            "started_days": 82,
+            "goals": 27.0,
+            "assists": 40.0,
+            "faceoff_wins": 355.0,
+            "shots": 194.0,
+            "hits": 75.0,
+            "blocks": 70.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0466": {
+            "started_days": 81,
+            "goals": 20.0,
+            "assists": 39.0,
+            "faceoff_wins": 0.0,
+            "shots": 235.0,
+            "hits": 195.0,
+            "blocks": 154.0,
+            "defense_points": 59.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0402": {
+            "started_days": 82,
+            "goals": 9.0,
+            "assists": 33.0,
+            "faceoff_wins": 0.0,
+            "shots": 135.0,
+            "hits": 211.0,
+            "blocks": 212.0,
+            "defense_points": 42.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0300": {
+            "started_days": 55,
+            "goals": 2.0,
+            "assists": 28.0,
+            "faceoff_wins": 0.0,
+            "shots": 120.0,
+            "hits": 75.0,
+            "blocks": 97.0,
+            "defense_points": 30.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0271": {
+            "started_days": 82,
+            "goals": 10.0,
+            "assists": 42.0,
+            "faceoff_wins": 0.0,
+            "shots": 176.0,
+            "hits": 69.0,
+            "blocks": 194.0,
+            "defense_points": 52.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0066": {
+            "started_days": 81,
+            "goals": 33.0,
+            "assists": 35.0,
+            "faceoff_wins": 765.0,
+            "shots": 248.0,
+            "hits": 61.0,
+            "blocks": 42.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0037": {
+            "started_days": 59,
+            "goals": 19.0,
+            "assists": 33.0,
+            "faceoff_wins": 4.0,
+            "shots": 144.0,
+            "hits": 142.0,
+            "blocks": 22.0,
+            "defense_points": 0.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0076": {
+            "started_days": 66,
+            "goals": 8.0,
+            "assists": 25.0,
+            "faceoff_wins": 0.0,
+            "shots": 168.0,
+            "hits": 104.0,
+            "blocks": 67.0,
+            "defense_points": 33.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          },
+          "20232024_0038": {
+            "started_days": 52,
+            "goals": 0.0,
+            "assists": 0.0,
+            "faceoff_wins": 0.0,
+            "shots": 0.0,
+            "hits": 0.0,
+            "blocks": 0.0,
+            "defense_points": 0.0,
+            "wins": 30.0,
+            "saves": 1329.0,
+            "shutouts": 0.0,
+            "shots_against": 1477.0
+          }
+        }
+      },
+      "elapsed_seconds": 24.89214501900001
+    },
+    "DECISION_ENGINE": {
+      "draft": {
+        "status": "COMPLETE",
+        "trace": [
+          {
+            "pick_index": 0,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0132"
+          },
+          {
+            "pick_index": 1,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0059"
+          },
+          {
+            "pick_index": 2,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0333"
+          },
+          {
+            "pick_index": 3,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0211"
+          },
+          {
+            "pick_index": 4,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0405"
+          },
+          {
+            "pick_index": 5,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0072"
+          },
+          {
+            "pick_index": 6,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0514"
+          },
+          {
+            "pick_index": 7,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0475"
+          },
+          {
+            "pick_index": 8,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0303"
+          },
+          {
+            "pick_index": 9,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0216"
+          },
+          {
+            "pick_index": 10,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0095"
+          },
+          {
+            "pick_index": 11,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0388"
+          },
+          {
+            "pick_index": 12,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0148"
+          },
+          {
+            "pick_index": 13,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0130"
+          },
+          {
+            "pick_index": 14,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0013"
+          },
+          {
+            "pick_index": 15,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0394"
+          },
+          {
+            "pick_index": 16,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0275"
+          },
+          {
+            "pick_index": 17,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0038"
+          },
+          {
+            "pick_index": 18,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0208"
+          },
+          {
+            "pick_index": 19,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0173"
+          },
+          {
+            "pick_index": 20,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0324"
+          },
+          {
+            "pick_index": 21,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0377"
+          },
+          {
+            "pick_index": 22,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0466"
+          },
+          {
+            "pick_index": 23,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0024"
+          },
+          {
+            "pick_index": 24,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0419"
+          },
+          {
+            "pick_index": 25,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0520"
+          },
+          {
+            "pick_index": 26,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0172"
+          },
+          {
+            "pick_index": 27,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0535"
+          },
+          {
+            "pick_index": 28,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0570"
+          },
+          {
+            "pick_index": 29,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0066"
+          },
+          {
+            "pick_index": 30,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0020"
+          },
+          {
+            "pick_index": 31,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0234"
+          },
+          {
+            "pick_index": 32,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0160"
+          },
+          {
+            "pick_index": 33,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0524"
+          },
+          {
+            "pick_index": 34,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0267"
+          },
+          {
+            "pick_index": 35,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0050"
+          },
+          {
+            "pick_index": 36,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0220"
+          },
+          {
+            "pick_index": 37,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0067"
+          },
+          {
+            "pick_index": 38,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0321"
+          },
+          {
+            "pick_index": 39,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0534"
+          },
+          {
+            "pick_index": 40,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0538"
+          },
+          {
+            "pick_index": 41,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0250"
+          },
+          {
+            "pick_index": 42,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0402"
+          },
+          {
+            "pick_index": 43,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0168"
+          },
+          {
+            "pick_index": 44,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0021"
+          },
+          {
+            "pick_index": 45,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0004"
+          },
+          {
+            "pick_index": 46,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0271"
+          },
+          {
+            "pick_index": 47,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0505"
+          },
+          {
+            "pick_index": 48,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0423"
+          },
+          {
+            "pick_index": 49,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0393"
+          },
+          {
+            "pick_index": 50,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0219"
+          },
+          {
+            "pick_index": 51,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0563"
+          },
+          {
+            "pick_index": 52,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0117"
+          },
+          {
+            "pick_index": 53,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0336"
+          },
+          {
+            "pick_index": 54,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0081"
+          },
+          {
+            "pick_index": 55,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0182"
+          },
+          {
+            "pick_index": 56,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0014"
+          },
+          {
+            "pick_index": 57,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0144"
+          },
+          {
+            "pick_index": 58,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0265"
+          },
+          {
+            "pick_index": 59,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0296"
+          },
+          {
+            "pick_index": 60,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0127"
+          },
+          {
+            "pick_index": 61,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0398"
+          },
+          {
+            "pick_index": 62,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0406"
+          },
+          {
+            "pick_index": 63,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0145"
+          },
+          {
+            "pick_index": 64,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0225"
+          },
+          {
+            "pick_index": 65,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0358"
+          },
+          {
+            "pick_index": 66,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0416"
+          },
+          {
+            "pick_index": 67,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0397"
+          },
+          {
+            "pick_index": 68,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0326"
+          },
+          {
+            "pick_index": 69,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0457"
+          },
+          {
+            "pick_index": 70,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0548"
+          },
+          {
+            "pick_index": 71,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0210"
+          },
+          {
+            "pick_index": 72,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0253"
+          },
+          {
+            "pick_index": 73,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0491"
+          },
+          {
+            "pick_index": 74,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0037"
+          },
+          {
+            "pick_index": 75,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0509"
+          },
+          {
+            "pick_index": 76,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0571"
+          },
+          {
+            "pick_index": 77,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0389"
+          },
+          {
+            "pick_index": 78,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0476"
+          },
+          {
+            "pick_index": 79,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0494"
+          },
+          {
+            "pick_index": 80,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0315"
+          },
+          {
+            "pick_index": 81,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0184"
+          },
+          {
+            "pick_index": 82,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0243"
+          },
+          {
+            "pick_index": 83,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0461"
+          },
+          {
+            "pick_index": 84,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0334"
+          },
+          {
+            "pick_index": 85,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0224"
+          },
+          {
+            "pick_index": 86,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0186"
+          },
+          {
+            "pick_index": 87,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0076"
+          },
+          {
+            "pick_index": 88,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0112"
+          },
+          {
+            "pick_index": 89,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0085"
+          },
+          {
+            "pick_index": 90,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0430"
+          },
+          {
+            "pick_index": 91,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0164"
+          },
+          {
+            "pick_index": 92,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0118"
+          },
+          {
+            "pick_index": 93,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0091"
+          },
+          {
+            "pick_index": 94,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0300"
+          },
+          {
+            "pick_index": 95,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0581"
+          },
+          {
+            "pick_index": 96,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0156"
+          },
+          {
+            "pick_index": 97,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0454"
+          },
+          {
+            "pick_index": 98,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0195"
+          },
+          {
+            "pick_index": 99,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0010"
+          },
+          {
+            "pick_index": 100,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0292"
+          },
+          {
+            "pick_index": 101,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0401"
+          },
+          {
+            "pick_index": 102,
+            "team_id": "opponent5",
+            "policy": "B1",
+            "player_id": "20232024_0588"
+          },
+          {
+            "pick_index": 103,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0187"
+          },
+          {
+            "pick_index": 104,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0485"
+          },
+          {
+            "pick_index": 105,
+            "team_id": "opponent2",
+            "policy": "B1",
+            "player_id": "20232024_0347"
+          },
+          {
+            "pick_index": 106,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0109"
+          },
+          {
+            "pick_index": 107,
+            "team_id": "user",
+            "policy": "B2",
+            "player_id": "20232024_0230"
+          },
+          {
+            "pick_index": 108,
+            "team_id": "user",
+            "policy": "B1",
+            "player_id": "20232024_0006"
+          },
+          {
+            "pick_index": 109,
+            "team_id": "opponent1",
+            "policy": "B3",
+            "player_id": "20232024_0521"
+          },
+          {
+            "pick_index": 110,
+            "team_id": "opponent2",
+            "policy": "B2",
+            "player_id": "20232024_0237"
+          },
+          {
+            "pick_index": 111,
+            "team_id": "opponent3",
+            "policy": "DECISION_ENGINE",
+            "player_id": "20232024_0463"
+          },
+          {
+            "pick_index": 112,
+            "team_id": "opponent4",
+            "policy": "B3",
+            "player_id": "20232024_0529"
+          },
+          {
+            "pick_index": 113,
+            "team_id": "opponent5",
+            "policy": "B2",
+            "player_id": "20232024_0498"
+          }
+        ],
+        "rosters": {
+          "user": [
+            "20232024_0006",
+            "20232024_0024",
+            "20232024_0050",
+            "20232024_0127",
+            "20232024_0132",
+            "20232024_0148",
+            "20232024_0156",
+            "20232024_0210",
+            "20232024_0220",
+            "20232024_0230",
+            "20232024_0253",
+            "20232024_0296",
+            "20232024_0334",
+            "20232024_0388",
+            "20232024_0419",
+            "20232024_0423",
+            "20232024_0461",
+            "20232024_0505",
+            "20232024_0581"
+          ],
+          "opponent1": [
+            "20232024_0059",
+            "20232024_0067",
+            "20232024_0095",
+            "20232024_0109",
+            "20232024_0130",
+            "20232024_0224",
+            "20232024_0243",
+            "20232024_0265",
+            "20232024_0267",
+            "20232024_0271",
+            "20232024_0300",
+            "20232024_0393",
+            "20232024_0398",
+            "20232024_0454",
+            "20232024_0466",
+            "20232024_0491",
+            "20232024_0520",
+            "20232024_0521",
+            "20232024_0548"
+          ],
+          "opponent2": [
+            "20232024_0004",
+            "20232024_0013",
+            "20232024_0037",
+            "20232024_0091",
+            "20232024_0144",
+            "20232024_0172",
+            "20232024_0184",
+            "20232024_0186",
+            "20232024_0195",
+            "20232024_0216",
+            "20232024_0219",
+            "20232024_0237",
+            "20232024_0321",
+            "20232024_0333",
+            "20232024_0347",
+            "20232024_0377",
+            "20232024_0406",
+            "20232024_0457",
+            "20232024_0524"
+          ],
+          "opponent3": [
+            "20232024_0010",
+            "20232024_0014",
+            "20232024_0021",
+            "20232024_0076",
+            "20232024_0118",
+            "20232024_0145",
+            "20232024_0160",
+            "20232024_0211",
+            "20232024_0303",
+            "20232024_0315",
+            "20232024_0324",
+            "20232024_0326",
+            "20232024_0394",
+            "20232024_0463",
+            "20232024_0485",
+            "20232024_0509",
+            "20232024_0534",
+            "20232024_0535",
+            "20232024_0563"
+          ],
+          "opponent4": [
+            "20232024_0112",
+            "20232024_0117",
+            "20232024_0164",
+            "20232024_0168",
+            "20232024_0173",
+            "20232024_0182",
+            "20232024_0187",
+            "20232024_0225",
+            "20232024_0234",
+            "20232024_0275",
+            "20232024_0292",
+            "20232024_0397",
+            "20232024_0405",
+            "20232024_0475",
+            "20232024_0494",
+            "20232024_0529",
+            "20232024_0538",
+            "20232024_0570",
+            "20232024_0571"
+          ],
+          "opponent5": [
+            "20232024_0020",
+            "20232024_0038",
+            "20232024_0066",
+            "20232024_0072",
+            "20232024_0081",
+            "20232024_0085",
+            "20232024_0208",
+            "20232024_0250",
+            "20232024_0336",
+            "20232024_0358",
+            "20232024_0389",
+            "20232024_0401",
+            "20232024_0402",
+            "20232024_0416",
+            "20232024_0430",
+            "20232024_0476",
+            "20232024_0498",
+            "20232024_0514",
+            "20232024_0588"
+          ]
+        },
+        "decisions": [
+          {
+            "pick_index": 3,
+            "round": 1,
+            "player_id": "20232024_0211",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "max_budget": 16,
+            "one_rollout_leader": "20232024_0303",
+            "final_leader": "20232024_0211",
+            "final_runner_up": "20232024_0130",
+            "final_runner_up_gap_points": 1.4018533549783545,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0303",
+                "candidate_count": 589,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0303",
+                "candidate_count": 46,
+                "worst_ci95_high_points": 4.68722943722943,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0475",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 3.9323068377377326,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0211",
+                "candidate_count": 11,
+                "worst_ci95_high_points": 2.81630327911064,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0211",
+                "candidate_count": 8,
+                "worst_ci95_high_points": 0.47215940542356116,
+                "separated": false,
+                "stable_streak": 1
+              }
+            ],
+            "full_pool_candidate_count": 589
+          },
+          {
+            "pick_index": 8,
+            "round": 2,
+            "player_id": "20232024_0303",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "max_budget": 16,
+            "one_rollout_leader": "20232024_0534",
+            "final_leader": "20232024_0303",
+            "final_runner_up": "20232024_0208",
+            "final_runner_up_gap_points": 0.25816197691197473,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0534",
+                "candidate_count": 584,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0109",
+                "candidate_count": 47,
+                "worst_ci95_high_points": 3.0606060606060366,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0265",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 2.142334444590115,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0265",
+                "candidate_count": 10,
+                "worst_ci95_high_points": 1.161650331672638,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0303",
+                "candidate_count": 7,
+                "worst_ci95_high_points": 0.9329796766096079,
+                "separated": false,
+                "stable_streak": 0
+              }
+            ],
+            "full_pool_candidate_count": 584
+          },
+          {
+            "pick_index": 15,
+            "round": 3,
+            "player_id": "20232024_0394",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "max_budget": 16,
+            "one_rollout_leader": "20232024_0014",
+            "final_leader": "20232024_0394",
+            "final_runner_up": "20232024_0173",
+            "final_runner_up_gap_points": 0.0862418831168825,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0014",
+                "candidate_count": 577,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0394",
+                "candidate_count": 42,
+                "worst_ci95_high_points": 4.430735930735913,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0173",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 2.6223171456649625,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0394",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 1.7214231266095825,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0394",
+                "candidate_count": 11,
+                "worst_ci95_high_points": 0.7781637574920708,
+                "separated": false,
+                "stable_streak": 1
+              }
+            ],
+            "full_pool_candidate_count": 577
+          },
+          {
+            "pick_index": 20,
+            "round": 4,
+            "player_id": "20232024_0324",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "max_budget": 16,
+            "one_rollout_leader": "20232024_0127",
+            "final_leader": "20232024_0324",
+            "final_runner_up": "20232024_0067",
+            "final_runner_up_gap_points": 0.28014520202020027,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0127",
+                "candidate_count": 572,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0219",
+                "candidate_count": 45,
+                "worst_ci95_high_points": 3.8694083694083865,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0145",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 0.9207330192230456,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0219",
+                "candidate_count": 9,
+                "worst_ci95_high_points": 1.4331269495233598,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0324",
+                "candidate_count": 8,
+                "worst_ci95_high_points": 0.9331017668058672,
+                "separated": false,
+                "stable_streak": 0
+              }
+            ],
+            "full_pool_candidate_count": 572
+          },
+          {
+            "pick_index": 27,
+            "round": 5,
+            "player_id": "20232024_0535",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "max_budget": 16,
+            "one_rollout_leader": "20232024_0219",
+            "final_leader": "20232024_0535",
+            "final_runner_up": "20232024_0117",
+            "final_runner_up_gap_points": 0.3641323953823945,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0219",
+                "candidate_count": 565,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0160",
+                "candidate_count": 47,
+                "worst_ci95_high_points": 3.923520923520952,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0160",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 1.6175142666189855,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0505",
+                "candidate_count": 7,
+                "worst_ci95_high_points": 3.1088014829974657,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0535",
+                "candidate_count": 7,
+                "worst_ci95_high_points": 1.4917378553208451,
+                "separated": false,
+                "stable_streak": 0
+              }
+            ],
+            "full_pool_candidate_count": 565
+          },
+          {
+            "pick_index": 32,
+            "round": 6,
+            "player_id": "20232024_0160",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "max_budget": 16,
+            "one_rollout_leader": "20232024_0423",
+            "final_leader": "20232024_0160",
+            "final_runner_up": "20232024_0050",
+            "final_runner_up_gap_points": 0.5507079725829707,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0423",
+                "candidate_count": 560,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0321",
+                "candidate_count": 43,
+                "worst_ci95_high_points": 6.433621933621948,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0267",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 2.0443094659425984,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0160",
+                "candidate_count": 11,
+                "worst_ci95_high_points": 1.7324789121909554,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0160",
+                "candidate_count": 6,
+                "worst_ci95_high_points": 0.8727915775977814,
+                "separated": false,
+                "stable_streak": 1
+              }
+            ],
+            "full_pool_candidate_count": 560
+          },
+          {
+            "pick_index": 39,
+            "round": 7,
+            "player_id": "20232024_0534",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "max_budget": 16,
+            "one_rollout_leader": "20232024_0334",
+            "final_leader": "20232024_0534",
+            "final_runner_up": "20232024_0402",
+            "final_runner_up_gap_points": 0.014091810966811918,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0334",
+                "candidate_count": 553,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0534",
+                "candidate_count": 40,
+                "worst_ci95_high_points": 4.045454545454547,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0534",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 1.8077582791315185,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0402",
+                "candidate_count": 9,
+                "worst_ci95_high_points": 1.697323950085312,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0534",
+                "candidate_count": 9,
+                "worst_ci95_high_points": 1.1960234875595614,
+                "separated": false,
+                "stable_streak": 0
+              }
+            ],
+            "full_pool_candidate_count": 553
+          },
+          {
+            "pick_index": 44,
+            "round": 8,
+            "player_id": "20232024_0021",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 16,
+            "max_budget": 16,
+            "one_rollout_leader": "20232024_0156",
+            "final_leader": "20232024_0021",
+            "final_runner_up": "20232024_0006",
+            "final_runner_up_gap_points": 0.13302669552669874,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0156",
+                "candidate_count": 548,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0004",
+                "candidate_count": 45,
+                "worst_ci95_high_points": 1.790404040404042,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0006",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 2.3909237444089575,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0004",
+                "candidate_count": 11,
+                "worst_ci95_high_points": 1.7159635883244704,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0021",
+                "candidate_count": 11,
+                "worst_ci95_high_points": 1.5233259862603994,
+                "separated": false,
+                "stable_streak": 0
+              }
+            ],
+            "full_pool_candidate_count": 548
+          },
+          {
+            "pick_index": 51,
+            "round": 9,
+            "player_id": "20232024_0563",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 32,
+            "max_budget": 32,
+            "one_rollout_leader": "20232024_0397",
+            "final_leader": "20232024_0563",
+            "final_runner_up": "20232024_0296",
+            "final_runner_up_gap_points": 0.14373647186146887,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0397",
+                "candidate_count": 541,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0563",
+                "candidate_count": 44,
+                "worst_ci95_high_points": 2.479797979797957,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0296",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 0.8064024668524361,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0296",
+                "candidate_count": 9,
+                "worst_ci95_high_points": 0.9832762016675667,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0296",
+                "candidate_count": 9,
+                "worst_ci95_high_points": 1.2025111540519393,
+                "separated": false,
+                "stable_streak": 2
+              },
+              {
+                "budget": 32,
+                "leader": "20232024_0563",
+                "candidate_count": 9,
+                "worst_ci95_high_points": 0.68405692503083,
+                "separated": false,
+                "stable_streak": 0
+              }
+            ],
+            "full_pool_candidate_count": 541
+          },
+          {
+            "pick_index": 56,
+            "round": 10,
+            "player_id": "20232024_0014",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 32,
+            "max_budget": 32,
+            "one_rollout_leader": "20232024_0398",
+            "final_leader": "20232024_0014",
+            "final_runner_up": "20232024_0398",
+            "final_runner_up_gap_points": 0.4963135822510815,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0398",
+                "candidate_count": 536,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0398",
+                "candidate_count": 45,
+                "worst_ci95_high_points": 1.8268398268398194,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0014",
+                "candidate_count": 7,
+                "worst_ci95_high_points": 1.268606299285452,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0014",
+                "candidate_count": 6,
+                "worst_ci95_high_points": 0.4193244697234423,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0014",
+                "candidate_count": 4,
+                "worst_ci95_high_points": 0.1560012614938513,
+                "separated": false,
+                "stable_streak": 2
+              },
+              {
+                "budget": 32,
+                "leader": "20232024_0014",
+                "candidate_count": 3,
+                "worst_ci95_high_points": 0.08979269616329982,
+                "separated": false,
+                "stable_streak": 3
+              }
+            ],
+            "full_pool_candidate_count": 536
+          },
+          {
+            "pick_index": 63,
+            "round": 11,
+            "player_id": "20232024_0145",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 32,
+            "max_budget": 32,
+            "one_rollout_leader": "20232024_0145",
+            "final_leader": "20232024_0145",
+            "final_runner_up": "20232024_0397",
+            "final_runner_up_gap_points": 0.19869453463203202,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0145",
+                "candidate_count": 529,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0300",
+                "candidate_count": 42,
+                "worst_ci95_high_points": 3.1489898989899126,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0397",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 1.2085866229522297,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0397",
+                "candidate_count": 11,
+                "worst_ci95_high_points": 1.793946800304831,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0397",
+                "candidate_count": 10,
+                "worst_ci95_high_points": 1.2514011334597248,
+                "separated": false,
+                "stable_streak": 2
+              },
+              {
+                "budget": 32,
+                "leader": "20232024_0145",
+                "candidate_count": 9,
+                "worst_ci95_high_points": 0.5287013987477699,
+                "separated": false,
+                "stable_streak": 0
+              }
+            ],
+            "full_pool_candidate_count": 529
+          },
+          {
+            "pick_index": 68,
+            "round": 12,
+            "player_id": "20232024_0326",
+            "status": "RESOLVED_WITHIN_ADAPTIVE_RACE",
+            "fallback_used": false,
+            "final_budget": 16,
+            "max_budget": 32,
+            "one_rollout_leader": "20232024_0326",
+            "final_leader": "20232024_0326",
+            "final_runner_up": "20232024_0037",
+            "final_runner_up_gap_points": 0.851145382395388,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0326",
+                "candidate_count": 524,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0326",
+                "candidate_count": 42,
+                "worst_ci95_high_points": 1.2705627705627693,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0326",
+                "candidate_count": 6,
+                "worst_ci95_high_points": 0.6723978798736556,
+                "separated": false,
+                "stable_streak": 2
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0326",
+                "candidate_count": 3,
+                "worst_ci95_high_points": 0.32005506265476524,
+                "separated": false,
+                "stable_streak": 3
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0326",
+                "candidate_count": 3,
+                "worst_ci95_high_points": -0.2694192892053612,
+                "separated": true,
+                "stable_streak": 4
+              }
+            ],
+            "full_pool_candidate_count": 524
+          },
+          {
+            "pick_index": 75,
+            "round": 13,
+            "player_id": "20232024_0509",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 32,
+            "max_budget": 32,
+            "one_rollout_leader": "20232024_0347",
+            "final_leader": "20232024_0509",
+            "final_runner_up": "20232024_0461",
+            "final_runner_up_gap_points": 0.08145066738816789,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0347",
+                "candidate_count": 517,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0347",
+                "candidate_count": 36,
+                "worst_ci95_high_points": 4.422077922077936,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0461",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 1.9442780801004842,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0347",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 1.2799902431168424,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0076",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 0.9040724034647292,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 32,
+                "leader": "20232024_0509",
+                "candidate_count": 11,
+                "worst_ci95_high_points": 0.7246067829170433,
+                "separated": false,
+                "stable_streak": 0
+              }
+            ],
+            "full_pool_candidate_count": 517
+          },
+          {
+            "pick_index": 80,
+            "round": 14,
+            "player_id": "20232024_0315",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 32,
+            "max_budget": 32,
+            "one_rollout_leader": "20232024_0569",
+            "final_leader": "20232024_0315",
+            "final_runner_up": "20232024_0010",
+            "final_runner_up_gap_points": 0.11724386724387102,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0569",
+                "candidate_count": 512,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0569",
+                "candidate_count": 48,
+                "worst_ci95_high_points": 1.2680375180374996,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0569",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 0.6897496499532654,
+                "separated": false,
+                "stable_streak": 2
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0315",
+                "candidate_count": 10,
+                "worst_ci95_high_points": 0.8875685655108863,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0010",
+                "candidate_count": 8,
+                "worst_ci95_high_points": 0.4305808656181189,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 32,
+                "leader": "20232024_0315",
+                "candidate_count": 7,
+                "worst_ci95_high_points": 0.17007470195837593,
+                "separated": false,
+                "stable_streak": 0
+              }
+            ],
+            "full_pool_candidate_count": 512
+          },
+          {
+            "pick_index": 87,
+            "round": 15,
+            "player_id": "20232024_0076",
+            "status": "RESOLVED_WITHIN_ADAPTIVE_RACE",
+            "fallback_used": false,
+            "final_budget": 64,
+            "max_budget": 64,
+            "one_rollout_leader": "20232024_0347",
+            "final_leader": "20232024_0076",
+            "final_runner_up": "20232024_0156",
+            "final_runner_up_gap_points": 0.1879847582972617,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0347",
+                "candidate_count": 505,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0347",
+                "candidate_count": 39,
+                "worst_ci95_high_points": 1.883838383838374,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0347",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 0.7157781136293728,
+                "separated": false,
+                "stable_streak": 2
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0569",
+                "candidate_count": 11,
+                "worst_ci95_high_points": 0.45978007128813875,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0076",
+                "candidate_count": 8,
+                "worst_ci95_high_points": 0.2515477504901819,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 32,
+                "leader": "20232024_0076",
+                "candidate_count": 7,
+                "worst_ci95_high_points": 0.04102242348582805,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 64,
+                "leader": "20232024_0076",
+                "candidate_count": 5,
+                "worst_ci95_high_points": -0.017930284640008204,
+                "separated": true,
+                "stable_streak": 2
+              }
+            ],
+            "full_pool_candidate_count": 505
+          },
+          {
+            "pick_index": 92,
+            "round": 16,
+            "player_id": "20232024_0118",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 64,
+            "max_budget": 64,
+            "one_rollout_leader": "20232024_0118",
+            "final_leader": "20232024_0118",
+            "final_runner_up": "20232024_0588",
+            "final_runner_up_gap_points": 0.11414366883116725,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0118",
+                "candidate_count": 500,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0588",
+                "candidate_count": 41,
+                "worst_ci95_high_points": 1.415584415584438,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0588",
+                "candidate_count": 12,
+                "worst_ci95_high_points": 0.30920469773078774,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0118",
+                "candidate_count": 7,
+                "worst_ci95_high_points": 0.1255672425805549,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0118",
+                "candidate_count": 6,
+                "worst_ci95_high_points": 0.23129463124995012,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 32,
+                "leader": "20232024_0118",
+                "candidate_count": 5,
+                "worst_ci95_high_points": 0.03313349591089526,
+                "separated": false,
+                "stable_streak": 2
+              },
+              {
+                "budget": 64,
+                "leader": "20232024_0118",
+                "candidate_count": 4,
+                "worst_ci95_high_points": 0.04391176053469806,
+                "separated": false,
+                "stable_streak": 3
+              }
+            ],
+            "full_pool_candidate_count": 500
+          },
+          {
+            "pick_index": 99,
+            "round": 17,
+            "player_id": "20232024_0010",
+            "status": "UNRESOLVED_MAX_BUDGET",
+            "fallback_used": true,
+            "final_budget": 64,
+            "max_budget": 64,
+            "one_rollout_leader": "20232024_0485",
+            "final_leader": "20232024_0010",
+            "final_runner_up": "20232024_0588",
+            "final_runner_up_gap_points": 0.0608766233766286,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0485",
+                "candidate_count": 493,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0010",
+                "candidate_count": 42,
+                "worst_ci95_high_points": 1.2323232323231905,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0010",
+                "candidate_count": 7,
+                "worst_ci95_high_points": 0.008352173285801762,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0010",
+                "candidate_count": 4,
+                "worst_ci95_high_points": 0.08211218424355413,
+                "separated": false,
+                "stable_streak": 2
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0588",
+                "candidate_count": 3,
+                "worst_ci95_high_points": 0.1740668220968519,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 32,
+                "leader": "20232024_0010",
+                "candidate_count": 3,
+                "worst_ci95_high_points": 0.04299493825861789,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 64,
+                "leader": "20232024_0010",
+                "candidate_count": 3,
+                "worst_ci95_high_points": 0.007836042295474598,
+                "separated": false,
+                "stable_streak": 1
+              }
+            ],
+            "full_pool_candidate_count": 493
+          },
+          {
+            "pick_index": 104,
+            "round": 18,
+            "player_id": "20232024_0485",
+            "status": "RESOLVED_WITHIN_ADAPTIVE_RACE",
+            "fallback_used": false,
+            "final_budget": 32,
+            "max_budget": 64,
+            "one_rollout_leader": "20232024_0485",
+            "final_leader": "20232024_0485",
+            "final_runner_up": "20232024_0247",
+            "final_runner_up_gap_points": 0.3083288239538188,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0485",
+                "candidate_count": 488,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0485",
+                "candidate_count": 40,
+                "worst_ci95_high_points": 0.8124098124098132,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0247",
+                "candidate_count": 7,
+                "worst_ci95_high_points": 0.7694832272021197,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0485",
+                "candidate_count": 7,
+                "worst_ci95_high_points": 0.5433759406654516,
+                "separated": false,
+                "stable_streak": 0
+              },
+              {
+                "budget": 16,
+                "leader": "20232024_0485",
+                "candidate_count": 7,
+                "worst_ci95_high_points": 0.03833830270310451,
+                "separated": false,
+                "stable_streak": 1
+              },
+              {
+                "budget": 32,
+                "leader": "20232024_0485",
+                "candidate_count": 3,
+                "worst_ci95_high_points": -0.11632074232428169,
+                "separated": true,
+                "stable_streak": 2
+              }
+            ],
+            "full_pool_candidate_count": 488
+          },
+          {
+            "pick_index": 111,
+            "round": 19,
+            "player_id": "20232024_0463",
+            "status": "RESOLVED_WITHIN_ADAPTIVE_RACE",
+            "fallback_used": false,
+            "final_budget": 8,
+            "max_budget": 64,
+            "one_rollout_leader": "20232024_0463",
+            "final_leader": "20232024_0463",
+            "final_runner_up": "20232024_0023",
+            "final_runner_up_gap_points": 0.2254689754689787,
+            "stages": [
+              {
+                "budget": 1,
+                "leader": "20232024_0463",
+                "candidate_count": 481,
+                "source": "full_pool"
+              },
+              {
+                "budget": 2,
+                "leader": "20232024_0463",
+                "candidate_count": 41,
+                "worst_ci95_high_points": -0.2254689754689787,
+                "separated": true,
+                "stable_streak": 1
+              },
+              {
+                "budget": 4,
+                "leader": "20232024_0463",
+                "candidate_count": 3,
+                "worst_ci95_high_points": -0.2254689754689787,
+                "separated": true,
+                "stable_streak": 2
+              },
+              {
+                "budget": 8,
+                "leader": "20232024_0463",
+                "candidate_count": 3,
+                "worst_ci95_high_points": -0.2254689754689787,
+                "separated": true,
+                "stable_streak": 3
+              }
+            ],
+            "full_pool_candidate_count": 481
+          }
+        ],
+        "elapsed_seconds": 3381.255459423
+      },
+      "outcome": {
+        "mean_weekly_category_share": 0.4727272727272728,
+        "matchup_comparisons": 140,
+        "category_credits": {
+          "G": 0.3607142857142857,
+          "A": 0.45357142857142857,
+          "FOW": 0.014285714285714285,
+          "SOG": 0.4857142857142857,
+          "HIT": 0.5678571428571428,
+          "BLK": 0.6714285714285714,
+          "DEF": 0.6357142857142857,
+          "W": 0.42857142857142855,
+          "SVS": 0.5321428571428571,
+          "SO": 0.5,
+          "SVPCT": 0.55
+        }
+      },
+      "elapsed_seconds": 3382.344956821,
+      "confidence_reporting": {
+        "ALL": {
+          "decision_count": 19,
+          "realized_started_contribution": {
+            "started_days": 1309.0,
+            "goals": 312.0,
+            "assists": 606.0,
+            "faceoff_wins": 853.0,
+            "shots": 3104.0,
+            "hits": 1395.0,
+            "blocks": 1220.0,
+            "defense_points": 287.0,
+            "wins": 60.0,
+            "saves": 3327.0,
+            "shutouts": 0.0,
+            "shots_against": 3666.0
+          }
+        },
+        "RESOLVED": {
+          "decision_count": 4,
+          "realized_started_contribution": {
+            "started_days": 266.0,
+            "goals": 65.0,
+            "assists": 112.0,
+            "faceoff_wins": 238.0,
+            "shots": 646.0,
+            "hits": 367.0,
+            "blocks": 248.0,
+            "defense_points": 49.0,
+            "wins": 0.0,
+            "saves": 0.0,
+            "shutouts": 0.0,
+            "shots_against": 0.0
+          }
+        },
+        "UNRESOLVED": {
+          "decision_count": 15,
+          "realized_started_contribution": {
+            "started_days": 1043.0,
+            "goals": 247.0,
+            "assists": 494.0,
+            "faceoff_wins": 615.0,
+            "shots": 2458.0,
+            "hits": 1028.0,
+            "blocks": 972.0,
+            "defense_points": 238.0,
+            "wins": 60.0,
+            "saves": 3327.0,
+            "shutouts": 0.0,
+            "shots_against": 3666.0
+          }
+        },
+        "unresolved_rate": 0.7894736842105263,
+        "note": "Cohort contribution is descriptive started production, not a causal per-pick value estimate."
+      }
+    }
+  },
+  "summary": {
+    "scores": {
+      "B1": 0.5737012987012987,
+      "B2": 0.5344155844155843,
+      "B3": 0.5353896103896104,
+      "DECISION_ENGINE": 0.4727272727272728
+    },
+    "engine_minus_pp": {
+      "B1": -10.097402597402594,
+      "B2": -6.168831168831157,
+      "B3": -6.266233766233764
+    },
+    "engine_resolved_decisions": 4,
+    "engine_unresolved_decisions": 15,
+    "engine_unresolved_rate": 0.7894736842105263
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "version": "v0.3.18-historical-development",
+  "status": "DEVELOPMENT_ONLY_NOT_PROMOTION_EVIDENCE",
+  "seasons": [
+    "2022-23",
+    "2023-24"
+  ],
+  "seats_per_season": 6,
+  "completed_counterfactual_focus_drafts": 48,
+  "scores": {
+    "B1": 0.4975649350649351,
+    "B2": 0.5057900432900433,
+    "B3": 0.4993777056277056,
+    "DECISION_ENGINE": 0.5072781385281385
+  },
+  "engine_minus_baseline_pp": {
+    "B1": {
+      "mean": 0.9713203463203447,
+      "median": 1.2175324675324646,
+      "min": -11.85064935064935,
+      "max": 14.740259740259742,
+      "positive_seats": 7,
+      "negative_seats": 5,
+      "zero_seats": 0
+    },
+    "B2": {
+      "mean": 0.1488095238095242,
+      "median": -0.8279220779220803,
+      "min": -17.045454545454547,
+      "max": 14.80519480519481,
+      "positive_seats": 5,
+      "negative_seats": 7,
+      "zero_seats": 0
+    },
+    "B3": {
+      "mean": 0.790043290043288,
+      "median": -1.688311688311686,
+      "min": -9.740259740259749,
+      "max": 14.285714285714274,
+      "positive_seats": 5,
+      "negative_seats": 7,
+      "zero_seats": 0
+    }
+  },
+  "by_season": {
+    "2022-23": {
+      "scores": {
+        "B1": 0.5056818181818182,
+        "B2": 0.5178030303030303,
+        "B3": 0.5067099567099568,
+        "DECISION_ENGINE": 0.5106060606060606
+      },
+      "engine_minus_pp": {
+        "B1": 0.49242424242423866,
+        "B2": -0.7196969696969702,
+        "B3": 0.3896103896103842
+      },
+      "engine_resolved_decisions": 18,
+      "engine_unresolved_decisions": 96
+    },
+    "2023-24": {
+      "scores": {
+        "B1": 0.48944805194805197,
+        "B2": 0.49377705627705626,
+        "B3": 0.4920454545454545,
+        "DECISION_ENGINE": 0.5039502164502164
+      },
+      "engine_minus_pp": {
+        "B1": 1.450216450216446,
+        "B2": 1.0173160173160167,
+        "B3": 1.1904761904761918
+      },
+      "engine_resolved_decisions": 15,
+      "engine_unresolved_decisions": 99
+    }
+  },
+  "engine_decision_confidence": {
+    "resolved": 33,
+    "unresolved": 195,
+    "unresolved_rate": 0.8552631578947368
+  },
+  "reporting_contract": {
+    "ALL": "Final roster outcome is reported for every complete engine draft.",
+    "RESOLVED": "Resolved engine picks are reported separately by count and realized started contribution in seat artifacts.",
+    "UNRESOLVED": "Unresolved engine picks retain their label/fallback flag and are reported separately in seat artifacts.",
+    "causal_warning": "Resolved/unresolved started-production cohorts are descriptive, not causal per-pick value estimates."
+  },
+  "validation_season_2024_25_opened": false,
+  "holdout_season_2025_26_opened": false,
+  "interpretation": "Development evidence only. Any methodology change may use these seasons but must be frozen before 2024-25 validation is opened."
+}
