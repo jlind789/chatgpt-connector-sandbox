@@ -126,8 +126,10 @@ def sum_plan_by_week(data,plan,E):
 def build_season(season, cfg):
     from decision_engine.fixtures import build_fixture,count_category,ratio_category
     from decision_engine.validation import validate,canonical_hash
-    from research.drafts import pure_baseline_draft
     from research.independent import lineup_plan,expected_period_stats
+    from research.efficient_assignment import EfficientRosterSolver
+    from decision_engine.scoring import IntrinsicModel
+    from research.baselines import ReplacementAnchor,choose
 
     pre=read_csv(RUNTIME/'historical-backtest-inputs-v0.3.17'/cfg['input']/'preseason_players.csv')
     schedule=read_csv(ROOT/'data/historical'/cfg['code']/'schedule.csv')
@@ -224,12 +226,24 @@ def build_season(season, cfg):
            'public_generator_version':'HISTORICAL_CROME_EXACT_CALENDAR_V0318','keeper_mode':False}
 
     # Projection-only reference rosters; historical outcomes are not read here.
+    # Use the previously certified typed legality solver only to avoid repeating
+    # equivalent feasibility checks. Player values and baseline policies remain distinct.
+    solver=EfficientRosterSolver(d);iv=IntrinsicModel(d);anchor_ref=ReplacementAnchor(d,iv)
+    all_pool={p['player_id'] for p in d['league_players'] if p['rosterable']}
+    def fast_reference_draft(policy):
+        rosters={t:[] for t in team_ids};pool=set(all_pool)
+        for idx,team in enumerate(draft_order):
+            later=draft_order[idx+1:].count(team)
+            p=choose(policy,rosters[team],pool,later,solver,iv,anchor_ref)
+            if p is None:raise RuntimeError(f'{season} reference {policy} no feasible pick at {idx}')
+            pool.remove(p);rosters[team].append(p)
+        for team,ids in rosters.items():
+            if not solver.best(ids,terminal=True):raise RuntimeError(f'{season} reference {policy} invalid final roster {team}')
+        return rosters
     ref_rosters=[]
     for policy in ('B1','B2','B3'):
-        dr=pure_baseline_draft(world,policy)
-        if dr['status']!='COMPLETE':raise RuntimeError(f'{season} reference {policy} failed: {dr["status"]}')
-        for team,roster in sorted(dr['rosters'].items()):
-            ref_rosters.append((policy,team,roster))
+        rosters=fast_reference_draft(policy)
+        for team,roster in sorted(rosters.items()):ref_rosters.append((policy,team,roster))
     E=expected_period_stats(d);field=[];ref_trace=[]
     for policy,team,roster in ref_rosters:
         plan=lineup_plan(d,roster)
