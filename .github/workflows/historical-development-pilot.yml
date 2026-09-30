@@ -6,12 +6,15 @@ on:
       - '.github/workflows/historical-development-pilot.yml'
       - 'scripts/run_historical_development.py'
   workflow_dispatch:
+  issues:
+    types: [opened]
 
 permissions:
   contents: write
 
 jobs:
   pilot-2022:
+    if: github.event_name != 'issues' || startsWith(github.event.issue.title, 'RUN_HISTORICAL_PILOT_2022')
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
