@@ -1,0 +1,34 @@
+name: Build historical NHL outcomes
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-historical-nhl.yml'
+      - 'scripts/fetch_historical_nhl.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch 2022-23 and 2023-24 official NHL outcomes
+        run: python scripts/fetch_historical_nhl.py 20222023 20232024
+      - name: Commit generated historical datasets
+        run: |
+          git config user.name "chatgpt-historical-data"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/historical
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Add 2022-23 and 2023-24 NHL historical outcomes"
+            git push
+          fi
