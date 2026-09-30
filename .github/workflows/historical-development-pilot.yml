@@ -26,14 +26,23 @@ jobs:
           rm -rf runtime_v0317/data
           ln -s ../data runtime_v0317/data
       - name: Run 2022-23 one-seat development pilot
+        id: pilot
+        continue-on-error: true
         env:
           PYTHONPATH: runtime_v0317
         run: |
+          mkdir -p results/historical_development/pilot_20222023
+          set +e
           python scripts/run_historical_development.py 20222023 \
             --root runtime_v0317 \
             --output results/historical_development/pilot_20222023 \
-            --focus-limit 1
-      - name: Commit pilot results
+            --focus-limit 1 \
+            > results/historical_development/pilot_20222023/workflow.log 2>&1
+          status=$?
+          echo "exit_code=$status" >> "$GITHUB_OUTPUT"
+          cat results/historical_development/pilot_20222023/workflow.log
+          exit 0
+      - name: Commit pilot results or diagnostics
         run: |
           git config user.name "chatgpt-historical-backtest"
           git config user.email "actions@users.noreply.github.com"
@@ -41,7 +50,10 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Add 2022-23 historical development pilot"
+            git commit -m "Record 2022-23 historical development pilot"
             git pull --rebase origin main
             git push
           fi
+      - name: Fail visibly if pilot failed
+        if: steps.pilot.outputs.exit_code != '0'
+        run: exit 1
