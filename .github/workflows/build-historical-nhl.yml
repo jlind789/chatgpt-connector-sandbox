@@ -21,11 +21,17 @@ jobs:
           python-version: '3.12'
       - name: Fetch 2022-23 and 2023-24 official NHL outcomes
         run: python scripts/fetch_historical_nhl.py 20222023 20232024
+      - name: Unpack frozen development runtime
+        run: |
+          rm -rf runtime_v0317
+          mkdir -p runtime_v0317
+          unzip -q Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip -d runtime_v0317
+          find runtime_v0317 -maxdepth 4 -type f | sort > runtime_v0317/FILELIST.txt
       - name: Commit generated historical datasets
         run: |
           git config user.name "chatgpt-historical-data"
           git config user.email "actions@users.noreply.github.com"
-          git add data/historical
+          git add data/historical runtime_v0317
           if git diff --cached --quiet; then
             echo "No changes"
           else
