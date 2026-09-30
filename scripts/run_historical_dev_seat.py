@@ -95,10 +95,35 @@ def adaptive_pick(snapshot):
                    'final_runner_up_gap_points':-final_rows[1]['mean_diff_vs_leader_points'] if final_rows and len(final_rows)>1 else None,
                    'stages':stages,'full_pool_candidate_count':len(one['ranked_candidates'])}
 
-def engine_draft(world,focus):
-    from research.drafts import DraftContext,snapshot_for
+def draft_primitives(world):
+    from research.efficient_assignment import EfficientRosterSolver
+    from decision_engine.scoring import IntrinsicModel
+    from research.baselines import ReplacementAnchor
+    data=world['snapshot'];solver=EfficientRosterSolver(data);iv=IntrinsicModel(data);anchor=ReplacementAnchor(data,iv)
+    return solver,iv,anchor
+
+def baseline_draft(world,focus,policy):
+    from research.baselines import choose
+    solver,iv,anchor=draft_primitives(world)
     rosters={t:list(world['initial_rosters'][t]) for t in world['team_ids']}
-    context=DraftContext(world);solver=context.solver;iv=context.iv;anchor=context.replacement
+    pool={p['player_id'] for p in world['snapshot']['league_players'] if p['rosterable']}
+    trace=[];started=time.perf_counter()
+    for index,team in enumerate(world['draft_order']):
+        later=world['draft_order'][index+1:].count(team)
+        agent=policy if team==focus else ('B1','B3','B2')[index%3]
+        p=choose(agent,rosters[team],pool,later,solver,iv,anchor)
+        if p is None:return {'status':'NO_FEASIBLE_PICK','trace':trace,'rosters':rosters,'policy':policy,'focus_team':focus}
+        pool.remove(p);rosters[team].append(p);trace.append({'pick_index':index,'team_id':team,'policy':agent,'player_id':p})
+    for t,ids in rosters.items():
+        if not solver.best(ids,terminal=True):raise AssertionError('invalid baseline completed roster '+t)
+    return {'status':'COMPLETE','policy':policy,'focus_team':focus,'rosters':{t:sorted(v) for t,v in rosters.items()},
+            'trace':trace,'elapsed_seconds':time.perf_counter()-started}
+
+def engine_draft(world,focus):
+    from research.drafts import snapshot_for
+    from research.baselines import choose
+    rosters={t:list(world['initial_rosters'][t]) for t in world['team_ids']}
+    solver,iv,anchor=draft_primitives(world)
     taken={p for ids in rosters.values() for p in ids}
     pool={p['player_id'] for p in world['snapshot']['league_players'] if p['rosterable']}-taken
     trace=[];decisions=[];started=time.perf_counter()
@@ -111,7 +136,7 @@ def engine_draft(world,focus):
             policy='DECISION_ENGINE'
         else:
             policy=('B1','B3','B2')[index%3]
-            chosen=__import__('research.baselines',fromlist=['choose']).choose(policy,rosters[team],pool,later,solver,iv,anchor)
+            chosen=choose(policy,rosters[team],pool,later,solver,iv,anchor)
         if chosen is None:return {'status':'NO_FEASIBLE_PICK','trace':trace,'rosters':rosters,'decisions':decisions}
         if chosen not in pool:raise AssertionError('unavailable pick')
         reason=solver.candidate_reason(rosters[team],chosen,pool,later)
@@ -122,10 +147,6 @@ def engine_draft(world,focus):
         if not solver.best(ids,terminal=True):raise AssertionError('invalid completed roster '+t)
     return {'status':'COMPLETE','trace':trace,'rosters':{t:sorted(v) for t,v in rosters.items()},
             'decisions':decisions,'elapsed_seconds':time.perf_counter()-started}
-
-def baseline_draft(world,focus,policy):
-    from research.drafts import DraftContext,play_draft
-    return play_draft(world,focus,policy,DraftContext(world),'MIXED')
 
 def active_slots(data):
     slots=[]
