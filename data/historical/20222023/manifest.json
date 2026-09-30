@@ -4,7 +4,7 @@
   "player_game_rows": 52460,
   "faceoff_events": 74659,
   "schedule_sha256": "74cdf31dfd7578ad2d0ea6f7928a22b3eaf82b1f3f1be7ccba0cf053078c23e0",
-  "player_game_stats_sha256": "9f62be24c381068986e2fe453e36f5884fddb9221f1cfdd48b45374f6212deb5",
+  "player_game_stats_sha256": "43b954c17932c5cf91672364129ee63b9f5d698057b2c85cb6dc9a64fb90ab41",
   "source": "Official NHL Web API api-web.nhle.com",
   "endpoints": [
     "/v1/schedule/{date}",
