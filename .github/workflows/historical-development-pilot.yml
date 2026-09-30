@@ -1,0 +1,47 @@
+name: Historical development pilot
+
+on:
+  push:
+    paths:
+      - '.github/workflows/historical-development-pilot.yml'
+      - 'scripts/run_historical_development.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pilot-2022:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen runtime dependencies
+        run: python -m pip install -r runtime_v0317/requirements-tested.txt
+      - name: Link frozen runtime to historical outcome data
+        run: |
+          rm -rf runtime_v0317/data
+          ln -s ../data runtime_v0317/data
+      - name: Run 2022-23 one-seat development pilot
+        env:
+          PYTHONPATH: runtime_v0317
+        run: |
+          python scripts/run_historical_development.py 20222023 \
+            --root runtime_v0317 \
+            --output results/historical_development/pilot_20222023 \
+            --focus-limit 1
+      - name: Commit pilot results
+        run: |
+          git config user.name "chatgpt-historical-backtest"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/historical_development
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Add 2022-23 historical development pilot"
+            git pull --rebase origin main
+            git push
+          fi
