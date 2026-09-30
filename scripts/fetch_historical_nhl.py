@@ -119,12 +119,16 @@ def parse_one(schedule_row):
                     "SO": 0,
                     "SA": 0,
                 })
-        for p in team.get("goalies", []) or []:
+        goalie_list = team.get("goalies", []) or []
+        opponent_side = "homeTeam" if side == "awayTeam" else "awayTeam"
+        opponent_score = int((box.get(opponent_side) or {}).get("score") or 0)
+        for p in goalie_list:
             pid = int(p.get("playerId"))
             decision = str(p.get("decision") or "")
             ga = int(p.get("goalsAgainst") or 0)
             saves = int(p.get("saves") or 0)
             sa = int(p.get("shotsAgainst") or 0)
+            shared_shutout = len(goalie_list) != 1
             rows.append({
                 "season": schedule_row["season"],
                 "game_id": gid,
@@ -137,7 +141,7 @@ def parse_one(schedule_row):
                 "G": 0, "A": 0, "FOW": 0, "SOG": 0, "HIT": 0, "BLK": 0, "DEF": 0,
                 "W": 1 if decision == "W" else 0,
                 "SVS": saves,
-                "SO": 1 if decision == "W" and ga == 0 else 0,
+                "SO": 1 if decision == "W" and ga == 0 and opponent_score == 0 and not shared_shutout else 0,
                 "SA": sa,
             })
     return rows, {
@@ -212,3 +216,5 @@ if __name__ == "__main__":
     main()
 
 # trigger: historical-v0.3.17
+
+# shutout rule hardened: only single-goalie team shutouts are credited
