@@ -166,7 +166,13 @@ def build_season(season, cfg):
                     period_count=len(dates),rollouts=1,required_active=True)
     d['schema_version']='decision-engine-input/0.3.1'
     d['capability_profile']='HORIZON_SPLIT_EXACT_CALENDAR_V1'
-    d['created_at']=json.loads((RUNTIME/'historical-backtest-inputs-v0.3.17/manifest.json').read_text())['seasons'][season]['declared_cutoff']+'T12:00:00Z'
+    cutoff=json.loads((RUNTIME/'historical-backtest-inputs-v0.3.17/manifest.json').read_text())['seasons'][season]['declared_cutoff']+'T12:00:00Z'
+    d['created_at']=cutoff
+    d['roster_state']['as_of']=cutoff
+    for lp in d['league_players']:lp['eligibility']['as_of']=cutoff
+    d['reference_model']['as_of']=cutoff
+    d['exposure_model']['as_of']=cutoff
+    d['source_metadata']['imported_at']=cutoff
     d['league']['season']=season;d['league']['draft_config']['draft_type']='SNAKE'
     d['league']['scoring_objective']={'type':'H2H_EACH_CATEGORY','category_tie_credit':0.5,'both_undefined_tie_credit':0.5,
         'rounding':'HALF_EVEN','horizon_id':f'{cfg["code"]}_full_regular_season_weeks','evaluation_period_count':week_count}
@@ -198,7 +204,7 @@ def build_season(season, cfg):
     d['methodology_config'].update({'seed':1700+int(cfg['code'][:4]),'rollouts':1,'soft_policy_lambda':0.005,
         'neutral_temperature':6,'max_search_nodes':1000000,'max_lineup_plans':250000,'continuation_policy':'B3'})
     d['source_metadata']={'source_platform':'ESPN','adapter_name':'historical_crome_exact_calendar_v0318',
-        'adapter_version':'0.3.18','imported_at':'2026-09-30T00:00:00Z'}
+        'adapter_version':'0.3.18','imported_at':cutoff}
     # Player display names + identity are historical workbook identities, not current platform identities.
     for p in d['players']:p['display_name']=names[p['player_id']]
     # Placeholder normalization cohort is every rosterable frozen preseason player.
