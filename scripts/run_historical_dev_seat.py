@@ -63,6 +63,9 @@ def adaptive_pick(snapshot):
     from research.incremental_runner import ExactCalendarIncrementalRunner
     from research.convergence import paired_rows,race_survivors,resolution
     d=json.loads(json.dumps(snapshot))
+    # Computational completion ceiling only. The bounded lineup menu, scoring,
+    # projections, and convergence policy are unchanged.
+    d['methodology_config']['max_lineup_plans']=10000000
     remaining=sum(p['actor_id']=='USER' for p in d['draft_state']['remaining_picks'])
     ceiling=max_budget(remaining)
     d['methodology_config']['rollouts']=1
