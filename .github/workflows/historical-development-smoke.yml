@@ -1,0 +1,58 @@
+name: Historical development smoke
+
+on:
+  push:
+    paths:
+      - 'scripts/run_historical_development.py'
+      - 'Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip'
+      - '.github/workflows/historical-development-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare frozen development runtime
+        run: |
+          rm -rf historical-work
+          mkdir historical-work
+          unzip -q Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip -d historical-work
+          cp -r data historical-work/
+          cp scripts/run_historical_development.py historical-work/
+      - name: Verify runner syntax
+        working-directory: historical-work
+        run: python -m py_compile run_historical_development.py
+      - name: Run 2022-23 one-seat smoke backtest
+        working-directory: historical-work
+        env:
+          PYTHONPATH: .
+        run: |
+          python run_historical_development.py 20222023 \
+            --root . \
+            --output results/historical_development/smoke_20222023 \
+            --focus-limit 1
+      - name: Copy smoke artifacts
+        run: |
+          rm -rf results/historical_development/smoke_20222023
+          mkdir -p results/historical_development
+          cp -r historical-work/results/historical_development/smoke_20222023 results/historical_development/
+      - name: Commit smoke artifacts
+        run: |
+          git config user.name "chatgpt-historical-backtest"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/historical_development/smoke_20222023
+          if git diff --cached --quiet; then
+            echo "No result changes"
+          else
+            git commit -m "Add 2022-23 historical development smoke results"
+            git pull --rebase origin main
+            git push
+          fi
