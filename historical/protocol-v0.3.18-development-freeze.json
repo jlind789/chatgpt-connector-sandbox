@@ -1,0 +1,103 @@
+{
+  "protocol_version": "historical-development/0.3.18-preoutcome-freeze",
+  "engine_protocol": "v0.3.16-historical-freeze",
+  "methodology": "M0.3",
+  "historical_outcomes_used_to_define_protocol": false,
+  "season_roles": {
+    "2022-23": "DEVELOPMENT",
+    "2023-24": "DEVELOPMENT",
+    "2024-25": "VALIDATION_UNTOUCHED",
+    "2025-26": "HOLDOUT_UNTOUCHED"
+  },
+  "development_seasons": ["2022-23", "2023-24"],
+  "league": {
+    "teams": 6,
+    "draft_type": "SNAKE",
+    "rounds": 19,
+    "keepers": 0,
+    "roster_slots": {
+      "C": 2,
+      "LW": 2,
+      "RW": 2,
+      "D": 4,
+      "UTIL": 2,
+      "G": 2,
+      "BN": 5
+    },
+    "categories": ["G", "A", "FOW", "SOG", "HIT", "BLK", "DEF", "W", "SVS", "SO", "SVPCT"],
+    "manager_soft_preferences": [],
+    "goalie_minimum": null,
+    "lineup_lock": "DAILY",
+    "scoring_objective": "H2H_EACH_CATEGORY",
+    "category_tie_credit": 0.5
+  },
+  "fantasy_calendar": {
+    "week_definition": "MONDAY_SUNDAY",
+    "anchor": "MONDAY_CONTAINING_FIRST_REGULAR_SEASON_GAME",
+    "end": "WEEK_CONTAINING_LAST_REGULAR_SEASON_GAME",
+    "playoffs": "NONE_FOR_BENCHMARK",
+    "note": "This is a standardized historical benchmark, not a claim about historical HoH league settings."
+  },
+  "forecast_exposure": {
+    "season_projection_drives_intrinsic": true,
+    "lineup_exposure_uses_exact_official_team_game_dates": true,
+    "per_team_game_expected_stat": "SEASON_PROJECTION_TOTAL_DIVIDED_BY_TEAM_REGULAR_SEASON_GAME_COUNT",
+    "projection_reconciliation": "EXPOSURE_SUBSET_OR_EQUAL_TO_PROJECTION_HORIZON"
+  },
+  "reference_field": {
+    "generation": "PROJECTION_ONLY_BASELINE_MIXTURE",
+    "baselines": ["B1", "B2", "B3"],
+    "rosters_per_baseline": 6,
+    "historical_outcomes_used": false
+  },
+  "draft_comparators": ["B1", "B2", "B3", "DECISION_ENGINE"],
+  "opponent_policy": {
+    "mode": "MIXED",
+    "rotation": ["B1", "B3", "B2"],
+    "same_for_all_focus_policy_comparisons": true
+  },
+  "focus_seats": [1, 2, 3, 4, 5, 6],
+  "decision_engine": {
+    "timing_value": 0,
+    "continuation_policy": "B3",
+    "adaptive_convergence": {
+      "epsilon_utility_points": 0.10,
+      "minimum_resolution_budget": 8,
+      "max_budget_by_user_picks_remaining": [
+        {"minimum_remaining": 12, "maximum_rollouts": 16},
+        {"minimum_remaining": 6, "maximum_rollouts": 32},
+        {"minimum_remaining": 0, "maximum_rollouts": 64}
+      ],
+      "initial_full_pool_budget": 1,
+      "broad_pool": {
+        "top_decision_score": 24,
+        "top_intrinsic": 16,
+        "include_B1": true,
+        "include_B3": true,
+        "sentinel_ranks": [30, 50, 75, 100, 150, 200, 250, 300],
+        "min_keep": 3,
+        "max_keep": 12
+      },
+      "unresolved_action": "FINAL_BUDGET_MEAN_LEADER_FALLBACK_KEEP_UNRESOLVED_LABEL"
+    }
+  },
+  "realized_outcome_evaluation": {
+    "source": "OFFICIAL_NHL_WEB_API",
+    "lineup_management": "COMMON_FORECAST_ONLY_DAILY_MATCHING_WITH_REALIZED_DRESSED_AVAILABILITY",
+    "lineup_choice_uses_realized_stats": false,
+    "actual_participation_may_define_daily_availability": true,
+    "waivers_trades_free_agents": "DISABLED",
+    "primary_metric": "MEAN_WEEKLY_H2H_CATEGORY_SHARE_VS_OTHER_FIVE_DRAFTED_TEAMS",
+    "ratio_stat": "SVPCT_FROM_TOTAL_SAVES_DIVIDED_BY_TOTAL_SHOTS_AGAINST",
+    "DEF": "GOALS_PLUS_ASSISTS_BY_DEFENSE_ELIGIBLE_PLAYER",
+    "FOW": "OFFICIAL_PLAY_BY_PLAY_FACE_OFF_WINS"
+  },
+  "reporting": {
+    "required_engine_decision_cohorts": ["ALL", "RESOLVED", "UNRESOLVED"],
+    "report_unresolved_rate": true,
+    "report_draft_completion_failures": true,
+    "human_picks_are_ground_truth": false,
+    "legacy_HoH_Lab_advice_is_ground_truth": false,
+    "development_results_are_promotion_eligible": false
+  }
+}
