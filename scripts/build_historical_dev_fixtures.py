@@ -271,3 +271,5 @@ def main():
     (OUT/'fixture_summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     print(json.dumps(summary,indent=2))
 if __name__=='__main__':main()
+
+# trigger: v0.3.18-fixture-build
