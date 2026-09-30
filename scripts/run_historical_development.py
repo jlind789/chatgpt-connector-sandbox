@@ -259,7 +259,7 @@ def make_snapshot(season, players, calendar, cutoff, initial_rosters=None, refer
     others=[t for t in TEAMS if t!=focus]
     amap={t:f"anon{i+1}" for i,t in enumerate(others)}
     actors=["USER" if t==focus else amap[t] for t in draft_order]
-    team_objects=[{"team_id":t,"league_id":f"hist_{season}","display_name":t} for t in TEAMS]
+    team_objects=[{"team_id":t,"league_id":f"historical_{season}_hoh_shape","display_name":t} for t in TEAMS]
     d={
         "schema_version":"decision-engine-input/0.3.1",
         "capability_profile":"HORIZON_SPLIT_EXACT_CALENDAR_V1",
@@ -279,7 +279,7 @@ def make_snapshot(season, players, calendar, cutoff, initial_rosters=None, refer
         },
         "manager_profile":{"manager_profile_id":"historical_standard","position_policies":[],"category_preferences":[],"strategy_settings":{"opponent_strategy_mode":"POOL_ONLY","timing_enabled":False}},
         "players":[{"player_id":p["player_id"],"sport_code":"HOCKEY","display_name":p["display_name"]} for p in players],
-        "league_players":[{"player_id":p["player_id"],"league_id":f"hist_{season}","rosterable":True,"eligibility":{"position_ids":p["eligibility"],"source":"IMPORT","as_of":cutoff},"status_tags":[]} for p in players],
+        "league_players":[{"player_id":p["player_id"],"league_id":f"historical_{season}_hoh_shape","rosterable":True,"eligibility":{"position_ids":p["eligibility"],"source":"IMPORT","as_of":cutoff},"status_tags":[]} for p in players],
         "projection_set":{"projection_set_id":f"crome_{season}_preseason","sport_code":"HOCKEY","season":season,"horizon_id":f"season_{season}","source":"Frozen Crome aggregate preseason workbook","created_at":cutoff,"player_projections":pp},
         "teams":team_objects,
         "roster_state":{"as_of":cutoff,"teams":[{"team_id":t,"entries":[{"player_id":p,"acquisition_type":"KEEPER"} for p in initial_rosters[t]]} for t in TEAMS]},
