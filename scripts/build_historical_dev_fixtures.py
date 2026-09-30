@@ -198,7 +198,7 @@ def build_season(season, cfg):
         'horizon_id':f'{cfg["code"]}_full_regular_season_weeks','as_of':d['created_at'],'data_kind':'ARCHIVED','exposure_stat_key':'games',
         'periods':[{'period_id':day,'lock_group_id':day,'starts_at':day+'T12:00:00Z','evaluation_group_id':weeks[day]} for day in dates],
         'evaluation_groups':[{'evaluation_group_id':f'W{i:02d}','weight':1.0} for i in range(1,week_count+1)],
-        'projection_reconciliation_mode':'WEIGHTED_EVALUATION_GROUPS_TO_PROJECTION_TOTAL',
+        'projection_reconciliation_mode':'EXPOSURE_SUBSET_OF_PROJECTION_HORIZON',
         'forecast_scenarios':[{'scenario_id':'crome_mean_exact_calendar','probability':1.0,'player_period_stats':pstats}]}
     d['manager_profile']['position_policies']=[]
     d['methodology_config'].update({'seed':1700+int(cfg['code'][:4]),'rollouts':1,'soft_policy_lambda':0.005,
