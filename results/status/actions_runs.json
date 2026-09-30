@@ -1,24 +1,68 @@
 [
   {
-    "id": 36771123748,
+    "id": 36771175936,
     "name": "Historical development pilot",
+    "event": "issues",
+    "status": "completed",
+    "conclusion": "skipped",
+    "head_sha": "ecd0cedfbaa38c491e9b29ba5e6963469e808fc1",
+    "created_at": "2026-09-30T20:14:06Z",
+    "updated_at": "2026-09-30T20:14:07Z",
+    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36771175936"
+  },
+  {
+    "id": 36771175645,
+    "name": "Workflow status probe",
     "event": "issues",
     "status": "in_progress",
     "conclusion": null,
+    "head_sha": "ecd0cedfbaa38c491e9b29ba5e6963469e808fc1",
+    "created_at": "2026-09-30T20:14:06Z",
+    "updated_at": "2026-09-30T20:14:11Z",
+    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36771175645"
+  },
+  {
+    "id": 36771175578,
+    "name": "Issue trigger heartbeat",
+    "event": "issues",
+    "status": "completed",
+    "conclusion": "skipped",
+    "head_sha": "ecd0cedfbaa38c491e9b29ba5e6963469e808fc1",
+    "created_at": "2026-09-30T20:14:06Z",
+    "updated_at": "2026-09-30T20:14:07Z",
+    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36771175578"
+  },
+  {
+    "id": 36771175552,
+    "name": "Historical setup smoke",
+    "event": "issues",
+    "status": "completed",
+    "conclusion": "skipped",
+    "head_sha": "ecd0cedfbaa38c491e9b29ba5e6963469e808fc1",
+    "created_at": "2026-09-30T20:14:06Z",
+    "updated_at": "2026-09-30T20:14:07Z",
+    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36771175552"
+  },
+  {
+    "id": 36771123748,
+    "name": "Historical development pilot",
+    "event": "issues",
+    "status": "completed",
+    "conclusion": "skipped",
     "head_sha": "6bba06cf655934fac5e6574496eb18632b39edb9",
     "created_at": "2026-09-30T20:13:41Z",
-    "updated_at": "2026-09-30T20:13:42Z",
+    "updated_at": "2026-09-30T20:13:52Z",
     "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36771123748"
   },
   {
     "id": 36771123746,
     "name": "Workflow status probe",
     "event": "issues",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "success",
     "head_sha": "6bba06cf655934fac5e6574496eb18632b39edb9",
     "created_at": "2026-09-30T20:13:41Z",
-    "updated_at": "2026-09-30T20:13:46Z",
+    "updated_at": "2026-09-30T20:13:58Z",
     "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36771123746"
   },
   {
@@ -284,49 +328,5 @@
     "created_at": "2026-09-30T20:09:40Z",
     "updated_at": "2026-09-30T20:09:53Z",
     "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36770661592"
-  },
-  {
-    "id": 36770661536,
-    "name": "Historical development pilot",
-    "event": "issues",
-    "status": "completed",
-    "conclusion": "skipped",
-    "head_sha": "2b7031c6607924cf4153473568ec9f41535d6c80",
-    "created_at": "2026-09-30T20:09:40Z",
-    "updated_at": "2026-09-30T20:09:48Z",
-    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36770661536"
-  },
-  {
-    "id": 36770661485,
-    "name": "Issue trigger heartbeat",
-    "event": "issues",
-    "status": "completed",
-    "conclusion": "skipped",
-    "head_sha": "2b7031c6607924cf4153473568ec9f41535d6c80",
-    "created_at": "2026-09-30T20:09:40Z",
-    "updated_at": "2026-09-30T20:09:41Z",
-    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36770661485"
-  },
-  {
-    "id": 36770645874,
-    "name": "Issue trigger heartbeat",
-    "event": "issues",
-    "status": "completed",
-    "conclusion": "skipped",
-    "head_sha": "2b7031c6607924cf4153473568ec9f41535d6c80",
-    "created_at": "2026-09-30T20:09:31Z",
-    "updated_at": "2026-09-30T20:09:33Z",
-    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36770645874"
-  },
-  {
-    "id": 36770645784,
-    "name": "Historical development pilot",
-    "event": "issues",
-    "status": "completed",
-    "conclusion": "failure",
-    "head_sha": "2b7031c6607924cf4153473568ec9f41535d6c80",
-    "created_at": "2026-09-30T20:09:31Z",
-    "updated_at": "2026-09-30T20:10:48Z",
-    "html_url": "https://github.com/jlind789/chatgpt-connector-sandbox/actions/runs/36770645784"
   }
 ]
