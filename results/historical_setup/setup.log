@@ -1,0 +1,23 @@
+{
+  "status": "OK",
+  "players": 515,
+  "excluded": [
+    {
+      "player": "Zach Aston-Reese",
+      "team": "FA",
+      "reason": "NO_SCHEDULE_TEAM"
+    }
+  ],
+  "weeks": 28,
+  "keepers_per_team": {
+    "team1": 7,
+    "team2": 7,
+    "team3": 7,
+    "team4": 7,
+    "team5": 7,
+    "team6": 7
+  },
+  "reference_rows": 18,
+  "reference_trace_rows": 18,
+  "snapshot_sha256": "5a602b6571f4242f7c291e02107dca2697a3296a244f6c2433547b48ed49f084"
+}
