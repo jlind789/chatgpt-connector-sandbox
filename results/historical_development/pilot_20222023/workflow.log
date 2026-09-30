@@ -1,14 +1,17 @@
 Traceback (most recent call last):
-  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 548, in <module>
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 566, in <module>
     if __name__=="__main__":main()
                             ^^^^^^
-  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 546, in main
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 564, in main
     a=ap.parse_args();run(a.season,Path(a.root),Path(a.output),a.focus_limit)
                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 479, in run
-    pre=make_snapshot(season,players,cal,meta["cutoff"],draft_order=snake_order(19))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 270, in make_snapshot
-    "league_id":league_id,"sport_code":"HOCKEY","season":season,
-                ^^^^^^^^^
-NameError: name 'league_id' is not defined
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 501, in run
+    reference,ref_trace=build_reference_field(world)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/scripts/run_historical_development.py", line 352, in build_reference_field
+    draft=play_draft(world,TEAMS[0],policy,context=baseline_context(world),opponent_style=policy)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/chatgpt-connector-sandbox/chatgpt-connector-sandbox/runtime_v0317/research/drafts.py", line 100, in play_draft
+    return {'status':'COMPLETE','policy':policy,'focus_team':focus,'rosters':{t:sorted(p) for t,p in rosters.items()},'trace':trace,'elapsed_seconds':time.perf_counter()-started,'cache_dependency_sha256':context.cache_dependency_sha256}
+                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'types.SimpleNamespace' object has no attribute 'cache_dependency_sha256'
