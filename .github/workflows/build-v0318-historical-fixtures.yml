@@ -6,6 +6,7 @@ on:
       - 'scripts/build_historical_dev_fixtures.py'
       - 'historical/protocol-v0.3.18-development-freeze.json'
       - 'Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip'
+      - '.github/workflows/build-v0318-historical-fixtures.yml'
   workflow_dispatch:
 
 permissions:
@@ -26,8 +27,18 @@ jobs:
           unzip -o Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip -d .runtime_v0317
           pip install -r .runtime_v0317/requirements-tested.txt
       - name: Build and validate historical development fixtures
-        run: python scripts/build_historical_dev_fixtures.py
-      - name: Commit generated fixture freeze
+        id: fixture_build
+        continue-on-error: true
+        run: |
+          mkdir -p historical/generated_v0318
+          set +e
+          python scripts/build_historical_dev_fixtures.py > historical/generated_v0318/build.log 2>&1
+          CODE=$?
+          cat historical/generated_v0318/build.log
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
+          echo "$CODE" > historical/generated_v0318/build.exit_code
+          exit 0
+      - name: Commit generated fixture artifacts or diagnostic log
         run: |
           git config user.name "chatgpt-historical-data"
           git config user.email "actions@users.noreply.github.com"
@@ -35,7 +46,10 @@ jobs:
           if git diff --cached --quiet; then
             echo "No fixture changes"
           else
-            git commit -m "Freeze v0.3.18 historical development fixtures"
+            git commit -m "Record v0.3.18 historical fixture build"
             git pull --rebase origin main
             git push
           fi
+      - name: Fail if fixture build failed
+        if: steps.fixture_build.outputs.exit_code != '0'
+        run: exit 1
