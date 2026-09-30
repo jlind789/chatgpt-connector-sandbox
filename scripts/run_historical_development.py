@@ -14,6 +14,7 @@ import unicodedata
 from collections import defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from types import SimpleNamespace
 
 from decision_engine.validation import validate, canonical_hash, EngineError
 from decision_engine.scoring import IntrinsicModel
@@ -22,6 +23,7 @@ from research.baselines import ReplacementAnchor, choose
 from research.drafts import DraftContext, play_draft, snapshot_for
 from research.independent import lineup_plan, score_matchup
 from research.incremental_runner import ExactCalendarIncrementalRunner
+from research.hoh_replay_runner import ReplayEfficientRosterSolver
 from research.convergence import paired_rows, race_survivors, resolution
 from research.historical_protocol import historical_action, RESOLVED, UNRESOLVED
 
@@ -300,9 +302,24 @@ def snake_order(rounds: int, teams=TEAMS):
     return order
 
 
+def baseline_context(world):
+    """Exact efficient legality context for baseline/reference drafts.
+
+    This changes no draft values or legality semantics. It replaces the legacy
+    exhaustive terminal assignment enumeration with the frozen constrained
+    solver already used by the full-roster research runner.
+    """
+    data=world["snapshot"]
+    iv=IntrinsicModel(data)
+    solver=ReplayEfficientRosterSolver(data)
+    solver.initialize([])
+    replacement=ReplacementAnchor(data,iv)
+    return SimpleNamespace(solver=solver,iv=iv,replacement=replacement)
+
+
 def generate_b1_keepers(base_snapshot, players):
     world={"snapshot":base_snapshot,"family":"HISTORICAL_KEEPER_SEED","world_seed":317,"team_ids":TEAMS,"initial_rosters":{t:[] for t in TEAMS},"draft_order":snake_order(19),"roster_size":19}
-    ctx=DraftContext(world)
+    ctx=baseline_context(world)
     rosters={t:[] for t in TEAMS};pool={p["player_id"] for p in players}
     trace=[]
     for i,t in enumerate(world["draft_order"]):
@@ -332,7 +349,7 @@ def aggregate_forecast_by_week(data, plan):
 def build_reference_field(world):
     rows=[];trace=[];data=world["snapshot"]
     for policy in ("B1","B2","B3"):
-        draft=play_draft(world,TEAMS[0],policy,opponent_style=policy)
+        draft=play_draft(world,TEAMS[0],policy,context=baseline_context(world),opponent_style=policy)
         if draft["status"]!="COMPLETE": raise RuntimeError(f"Reference {policy} failed")
         for team, roster in sorted(draft["rosters"].items()):
             plan=lineup_plan(data,roster)
@@ -391,7 +408,7 @@ def adaptive_engine_pick(data, ordinal):
 
 def adaptive_draft(world, focus):
     data=world["snapshot"]
-    base_ctx=DraftContext(world)
+    base_ctx=baseline_context(world)
     solver=base_ctx.solver;iv=base_ctx.iv;anchor=base_ctx.replacement
     rosters=copy.deepcopy(world["initial_rosters"]);taken={p for xs in rosters.values() for p in xs};pool={p["player_id"] for p in data["league_players"] if p["rosterable"]}-taken
     trace=[];engine_decisions=[];ordinal=0
@@ -488,7 +505,7 @@ def run(season, root: Path, output: Path, focus_limit=6):
     # Commit all draft choices before reading realized player-game data.
     for focus in TEAMS[:focus_limit]:
         commitments["strategies"][focus]={}
-        ctx=DraftContext(world)
+        ctx=baseline_context(world)
         for pol in ("B1","B2","B3"):
             d=play_draft(world,focus,pol,ctx,"MIXED")
             if d["status"]!="COMPLETE": raise RuntimeError(f"{season}/{focus}/{pol} failed: {d['status']}")
@@ -552,3 +569,5 @@ if __name__=="__main__":main()
 # trigger: historical-development-pilot-2022
 
 # trigger: historical-pilot-diagnostics
+
+# execution fix: baseline/reference terminal legality uses frozen efficient constrained solver
