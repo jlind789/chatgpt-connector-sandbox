@@ -4,6 +4,11 @@ on:
   workflow_run:
     workflows: ["Build v0.3.18 historical development fixtures"]
     types: [completed]
+  push:
+    paths:
+      - 'scripts/run_historical_dev_seat.py'
+      - 'scripts/aggregate_historical_dev.py'
+      - '.github/workflows/run-v0318-historical-development.yml'
   workflow_dispatch:
 
 permissions:
@@ -11,7 +16,7 @@ permissions:
 
 jobs:
   seats:
-    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.run_number >= 5)
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.run_number >= 5)
     strategy:
       fail-fast: false
       max-parallel: 6
