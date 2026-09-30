@@ -267,7 +267,7 @@ def make_snapshot(season, players, calendar, cutoff, initial_rosters=None, refer
         "created_at":cutoff,
         "user_team_id":focus,
         "league":{
-            "league_id":f"historical_{season}_hoh_shape","sport_code":"HOCKEY","season":season,
+            "league_id":league_id,"sport_code":"HOCKEY","season":season,
             "platform":"MANUAL","ownership_mode":"EXCLUSIVE","number_of_teams":6,
             "positions":positions,"roster_slots":roster_slots(),"categories":categories(),
             "league_constraints":[{"constraint_id":"terminal_roster_total","type":"TOTAL_ROSTER_COUNT","position_ids":[],"counting_basis":"ASSIGNED_POSITION","scope_slot_classes":["ACTIVE","BENCH","INJURED_RESERVE","RESERVE"],"operator":"EQ","limit":19,"evaluation_phase":"ROSTER_COMPLETION"}],
