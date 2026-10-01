@@ -1,0 +1,223 @@
+{
+  "version": "v0.3.19-convergence-calibration",
+  "status": "DEVELOPMENT_ONLY_NOT_PROMOTION_EVIDENCE",
+  "source_results_version": "v0.3.18-historical-development",
+  "source_unresolved_decisions": 195,
+  "calibrated_unresolved_decisions": 195,
+  "overall": {
+    "decisions": 195,
+    "resolved_at_128": 44,
+    "resolved_terminal": 85,
+    "unresolved_after_512": 110,
+    "first_resolution_budget_histogram": {
+      "128": 19,
+      "256": 20,
+      "32": 7,
+      "512": 19,
+      "64": 20,
+      "NONE": 110
+    },
+    "terminal_budget_histogram": {
+      "128": 44,
+      "256": 21,
+      "512": 130
+    },
+    "original_fallback_matches_128": 121,
+    "original_fallback_matches_terminal": 112,
+    "original_fallback_terminal_match_rate": 0.5743589743589743,
+    "terminal_resolved_fallback_match_rate": 0.7294117647058823,
+    "terminal_unresolved_fallback_match_rate": 0.45454545454545453,
+    "mean_terminal_runner_up_gap_points": 0.25046721579924747,
+    "mean_elapsed_seconds": 488.8195338975538
+  },
+  "by_original_max_budget": {
+    "16": {
+      "decisions": 91,
+      "resolved_at_128": 24,
+      "resolved_terminal": 45,
+      "unresolved_after_512": 46,
+      "first_resolution_budget_histogram": {
+        "128": 7,
+        "256": 8,
+        "32": 7,
+        "512": 13,
+        "64": 10,
+        "NONE": 46
+      },
+      "terminal_budget_histogram": {
+        "128": 24,
+        "256": 8,
+        "512": 59
+      },
+      "original_fallback_matches_128": 45,
+      "original_fallback_matches_terminal": 42,
+      "original_fallback_terminal_match_rate": 0.46153846153846156,
+      "terminal_resolved_fallback_match_rate": 0.6444444444444445,
+      "terminal_unresolved_fallback_match_rate": 0.2826086956521739,
+      "mean_terminal_runner_up_gap_points": 0.36557157964803083,
+      "mean_elapsed_seconds": 673.249180177934
+    },
+    "32": {
+      "decisions": 68,
+      "resolved_at_128": 17,
+      "resolved_terminal": 32,
+      "unresolved_after_512": 36,
+      "first_resolution_budget_histogram": {
+        "128": 9,
+        "256": 8,
+        "512": 5,
+        "64": 10,
+        "NONE": 36
+      },
+      "terminal_budget_histogram": {
+        "128": 17,
+        "256": 9,
+        "512": 42
+      },
+      "original_fallback_matches_128": 46,
+      "original_fallback_matches_terminal": 42,
+      "original_fallback_terminal_match_rate": 0.6176470588235294,
+      "terminal_resolved_fallback_match_rate": 0.78125,
+      "terminal_unresolved_fallback_match_rate": 0.4722222222222222,
+      "mean_terminal_runner_up_gap_points": 0.1884049222198349,
+      "mean_elapsed_seconds": 424.79198907867647
+    },
+    "64": {
+      "decisions": 36,
+      "resolved_at_128": 3,
+      "resolved_terminal": 8,
+      "unresolved_after_512": 28,
+      "first_resolution_budget_histogram": {
+        "128": 3,
+        "256": 4,
+        "512": 1,
+        "NONE": 28
+      },
+      "terminal_budget_histogram": {
+        "128": 3,
+        "256": 4,
+        "512": 29
+      },
+      "original_fallback_matches_128": 30,
+      "original_fallback_matches_terminal": 28,
+      "original_fallback_terminal_match_rate": 0.7777777777777778,
+      "terminal_resolved_fallback_match_rate": 1.0,
+      "terminal_unresolved_fallback_match_rate": 0.7142857142857143,
+      "mean_terminal_runner_up_gap_points": 0.07673773949815758,
+      "mean_elapsed_seconds": 143.56329045780555
+    }
+  },
+  "by_season": {
+    "2022-23": {
+      "decisions": 96,
+      "resolved_at_128": 30,
+      "resolved_terminal": 45,
+      "unresolved_after_512": 51,
+      "first_resolution_budget_histogram": {
+        "128": 12,
+        "256": 7,
+        "32": 4,
+        "512": 8,
+        "64": 14,
+        "NONE": 51
+      },
+      "terminal_budget_histogram": {
+        "128": 30,
+        "256": 7,
+        "512": 59
+      },
+      "original_fallback_matches_128": 60,
+      "original_fallback_matches_terminal": 55,
+      "original_fallback_terminal_match_rate": 0.5729166666666666,
+      "terminal_resolved_fallback_match_rate": 0.7333333333333333,
+      "terminal_unresolved_fallback_match_rate": 0.43137254901960786,
+      "mean_terminal_runner_up_gap_points": 0.2932575587299713,
+      "mean_elapsed_seconds": 456.5096187891042
+    },
+    "2023-24": {
+      "decisions": 99,
+      "resolved_at_128": 14,
+      "resolved_terminal": 40,
+      "unresolved_after_512": 59,
+      "first_resolution_budget_histogram": {
+        "128": 7,
+        "256": 13,
+        "32": 3,
+        "512": 11,
+        "64": 6,
+        "NONE": 59
+      },
+      "terminal_budget_histogram": {
+        "128": 14,
+        "256": 14,
+        "512": 71
+      },
+      "original_fallback_matches_128": 61,
+      "original_fallback_matches_terminal": 57,
+      "original_fallback_terminal_match_rate": 0.5757575757575758,
+      "terminal_resolved_fallback_match_rate": 0.725,
+      "terminal_unresolved_fallback_match_rate": 0.4745762711864407,
+      "mean_terminal_runner_up_gap_points": 0.20897354992703046,
+      "mean_elapsed_seconds": 520.1503606693839
+    }
+  },
+  "checkpoint_diagnostics": {
+    "8": {
+      "decisions_reaching_budget": 195,
+      "resolved_under_rule": 0,
+      "mean_candidate_count": 9.03076923076923,
+      "mean_runner_up_gap_points": 0.27922887297887267,
+      "mean_worst_ci95_high_points": 1.1468812772275097
+    },
+    "16": {
+      "decisions_reaching_budget": 195,
+      "resolved_under_rule": 0,
+      "mean_candidate_count": 7.312820512820513,
+      "mean_runner_up_gap_points": 0.2528779091279087,
+      "mean_worst_ci95_high_points": 0.6801134684398502
+    },
+    "32": {
+      "decisions_reaching_budget": 195,
+      "resolved_under_rule": 7,
+      "mean_candidate_count": 5.78974358974359,
+      "mean_runner_up_gap_points": 0.2280589780589779,
+      "mean_worst_ci95_high_points": 0.4471693258627043
+    },
+    "64": {
+      "decisions_reaching_budget": 195,
+      "resolved_under_rule": 26,
+      "mean_candidate_count": 4.8,
+      "mean_runner_up_gap_points": 0.243625009250009,
+      "mean_worst_ci95_high_points": 0.21119642594305488
+    },
+    "128": {
+      "decisions_reaching_budget": 195,
+      "resolved_under_rule": 44,
+      "mean_candidate_count": 3.9641025641025642,
+      "mean_runner_up_gap_points": 0.24543129035316585,
+      "mean_worst_ci95_high_points": 0.07797450050928502
+    },
+    "256": {
+      "decisions_reaching_budget": 151,
+      "resolved_under_rule": 21,
+      "mean_candidate_count": 3.7086092715231787,
+      "mean_runner_up_gap_points": 0.12730364713239345,
+      "mean_worst_ci95_high_points": 0.09266939003620879
+    },
+    "512": {
+      "decisions_reaching_budget": 130,
+      "resolved_under_rule": 20,
+      "mean_candidate_count": 3.523076923076923,
+      "mean_runner_up_gap_points": 0.1061155370237406,
+      "mean_worst_ci95_high_points": 0.04870491992187546
+    }
+  },
+  "early_resolution_stability_to_128": {
+    "first_resolved_before_128": 27,
+    "same_leader_and_resolved_at_128": 25,
+    "rate": 0.9259259259259259
+  },
+  "validation_season_2024_25_opened": false,
+  "holdout_season_2025_26_opened": false,
+  "interpretation": "Development-only convergence calibration. No historical outcome values were used by the calibration runner. Any methodology change must be frozen before validation is opened."
+}

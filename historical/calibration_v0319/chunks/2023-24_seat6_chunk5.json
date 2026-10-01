@@ -1,0 +1,15 @@
+{
+  "version": "v0.3.19-convergence-calibration-chunk",
+  "protocol_version": "historical-development/0.3.19-convergence-calibration",
+  "season": "2023-24",
+  "seat": 6,
+  "chunk": 5,
+  "round_range": [
+    17,
+    19
+  ],
+  "source_seat_result_sha256": "900d5a5878a1d81ef7672d720b9ee2b9e90802d6a7d16df903700e5a1c13ea63",
+  "source_unresolved_decisions_in_chunk": 0,
+  "rows": [],
+  "elapsed_seconds": 0.0003557149999551257
+}
