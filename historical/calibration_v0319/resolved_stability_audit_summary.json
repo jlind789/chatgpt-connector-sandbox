@@ -1,0 +1,21 @@
+{
+  "version": "v0.3.19-resolved-stability-audit",
+  "source_resolved_decisions": 33,
+  "source_resolution_budget_histogram": {
+    "16": 6,
+    "32": 6,
+    "64": 7,
+    "8": 14
+  },
+  "source_leader_matches_next_checkpoint": 32,
+  "source_leader_matches_next_checkpoint_rate": 0.9696969696969697,
+  "source_leader_matches_128": 32,
+  "source_leader_matches_128_rate": 0.9696969696969697,
+  "source_leader_still_resolved_at_128": 28,
+  "source_leader_still_resolved_at_128_rate": 0.8484848484848485,
+  "resolved_at_128_any_leader": 28,
+  "mean_elapsed_seconds": 158.972272234,
+  "validation_season_2024_25_opened": false,
+  "holdout_season_2025_26_opened": false,
+  "interpretation": "Development-only stability audit of the 33 decisions that v0.3.18 had already labeled resolved."
+}

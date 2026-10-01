@@ -1,0 +1,217 @@
+{
+  "version": "v0.3.19-resolved-stability-audit",
+  "season": "2022-23",
+  "seat": 1,
+  "source_seat_result_sha256": "90da787eb76c0457aa3eb1dcfec7cea227e720d819486a98f3562f07e391e4a8",
+  "rows": [
+    {
+      "season": "2022-23",
+      "seat": 1,
+      "focus_team": "user",
+      "pick_index": 84,
+      "round": 15,
+      "player_id": "20222023_0171",
+      "elapsed_seconds": 135.68222008,
+      "source_resolution_budget": 32,
+      "source_resolved_leader": "20222023_0171",
+      "next_checkpoint_budget": 64,
+      "next_checkpoint_leader": "20222023_0171",
+      "next_checkpoint_resolved": true,
+      "source_leader_matches_next": true,
+      "source_leader_matches_128": true,
+      "resolved_at_128": true,
+      "leader_at_128": "20222023_0171",
+      "stages": [
+        {
+          "budget": 1,
+          "leader": "20222023_0177",
+          "candidate_count": 432,
+          "source": "full_pool",
+          "resolved_under_rule": false
+        },
+        {
+          "budget": 2,
+          "leader": "20222023_0177",
+          "candidate_count": 33,
+          "worst_ci95_high_points": 0.7748917748917936,
+          "separated": false,
+          "stable_streak": 1,
+          "resolved_under_rule": false,
+          "runner_up": "20222023_0441",
+          "runner_up_gap_points": 0.15331890331888864
+        },
+        {
+          "budget": 4,
+          "leader": "20222023_0441",
+          "candidate_count": 5,
+          "worst_ci95_high_points": 0.9004470674059474,
+          "separated": false,
+          "stable_streak": 0,
+          "resolved_under_rule": false,
+          "runner_up": "20222023_0171",
+          "runner_up_gap_points": 0.5050505050505055
+        },
+        {
+          "budget": 8,
+          "leader": "20222023_0171",
+          "candidate_count": 5,
+          "worst_ci95_high_points": 0.7769257830859374,
+          "separated": false,
+          "stable_streak": 0,
+          "resolved_under_rule": false,
+          "runner_up": "20222023_0441",
+          "runner_up_gap_points": 0.657242063492068
+        },
+        {
+          "budget": 16,
+          "leader": "20222023_0171",
+          "candidate_count": 4,
+          "worst_ci95_high_points": 0.05219800088720716,
+          "separated": false,
+          "stable_streak": 1,
+          "resolved_under_rule": false,
+          "runner_up": "20222023_0441",
+          "runner_up_gap_points": 0.7897050865800926
+        },
+        {
+          "budget": 32,
+          "leader": "20222023_0171",
+          "candidate_count": 4,
+          "worst_ci95_high_points": -0.11120069003623256,
+          "separated": true,
+          "stable_streak": 2,
+          "resolved_under_rule": true,
+          "runner_up": "20222023_0494",
+          "runner_up_gap_points": 0.561981421356426
+        },
+        {
+          "budget": 64,
+          "leader": "20222023_0171",
+          "candidate_count": 3,
+          "worst_ci95_high_points": -0.35300748303650187,
+          "separated": true,
+          "stable_streak": 3,
+          "resolved_under_rule": true,
+          "runner_up": "20222023_0494",
+          "runner_up_gap_points": 0.6376544462481984
+        },
+        {
+          "budget": 128,
+          "leader": "20222023_0171",
+          "candidate_count": 3,
+          "worst_ci95_high_points": -0.6118269102142833,
+          "separated": true,
+          "stable_streak": 4,
+          "resolved_under_rule": true,
+          "runner_up": "20222023_0494",
+          "runner_up_gap_points": 0.8059106691919201
+        }
+      ]
+    },
+    {
+      "season": "2022-23",
+      "seat": 1,
+      "focus_team": "user",
+      "pick_index": 107,
+      "round": 18,
+      "player_id": "20222023_0472",
+      "elapsed_seconds": 60.74178678199999,
+      "source_resolution_budget": 8,
+      "source_resolved_leader": "20222023_0472",
+      "next_checkpoint_budget": 16,
+      "next_checkpoint_leader": "20222023_0472",
+      "next_checkpoint_resolved": true,
+      "source_leader_matches_next": true,
+      "source_leader_matches_128": true,
+      "resolved_at_128": true,
+      "leader_at_128": "20222023_0472",
+      "stages": [
+        {
+          "budget": 1,
+          "leader": "20222023_0472",
+          "candidate_count": 409,
+          "source": "full_pool",
+          "resolved_under_rule": false
+        },
+        {
+          "budget": 2,
+          "leader": "20222023_0472",
+          "candidate_count": 39,
+          "worst_ci95_high_points": -0.2525252525252486,
+          "separated": true,
+          "stable_streak": 1,
+          "resolved_under_rule": false,
+          "runner_up": "20222023_0248",
+          "runner_up_gap_points": 0.2525252525252486
+        },
+        {
+          "budget": 4,
+          "leader": "20222023_0472",
+          "candidate_count": 3,
+          "worst_ci95_high_points": -0.2525252525252486,
+          "separated": true,
+          "stable_streak": 2,
+          "resolved_under_rule": false,
+          "runner_up": "20222023_0248",
+          "runner_up_gap_points": 0.2525252525252486
+        },
+        {
+          "budget": 8,
+          "leader": "20222023_0472",
+          "candidate_count": 3,
+          "worst_ci95_high_points": -0.2525252525252486,
+          "separated": true,
+          "stable_streak": 3,
+          "resolved_under_rule": true,
+          "runner_up": "20222023_0248",
+          "runner_up_gap_points": 0.2525252525252486
+        },
+        {
+          "budget": 16,
+          "leader": "20222023_0472",
+          "candidate_count": 3,
+          "worst_ci95_high_points": -0.2525252525252486,
+          "separated": true,
+          "stable_streak": 4,
+          "resolved_under_rule": true,
+          "runner_up": "20222023_0248",
+          "runner_up_gap_points": 0.2525252525252486
+        },
+        {
+          "budget": 32,
+          "leader": "20222023_0472",
+          "candidate_count": 3,
+          "worst_ci95_high_points": -0.2525252525252486,
+          "separated": true,
+          "stable_streak": 5,
+          "resolved_under_rule": true,
+          "runner_up": "20222023_0248",
+          "runner_up_gap_points": 0.2525252525252486
+        },
+        {
+          "budget": 64,
+          "leader": "20222023_0472",
+          "candidate_count": 3,
+          "worst_ci95_high_points": -0.2525252525252486,
+          "separated": true,
+          "stable_streak": 6,
+          "resolved_under_rule": true,
+          "runner_up": "20222023_0248",
+          "runner_up_gap_points": 0.2525252525252486
+        },
+        {
+          "budget": 128,
+          "leader": "20222023_0472",
+          "candidate_count": 3,
+          "worst_ci95_high_points": -0.2525252525252486,
+          "separated": true,
+          "stable_streak": 7,
+          "resolved_under_rule": true,
+          "runner_up": "20222023_0248",
+          "runner_up_gap_points": 0.2525252525252486
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 198.17561096
+}

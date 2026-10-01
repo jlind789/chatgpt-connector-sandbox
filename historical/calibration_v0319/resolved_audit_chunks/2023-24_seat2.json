@@ -1,0 +1,113 @@
+{
+  "version": "v0.3.19-resolved-stability-audit",
+  "season": "2023-24",
+  "seat": 2,
+  "source_seat_result_sha256": "852c950b510360abb596576fc5267c131fe0cf4d9749a6838c53adce183ceeb2",
+  "rows": [
+    {
+      "season": "2023-24",
+      "seat": 2,
+      "focus_team": "opponent1",
+      "pick_index": 94,
+      "round": 16,
+      "player_id": "20232024_0315",
+      "elapsed_seconds": 164.41802299399998,
+      "source_resolution_budget": 64,
+      "source_resolved_leader": "20232024_0315",
+      "next_checkpoint_budget": 128,
+      "next_checkpoint_leader": "20232024_0315",
+      "next_checkpoint_resolved": true,
+      "source_leader_matches_next": true,
+      "source_leader_matches_128": true,
+      "resolved_at_128": true,
+      "leader_at_128": "20232024_0315",
+      "stages": [
+        {
+          "budget": 1,
+          "leader": "20232024_0547",
+          "candidate_count": 498,
+          "source": "full_pool",
+          "resolved_under_rule": false
+        },
+        {
+          "budget": 2,
+          "leader": "20232024_0300",
+          "candidate_count": 41,
+          "worst_ci95_high_points": 1.4007936507936587,
+          "separated": false,
+          "stable_streak": 0,
+          "resolved_under_rule": false,
+          "runner_up": "20232024_0009",
+          "runner_up_gap_points": 0.10822510822509068
+        },
+        {
+          "budget": 4,
+          "leader": "20232024_0300",
+          "candidate_count": 12,
+          "worst_ci95_high_points": 0.6417082774147091,
+          "separated": false,
+          "stable_streak": 1,
+          "resolved_under_rule": false,
+          "runner_up": "20232024_0187",
+          "runner_up_gap_points": 0.009018759018750155
+        },
+        {
+          "budget": 8,
+          "leader": "20232024_0187",
+          "candidate_count": 11,
+          "worst_ci95_high_points": 0.7714303013020495,
+          "separated": false,
+          "stable_streak": 0,
+          "resolved_under_rule": false,
+          "runner_up": "20232024_0547",
+          "runner_up_gap_points": 0.07215007215006508
+        },
+        {
+          "budget": 16,
+          "leader": "20232024_0547",
+          "candidate_count": 10,
+          "worst_ci95_high_points": 0.44300590832969144,
+          "separated": false,
+          "stable_streak": 0,
+          "resolved_under_rule": false,
+          "runner_up": "20232024_0315",
+          "runner_up_gap_points": 0.009018759018762645
+        },
+        {
+          "budget": 32,
+          "leader": "20232024_0315",
+          "candidate_count": 9,
+          "worst_ci95_high_points": 0.04529426868171371,
+          "separated": false,
+          "stable_streak": 0,
+          "resolved_under_rule": false,
+          "runner_up": "20232024_0547",
+          "runner_up_gap_points": 0.11160714285714246
+        },
+        {
+          "budget": 64,
+          "leader": "20232024_0315",
+          "candidate_count": 6,
+          "worst_ci95_high_points": -0.09773431145193356,
+          "separated": true,
+          "stable_streak": 1,
+          "resolved_under_rule": true,
+          "runner_up": "20232024_0547",
+          "runner_up_gap_points": 0.1840390512265519
+        },
+        {
+          "budget": 128,
+          "leader": "20232024_0315",
+          "candidate_count": 3,
+          "worst_ci95_high_points": -0.14530176713975784,
+          "separated": true,
+          "stable_streak": 2,
+          "resolved_under_rule": true,
+          "runner_up": "20232024_0547",
+          "runner_up_gap_points": 0.20137197871573104
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 165.719046426
+}
