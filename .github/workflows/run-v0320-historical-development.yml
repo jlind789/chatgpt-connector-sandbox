@@ -1,0 +1,67 @@
+name: Run v0.3.20 historical development backtests
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/run-v0320-historical-development.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  seats:
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        season: ["2022-23", "2023-24"]
+        seat: [1, 2, 3, 4, 5, 6]
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install frozen runtime
+        run: |
+          unzip -o Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip -d .runtime_v0317
+          pip install -r .runtime_v0317/requirements-tested.txt
+      - name: Verify v0.3.20 runner syntax
+        run: |
+          python -m py_compile scripts/run_historical_v0320_seat.py
+          python -m py_compile scripts/aggregate_historical_v0320.py
+      - name: Run v0.3.20 development seat
+        run: python scripts/run_historical_v0320_seat.py "${{ matrix.season }}" "${{ matrix.seat }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v0320-${{ matrix.season }}-seat${{ matrix.seat }}
+          path: historical/seat_results_v0320/${{ matrix.season }}_seat${{ matrix.seat }}.json
+          retention-days: 30
+
+  aggregate:
+    needs: seats
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v0320-*
+          path: historical/seat_results_v0320
+          merge-multiple: true
+      - name: Aggregate v0.3.20 results
+        run: python scripts/aggregate_historical_v0320.py
+      - name: Commit v0.3.20 development results
+        run: |
+          git config user.name "chatgpt-historical-development"
+          git config user.email "actions@users.noreply.github.com"
+          git add historical/seat_results_v0320 historical/results_v0320
+          if git diff --cached --quiet; then
+            echo "No result changes"
+          else
+            git commit -m "Add v0.3.20 historical development backtest results"
+            git pull --rebase origin main
+            git push
+          fi
