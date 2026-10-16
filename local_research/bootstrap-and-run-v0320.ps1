@@ -70,4 +70,17 @@ if ($Workers -gt 0) {
 Write-Host ""
 Write-Host "Starting/resuming local v0.3.20 development research..."
 & $Python @argsList
-exit $LASTEXITCODE
+if ($LASTEXITCODE -ne 0) {
+    exit $LASTEXITCODE
+}
+
+Write-Host ""
+Write-Host "Creating results bundle for review..."
+& $Python (Join-Path $Root "scripts\bundle_local_v0320_results.py")
+if ($LASTEXITCODE -ne 0) {
+    throw "Research completed, but results bundling failed."
+}
+
+Write-Host ""
+Write-Host "v0.3.20 development research completed and was bundled successfully."
+exit 0
