@@ -22,7 +22,9 @@ The first run will:
 4. install the frozen tested dependencies;
 5. prepare `.runtime_v0317`;
 6. run a frozen development-only equivalence certification;
-7. only if certification passes, start/resume the 12-seat v0.3.20 development run.
+7. only if certification passes, start/resume the 12-seat v0.3.20 development run;
+8. aggregate the completed results;
+9. create a review bundle ZIP.
 
 ## Safety
 
@@ -98,5 +100,11 @@ Seat results:
 Aggregated development result:
 
 `historical/local_runs/v0320-development/results/summary.json`
+
+Automatic review bundle:
+
+`historical/local_runs/v0320-development/v0320-development-results-bundle.zip`
+
+The bundle includes the manifest, status, completion marker, all 12 seat results, aggregate results, logs, and SHA-256 checksums. It intentionally excludes bulky per-decision checkpoints.
 
 Do not open 2024-25 validation based solely on run completion. Apply the pre-registered development gate first.
