@@ -51,10 +51,38 @@ if (-not (Test-Path (Join-Path $Runtime "decision_engine"))) {
     Expand-Archive -Path (Join-Path $Root "Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip") -DestinationPath $Runtime -Force
 }
 
-# Never call Test-Path with an empty string: PowerShell treats that as a parameter error.
-# The previous launcher could fail here before ever offering the intended prompt.
+# Before running certification, verify the selected ZIP is the *research results*
+# bundle, not the similarly named download of the GitHub repository.
 function Test-BundlePath([string]$Candidate) {
     return ((-not [string]::IsNullOrWhiteSpace($Candidate)) -and (Test-Path -LiteralPath $Candidate -PathType Leaf))
+}
+
+function Test-V0320ResultsBundle([string]$Candidate) {
+    if (-not (Test-BundlePath $Candidate)) { return $false }
+    try {
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+        $archive = [System.IO.Compression.ZipFile]::OpenRead($Candidate)
+        try {
+            $entries = @{}
+            foreach ($entry in $archive.Entries) {
+                $entries[$entry.FullName.Replace('\', '/')] = $true
+            }
+            foreach ($required in @('manifest.json', 'BUNDLE-CHECKSUMS.json', 'COMPLETE.json')) {
+                if (-not $entries.ContainsKey($required)) { return $false }
+            }
+            foreach ($season in @('2022-23','2023-24')) {
+                foreach ($seat in 1..6) {
+                    $name = ('seat_results/{0}_seat{1}.json' -f $season,$seat)
+                    if (-not $entries.ContainsKey($name)) { return $false }
+                }
+            }
+            return $true
+        } finally {
+            $archive.Dispose()
+        }
+    } catch {
+        return $false
+    }
 }
 
 if ([string]::IsNullOrWhiteSpace($SourceBundle)) {
@@ -64,28 +92,32 @@ if ([string]::IsNullOrWhiteSpace($SourceBundle)) {
         (Join-Path (Join-Path $env:USERPROFILE "Downloads") "v0320-development-results-bundle.zip")
     )
     foreach ($Candidate in $Candidates) {
-        if (Test-BundlePath $Candidate) {
+        if (Test-V0320ResultsBundle $Candidate) {
             $SourceBundle = $Candidate
             break
         }
     }
 }
-while (-not (Test-BundlePath $SourceBundle)) {
+
+while (-not (Test-V0320ResultsBundle $SourceBundle)) {
     Write-Host ""
-    Write-Host "The original v0.3.20 research ZIP has not yet been located."
-    Write-Host "Look for v0320-development-results-bundle.zip in the previous extracted repo's"
-    Write-Host "historical\local_runs\v0320-development folder."
-    $SourceBundle = Read-Host "Paste the full ZIP file path (or type Q to stop)"
+    if (Test-BundlePath $SourceBundle) {
+        Write-Host "That ZIP exists, but is NOT the v0.3.20 research RESULTS bundle." -ForegroundColor Yellow
+        Write-Host "Do not select chatgpt-connector-sandbox-dev-v0321-shadow-research.zip."
+    } else {
+        Write-Host "The original v0.3.20 research results ZIP has not yet been located."
+    }
+    Write-Host "Locate v0320-development-results-bundle.zip in the PREVIOUS extracted repo:"
+    Write-Host "historical\local_runs\v0320-development\v0320-development-results-bundle.zip"
+    $SourceBundle = Read-Host "Paste the full results ZIP path (or type Q to stop)"
     if ([string]::IsNullOrWhiteSpace($SourceBundle)) {
-        throw "No source bundle was provided. Research was not started."
+        throw "No source bundle provided; shadow research was not started."
     }
     $SourceBundle = $SourceBundle.Trim().Trim('"').Trim("'")
     if ($SourceBundle -ieq "Q") { throw "Cancelled at the source-bundle prompt." }
-    if (-not (Test-BundlePath $SourceBundle)) {
-        Write-Host "That file does not exist at the given path. Please try again." -ForegroundColor Yellow
-    }
 }
 $SourceBundle = (Resolve-Path -LiteralPath $SourceBundle).Path
+Write-Host "Verified v0.3.20 results ZIP: $SourceBundle" -ForegroundColor Green
 
 $env:OMP_NUM_THREADS="1"
 $env:OPENBLAS_NUM_THREADS="1"
