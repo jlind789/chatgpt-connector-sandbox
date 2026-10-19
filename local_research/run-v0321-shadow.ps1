@@ -51,26 +51,42 @@ if (-not (Test-Path (Join-Path $Runtime "decision_engine"))) {
     Expand-Archive -Path (Join-Path $Root "Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip") -DestinationPath $Runtime -Force
 }
 
+# Never call Test-Path with an empty string: PowerShell treats that as a parameter error.
+# The previous launcher could fail here before ever offering the intended prompt.
+function Test-BundlePath([string]$Candidate) {
+    return (-not [string]::IsNullOrWhiteSpace($Candidate)) -and
+        (Test-Path -LiteralPath $Candidate -PathType Leaf)
+}
+
 if ([string]::IsNullOrWhiteSpace($SourceBundle)) {
-    foreach ($candidate in @(
+    $Candidates = @(
         (Join-Path $Root "v0320-development-results-bundle.zip"),
+        (Join-Path $Root "historical\local_runs\v0320-development\v0320-development-results-bundle.zip"),
         (Join-Path (Join-Path $env:USERPROFILE "Downloads") "v0320-development-results-bundle.zip")
-    )) {
-        if (Test-Path $candidate) {
-            $SourceBundle = $candidate
+    )
+    foreach ($Candidate in $Candidates) {
+        if (Test-BundlePath $Candidate) {
+            $SourceBundle = $Candidate
             break
         }
     }
 }
-if (-not (Test-Path $SourceBundle -PathType Leaf)) {
+while (-not (Test-BundlePath $SourceBundle)) {
     Write-Host ""
-    $SourceBundle = Read-Host "Enter full path to your v0320-development-results-bundle.zip"
-    $SourceBundle = $SourceBundle.Trim('"')
+    Write-Host "The original v0.3.20 research ZIP has not yet been located."
+    Write-Host "Look for v0320-development-results-bundle.zip in the previous extracted repo's"
+    Write-Host "historical\local_runs\v0320-development folder."
+    $SourceBundle = Read-Host "Paste the full ZIP file path (or type Q to stop)"
+    if ([string]::IsNullOrWhiteSpace($SourceBundle)) {
+        throw "No source bundle was provided. Research was not started."
+    }
+    $SourceBundle = $SourceBundle.Trim().Trim('"').Trim("'")
+    if ($SourceBundle -ieq "Q") { throw "Cancelled at the source-bundle prompt." }
+    if (-not (Test-BundlePath $SourceBundle)) {
+        Write-Host "That file does not exist at the given path. Please try again." -ForegroundColor Yellow
+    }
 }
-if (-not (Test-Path $SourceBundle -PathType Leaf)) {
-    throw "Cannot locate the original v0.3.20 results bundle."
-}
-$SourceBundle = (Resolve-Path $SourceBundle).Path
+$SourceBundle = (Resolve-Path -LiteralPath $SourceBundle).Path
 
 $env:OMP_NUM_THREADS="1"
 $env:OPENBLAS_NUM_THREADS="1"
