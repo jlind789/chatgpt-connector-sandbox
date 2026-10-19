@@ -7,23 +7,45 @@ $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent $PSScriptRoot
 Set-Location $Root
 
-function Resolve-Uv {
+function Find-Uv {
     $cmd = Get-Command uv -ErrorAction SilentlyContinue
     if ($cmd) { return $cmd.Source }
 
-    $candidate = Join-Path $env:USERPROFILE ".local\bin\uv.exe"
-    if (Test-Path $candidate) { return $candidate }
+    $candidates = @(
+        (Join-Path $env:USERPROFILE ".local\bin\uv.exe"),
+        (Join-Path $env:USERPROFILE ".cargo\bin\uv.exe"),
+        (Join-Path $env:LOCALAPPDATA "Programs\uv\uv.exe")
+    )
+    foreach ($candidate in $candidates) {
+        if (Test-Path $candidate) { return $candidate }
+    }
+    return $null
+}
+
+function Resolve-Uv {
+    $found = Find-Uv
+    if ($found) { return $found }
 
     $winget = Get-Command winget -ErrorAction SilentlyContinue
     if ($winget) {
-        Write-Host "uv not found. Installing with winget..."
+        Write-Host "uv not found. Trying winget..."
         & winget install --id astral-sh.uv -e --accept-source-agreements --accept-package-agreements
-        if (Test-Path $candidate) { return $candidate }
-        $cmd = Get-Command uv -ErrorAction SilentlyContinue
-        if ($cmd) { return $cmd.Source }
+        $found = Find-Uv
+        if ($found) { return $found }
+        Write-Host "winget did not make uv available; trying the official Astral installer..."
+    } else {
+        Write-Host "winget is unavailable; trying the official Astral installer..."
     }
 
-    throw "uv is required but could not be installed automatically. Install uv from https://docs.astral.sh/uv/ and run this script again."
+    $installer = Join-Path $env:TEMP "uv-install.ps1"
+    Invoke-WebRequest -UseBasicParsing "https://astral.sh/uv/install.ps1" -OutFile $installer
+    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $installer
+    Remove-Item $installer -Force -ErrorAction SilentlyContinue
+
+    $found = Find-Uv
+    if ($found) { return $found }
+
+    throw "uv installation completed but uv.exe could not be located. Close this window, open a new PowerShell window, run 'uv --version', and then run RUN-RESEARCH.cmd again."
 }
 
 $Uv = Resolve-Uv
