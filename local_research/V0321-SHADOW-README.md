@@ -24,7 +24,9 @@ It searches for your v0.3.20 bundle in:
 - this repo's root directory;
 - your Windows Downloads folder.
 
-If it can't find the ZIP, it asks you to type or paste its full path.
+If it can't find the ZIP, it asks you to type or paste its full path. The path can be copied in Windows File Explorer: navigate to the old extracted repository, open `historical\\local_runs\\v0320-development`, right-click `v0320-development-results-bundle.zip` and select **Copy as path**; paste the resulting quoted path at the prompt.
+
+If the launcher fails with `Test-Path : Cannot bind argument to parameter 'Path' because it is an empty string`, the downloaded launcher predates commit `28a8d0f4aca20f0cd6a686387bba6e38ee84c7ea`. Replace only `local_research\\run-v0321-shadow.ps1` with the latest file from this branch, or download the current branch ZIP. Previously installed Python and uv do not need to be installed again.
 
 It starts at most **4 local seat workers** by default. Individual completed decisions are checkpointed, so you may rerun the launcher to resume after interruption.
 
