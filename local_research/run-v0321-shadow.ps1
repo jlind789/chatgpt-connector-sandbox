@@ -54,8 +54,7 @@ if (-not (Test-Path (Join-Path $Runtime "decision_engine"))) {
 # Never call Test-Path with an empty string: PowerShell treats that as a parameter error.
 # The previous launcher could fail here before ever offering the intended prompt.
 function Test-BundlePath([string]$Candidate) {
-    return (-not [string]::IsNullOrWhiteSpace($Candidate)) -and
-        (Test-Path -LiteralPath $Candidate -PathType Leaf)
+    return ((-not [string]::IsNullOrWhiteSpace($Candidate)) -and (Test-Path -LiteralPath $Candidate -PathType Leaf))
 }
 
 if ([string]::IsNullOrWhiteSpace($SourceBundle)) {
