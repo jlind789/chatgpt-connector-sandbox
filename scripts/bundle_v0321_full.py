@@ -21,7 +21,8 @@ def main():
     run=args.run_dir.resolve()
     files=[]
     for name in ("manifest.json","status.json","commitment_manifest.json",
-                 "results/summary.json","results/gate_report.json"):
+                 "results/summary.json","results/gate_report.json",
+                 "restart_certification/PASS.json", "restart_certification/resumed-run.log"):
         path=run/name
         if not path.is_file():raise RuntimeError(f"Missing {name}")
         files.append(path)
