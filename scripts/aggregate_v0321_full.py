@@ -66,6 +66,15 @@ def main():
     if sum(counts.values())!=228:
         raise RuntimeError("Decision-status counts do not sum to 228")
     rate=counts["unconfirmed_edge"]/228
+    restart=json.loads((run/"restart_certification/PASS.json").read_text(encoding="utf-8"))
+    restart_ok=(
+        restart.get("equivalent") is True
+        and restart.get("comparison")=="BYTE_IDENTICAL_OUTCOME_BLIND_COMMITMENT"
+        and restart.get("commitment_sha256")==commitment_index["sha256"]["2022-23_seat1.json"]
+    )
+    if not restart_ok:
+        raise RuntimeError("Missing/invalid restart certification")
+
     reference=json.loads(BASELINE.read_text(encoding="utf-8"))
     baseline_equal=all(
         abs(scores[p]-reference["scores"][p])<=1e-12
@@ -82,6 +91,7 @@ def main():
             "12_complete_engine_seats":True,
             "B1_B2_B3_match_v0318":baseline_equal,
             "commitment_precedes_outcome_load":True,
+            "restart_equivalence_certified":restart_ok,
             "228_decisions_exactly_one_status":True,
             "unconfirmed_rate_at_most_15pct":rate<=0.15,
             "practical_ties_preserve_status":True,
