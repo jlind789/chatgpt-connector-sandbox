@@ -31,6 +31,7 @@ SOURCE_FILES=[
     ROOT/"historical/generated_v0318/2023-24/world.json.gz",
     CERT,
     SCRIPTS/"run_v0321_full_local.py",
+    ROOT/"runtime_v0317/requirements-tested.txt",
 ]
 JOBS=[(s,i) for s in ("2022-23","2023-24") for i in range(1,7)]
 
@@ -127,6 +128,7 @@ def main():
         "version":"v0.3.21-full-development-local/1",
         "created_at":now(),
         "files_sha256":proofs,
+        "python_version":".".join(map(str,sys.version_info[:3])),
         "protocol_max_rollouts":1024,
         "seasons":["2022-23","2023-24"],
         "seats_per_season":6,
@@ -135,7 +137,7 @@ def main():
     }
     if manifest_path.exists():
         old=json.loads(manifest_path.read_text(encoding="utf-8"))
-        for key in ("version","files_sha256","protocol_max_rollouts","seasons",
+        for key in ("version","files_sha256","python_version","protocol_max_rollouts","seasons",
                     "seats_per_season","phase_boundary","python_hash_seed_policy"):
             if old.get(key)!=provenance[key]:
                 raise RuntimeError(f"Stale run provenance: {key}; choose a NEW --run-dir")
