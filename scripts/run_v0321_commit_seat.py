@@ -66,6 +66,8 @@ def main() -> None:
 
     season, seat = args.season, args.seat
     world = base.load_world(season)
+    # The inherited checkpoint helper uses family only for its resume log.
+    world.setdefault("family", season)
     focus = world["team_ids"][seat - 1]
     world_file = base.GEN / season / "world.json.gz"
     output = args.output_dir / f"{season}_seat{seat}.json"
