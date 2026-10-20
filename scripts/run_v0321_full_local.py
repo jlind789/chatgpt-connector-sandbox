@@ -21,6 +21,7 @@ PHASE_A=SCRIPTS/"run_v0321_commit_seat.py"
 PHASE_B=SCRIPTS/"run_v0321_evaluate_seat.py"
 AGG=SCRIPTS/"aggregate_v0321_full.py"
 BUNDLE=SCRIPTS/"bundle_v0321_full.py"
+CERT=SCRIPTS/"test_v0321_resume_equivalence.py"
 SOURCE_FILES=[
     PROTOCOL, PHASE_A, PHASE_B, AGG, BUNDLE,
     SCRIPTS/"run_historical_v0320_seat.py",
@@ -28,6 +29,8 @@ SOURCE_FILES=[
     ROOT/"Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip",
     ROOT/"historical/generated_v0318/2022-23/world.json.gz",
     ROOT/"historical/generated_v0318/2023-24/world.json.gz",
+    CERT,
+    SCRIPTS/"run_v0321_full_local.py",
 ]
 JOBS=[(s,i) for s in ("2022-23","2023-24") for i in range(1,7)]
 
@@ -172,6 +175,14 @@ def main():
             raise RuntimeError("Committed draft bytes changed after the Phase A boundary")
     write(index_path,{"phase":"A_FINISHED_BEFORE_OUTCOME_EVALUATION",
                       "created_at":now(),"sha256":index})
+
+    print("CERTIFICATION: comparing uninterrupted and resumed final draft decisions",flush=True)
+    cert=subprocess.run(
+        [sys.executable,str(CERT),"--run-dir",str(run)],
+        cwd=ROOT,env=env
+    )
+    if cert.returncode:
+        raise RuntimeError("Restart equivalence failed; outcome scoring is blocked")
 
     print("PHASE B: evaluating committed drafts in new Python processes",flush=True)
     phase_run("EVALUATE",PHASE_B,run,args.workers,env,status,lock)
