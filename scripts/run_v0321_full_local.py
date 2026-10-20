@@ -131,17 +131,19 @@ def main():
         "seasons":["2022-23","2023-24"],
         "seats_per_season":6,
         "phase_boundary":"ALL_DRAFT_COMMITMENTS_THEN_SEPARATE_PROCESS_REALIZED_EVALUATION",
+        "python_hash_seed_policy":"PYTHONHASHSEED=0",
     }
     if manifest_path.exists():
         old=json.loads(manifest_path.read_text(encoding="utf-8"))
         for key in ("version","files_sha256","protocol_max_rollouts","seasons",
-                    "seats_per_season","phase_boundary"):
+                    "seats_per_season","phase_boundary","python_hash_seed_policy"):
             if old.get(key)!=provenance[key]:
                 raise RuntimeError(f"Stale run provenance: {key}; choose a NEW --run-dir")
         provenance["created_at"]=old["created_at"]
     write(manifest_path,provenance)
 
     env=os.environ.copy()
+    env["PYTHONHASHSEED"]="0"
     for key in ("OMP_NUM_THREADS","OPENBLAS_NUM_THREADS","MKL_NUM_THREADS",
                 "NUMEXPR_NUM_THREADS","VECLIB_MAXIMUM_THREADS"):
         env[key]="1"
