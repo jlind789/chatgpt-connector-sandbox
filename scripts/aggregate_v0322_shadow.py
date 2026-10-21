@@ -35,6 +35,8 @@ def main():
             for d in record["rows"]:
                 if d["new_stage"]["budget"]!=2048:
                     raise RuntimeError("Missing 2048 stage evidence")
+                if not d.get("source_reproduction_passed") or d.get("reproduced_source_stage_count")!=11:
+                    raise RuntimeError("Source 1->1024 evidence reproduction not verified")
                 rows.append({"season":season,"seat":seat,**d})
     if len(kinds)!=1:
         raise RuntimeError("Mixed study provenance")
@@ -55,6 +57,8 @@ def main():
             "source_count":len(subset),
             "terminal_status_counts":dict(collections.Counter(x["extended_status"] for x in subset))
         }
+    if (groups["True"]["source_count"],groups["False"]["source_count"])!=(25,10):
+        raise RuntimeError("Source 1024 separated/unseparated cohort does not match audit")
     if sum(x["source_count"] for x in groups.values())!=35:
         raise RuntimeError("Stage 1024 strata mismatch")
 
