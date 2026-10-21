@@ -124,6 +124,8 @@ def main():
         "protocol_sha256":sha(PROTO),
         "base_runner_sha256":sha(BASE),
         "runtime_zip_sha256":sha(RUNTIME),
+        "world_2022_23_sha256":sha(ROOT/"historical/generated_v0318/2022-23/world.json.gz"),
+        "world_2023_24_sha256":sha(ROOT/"historical/generated_v0318/2023-24/world.json.gz"),
         "target_budget":2048,
         "source_protocol_ceiling":1024,
         "python_version":".".join(map(str,sys.version_info[:3])),
