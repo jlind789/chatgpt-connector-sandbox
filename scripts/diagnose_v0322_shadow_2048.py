@@ -180,6 +180,8 @@ def extend(snapshot: dict, source: dict):
             )
             return {
                 "extended_status": status,
+                "reproduced_source_stage_count": len(expected_by_budget),
+                "source_reproduction_passed": True,
                 "new_stage": stage,
                 "source_1024_separated": source["stages"][-1]["separated"],
                 "source_1024_gap": source["final_runner_up_gap_points"],
@@ -240,6 +242,17 @@ def main():
         seen = {int(r["pick_index"]) for r in record["rows"]}
         if len(seen) != len(record["rows"]):
             raise RuntimeError("Duplicate saved shadow decisions")
+        source_by_index = {int(d["pick_index"]): d for d in decisions}
+        if not seen.issubset(source_by_index):
+            raise RuntimeError("Saved shadow output includes a non-target decision")
+        for stored in record["rows"]:
+            original = source_by_index[int(stored["pick_index"])]
+            if (int(stored["round"]) != int(original["round"])
+                    or stored["source_1024_leader"] != original["final_leader"]
+                    or stored["source_1024_separated"] != original["stages"][-1]["separated"]
+                    or stored.get("source_reproduction_passed") is not True
+                    or stored.get("reproduced_source_stage_count") != 11):
+                raise RuntimeError("Saved shadow checkpoint has invalid source identity/proof")
 
         for n, original in enumerate(decisions, 1):
             idx = int(original["pick_index"])
