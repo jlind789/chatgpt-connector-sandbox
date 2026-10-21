@@ -59,6 +59,14 @@ def source_bundle(z: zipfile.ZipFile):
             or manifest["files_sha256"]["historical\\protocol-v0.3.21-development-freeze.json"] != file_hash(PROTO_FILE)
             or manifest["files_sha256"]["scripts\\run_historical_v0320_seat.py"] != file_hash(SCRIPTS / "run_historical_v0320_seat.py")):
         raise RuntimeError("Protocol/runner does not match frozen source")
+    if (manifest["files_sha256"]["Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip"]
+            != file_hash(ROOT / "Fantasy-Decision-Engine-v0.3.17-Development-Backtest-Runtime.zip")):
+        raise RuntimeError("Runtime ZIP differs from frozen source")
+    for season in SEASONS:
+        world = ROOT / "historical/generated_v0318" / season / "world.json.gz"
+        world_key = "historical\\generated_v0318\\" + season + "\\world.json.gz"
+        if manifest["files_sha256"][world_key] != file_hash(world):
+            raise RuntimeError(f"Source world mismatch: {season}")
     for season in SEASONS:
         for seat in range(1, 7):
             name = f"{season}_seat{seat}.json"
